@@ -99,7 +99,7 @@
 
   { "id": 391, "title": "Women Shoes 1", "price": 110, "category": "women-shoes", "description": "Stylish shoes", "thumbnail": "/images/shoes w1.jpg" },
   { "id": 392, "title": "Women Shoes 2", "price": 112, "category": "women-shoes", "description": "Elegant shoes", "thumbnail": "/images/shoes w2.jpg" },
-  { "id": 392, "title": "Women Shoes 2", "price": 112, "category": "women-shoes", "description": "Elegant shoes", "thumbnail": "/images/shoes w3.jpg" },
+  { "id": 39, "title": "Women Shoes 2", "price": 112, "category": "women-shoes", "description": "Elegant shoes", "thumbnail": "/images/shoes w3.jpg" },
   { "id": 393, "title": "Women Shoes 3", "price": 108, "category": "women-shoes", "description": "Chic shoes", "thumbnail": "/images/shoes w4.jpg" },
   { "id": 394, "title": "Women Shoes 4", "price": 111, "category": "women-shoes", "description": "Trendy shoes", "thumbnail": "/images/shoes w5.jpg" },
   { "id": 395, "title": "Women Shoes 5", "price": 109, "category": "women-shoes", "description": "Fashionable shoes", "thumbnail": "/images/shoes w6.jpg" },
