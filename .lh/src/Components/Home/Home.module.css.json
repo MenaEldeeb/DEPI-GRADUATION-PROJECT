@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/Components/Home/Home.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1763456267359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763457511315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n .homeContainer {\r\n+  width: 100%;\r\n   height: 100vh;\r\n   background-size: cover;\r\n   background-position: center;\r\n+  background-repeat: no-repeat;\r\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n"
+                },
+                {
+                    "date": 1763458091973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .homeContainer {\r\n   width: 100%;\r\n-  height: 100vh;\r\n+  height: 400vh;\r\n   background-size: cover;\r\n   background-position: center;\r\n   background-repeat: no-repeat;\r\n   position: relative;\r\n"
+                },
+                {
+                    "date": 1763458106219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .homeContainer {\r\n   width: 100%;\r\n-  height: 400vh;\r\n+  height: 200vh;\r\n   background-size: cover;\r\n   background-position: center;\r\n   background-repeat: no-repeat;\r\n   position: relative;\r\n"
+                },
+                {
+                    "date": 1763458123985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .homeContainer {\r\n   width: 100%;\r\n-  height: 200vh;\r\n+  height: 100vh;\r\n   background-size: cover;\r\n   background-position: center;\r\n   background-repeat: no-repeat;\r\n   position: relative;\r\n"
+                },
+                {
+                    "date": 1763458411103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,62 +0,0 @@\n-.homeContainer {\r\n-  width: 100%;\r\n-  height: 100vh;\r\n-  background-size: cover;\r\n-  background-position: center;\r\n-  background-repeat: no-repeat;\r\n-  position: relative;\r\n-}\r\n-\r\n-.overlay {\r\n-  background: rgba(0, 0, 0, 0.55);\r\n-  height: 100%;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  align-items: center;\r\n-  justify-content: center;\r\n-  color: white;\r\n-  text-align: center;\r\n-  padding: 20px;\r\n-}\r\n-\r\n-.title {\r\n-  font-size: 45px;\r\n-  font-weight: bold;\r\n-  margin-bottom: 20px;\r\n-}\r\n-\r\n-.shopBtn {\r\n-  background: #14a44d;\r\n-  border: none;\r\n-  padding: 12px 26px;\r\n-  color: white;\r\n-  font-size: 22px;\r\n-  border-radius: 8px;\r\n-  margin: 10px;\r\n-  cursor: pointer;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.shopBtn:hover {\r\n-  background: #0d7c39;\r\n-}\r\n-\r\n-.categories {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  gap: 15px;\r\n-}\r\n-\r\n-.catBtn {\r\n-  background: #14a44d;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: white;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.catBtn:hover {\r\n-  background: #0d7c39;\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763458668753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,60 @@\n+.homeContainer {\r\n+  height: 100vh;\r\n+  background-size: cover;\r\n+  background-position: center;\r\n+  position: relative;\r\n+}\r\n+\r\n+.overlay {\r\n+  background: rgba(0, 0, 0, 0.55);\r\n+  height: 100%;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: center;\r\n+  justify-content: center;\r\n+  color: white;\r\n+  text-align: center;\r\n+  padding: 20px;\r\n+}\r\n+\r\n+.title {\r\n+  font-size: 45px;\r\n+  font-weight: bold;\r\n+  margin-bottom: 20px;\r\n+}\r\n+\r\n+.shopBtn {\r\n+  background: #14a44d;\r\n+  border: none;\r\n+  padding: 12px 26px;\r\n+  color: white;\r\n+  font-size: 22px;\r\n+  border-radius: 8px;\r\n+  margin: 10px;\r\n+  cursor: pointer;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.shopBtn:hover {\r\n+  background: #0d7c39;\r\n+}\r\n+\r\n+.categories {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  gap: 15px;\r\n+}\r\n+\r\n+.catBtn {\r\n+  background: #14a44d;\r\n+  padding: 12px 26px;\r\n+  font-size: 20px;\r\n+  color: white;\r\n+  text-decoration: none;\r\n+  border-radius: 8px;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.catBtn:hover {\r\n+  background: #0d7c39;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763479084363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n .homeContainer {\r\n   height: 100vh;\r\n+  width: 100%;        /* 🔥 السطر المهم */\r\n   background-size: cover;\r\n   background-position: center;\r\n+  background-repeat: no-repeat; /* مهم برضه */\r\n   position: relative;\r\n }\r\n \r\n+\r\n .overlay {\r\n   background: rgba(0, 0, 0, 0.55);\r\n   height: 100%;\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1763479092407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n .homeContainer {\r\n   height: 100vh;\r\n-  width: 100%;        /* 🔥 السطر المهم */\r\n+  width: 100%;       \r\n   background-size: cover;\r\n   background-position: center;\r\n-  background-repeat: no-repeat; /* مهم برضه */\r\n+  background-repeat: no-repeat; \r\n   position: relative;\r\n }\r\n \r\n \r\n"
+                }
+            ],
+            "date": 1763456267359,
+            "name": "Commit-0",
+            "content": ".homeContainer {\r\n  height: 100vh;\r\n  background-size: cover;\r\n  background-position: center;\r\n  position: relative;\r\n}\r\n\r\n.overlay {\r\n  background: rgba(0, 0, 0, 0.55);\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: white;\r\n  text-align: center;\r\n  padding: 20px;\r\n}\r\n\r\n.title {\r\n  font-size: 45px;\r\n  font-weight: bold;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.shopBtn {\r\n  background: #14a44d;\r\n  border: none;\r\n  padding: 12px 26px;\r\n  color: white;\r\n  font-size: 22px;\r\n  border-radius: 8px;\r\n  margin: 10px;\r\n  cursor: pointer;\r\n  transition: 0.3s ease;\r\n}\r\n\r\n.shopBtn:hover {\r\n  background: #0d7c39;\r\n}\r\n\r\n.categories {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n}\r\n\r\n.catBtn {\r\n  background: #14a44d;\r\n  padding: 12px 26px;\r\n  font-size: 20px;\r\n  color: white;\r\n  text-decoration: none;\r\n  border-radius: 8px;\r\n  transition: 0.3s ease;\r\n}\r\n\r\n.catBtn:hover {\r\n  background: #0d7c39;\r\n}"
+        }
+    ]
+}

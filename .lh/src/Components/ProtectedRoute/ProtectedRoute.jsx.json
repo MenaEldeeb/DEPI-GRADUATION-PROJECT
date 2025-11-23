@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/Components/ProtectedRoute/ProtectedRoute.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1763385267356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763385288060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import React, { useContext } from \"react\";\r\n+import { Navigate } from \"react-router-dom\";\r\n+import { UserContext } from \"../context/userContext\";\r\n+\r\n+export default function ProtectedRoute({ children }) {\r\n+  const { isLogin } = useContext(UserContext);\r\n+\r\n+  \r\n+  if (!isLogin) {\r\n+    return <Navigate to=\"/login\" replace />;\r\n+  }\r\n+\r\n+  // لو عامل login يسمح بالوصول للصفحة\r\n+  return children;\r\n+}\r\n"
+                },
+                {
+                    "date": 1763385301801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,6 @@\n   if (!isLogin) {\r\n     return <Navigate to=\"/login\" replace />;\r\n   }\r\n \r\n-  // لو عامل login يسمح بالوصول للصفحة\r\n   return children;\r\n }\r\n"
+                },
+                {
+                    "date": 1763385415614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,5 @@\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n-  const { isLogin } = useContext(UserContext);\r\n-\r\n   \r\n-  if (!isLogin) {\r\n-    return <Navigate to=\"/login\" replace />;\r\n-  }\r\n-\r\n-  return children;\r\n-}\r\n"
+                },
+                {
+                    "date": 1763385423876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n-  \r\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385434754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n-  \n\\ No newline at end of file\n+  {\r\n+    if\r\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385472362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if\r\n+    if()\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385478007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if()\r\n+    if(localStorage)\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385491589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage)\r\n+    if(localStorage.g)\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385505240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.g)\r\n+    if(localStorage.getItem)\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385510615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.getItem)\r\n+    if(localStorage.getItem(''))\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385520489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.getItem(''))\r\n+    if(localStorage.getItem('user'))\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385527444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.getItem('user'))\r\n+    if(localStorage.getItem('userToken'))\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385563011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.getItem('userToken'))\r\n+    if(localStorage.getItem('userToken')!)\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385569803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.getItem('userToken')!)\r\n+    if(localStorage.getItem('userToken')!==null)\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385578497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,8 @@\n import { UserContext } from \"../context/userContext\";\r\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n-    if(localStorage.getItem('userToken')!==null)\r\n+    if(localStorage.getItem('userToken')!==null){\r\n+      re\r\n+    }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385584259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n-      re\r\n+      return p\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385590197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n-      return p\r\n+      return props\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385601688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n \r\n export default function ProtectedRoute({ children }) {\r\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n-      return props\r\n+      return props.children\r\n     }\r\n+    \r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385606822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n-    \r\n+    e\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385612169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,8 @@\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n-    e\r\n+    else{\r\n+      r\r\n+    }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385627770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useContext } from \"react\";\r\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n-export default function ProtectedRoute({ children }) {\r\n+export default function ProtectedRoute(p) \r\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n"
+                },
+                {
+                    "date": 1763385633889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import React, { useContext } from \"react\";\r\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n-export default function ProtectedRoute(p) \r\n+export default function ProtectedRoute(props) \r\n   {\r\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n     else{\r\n-      r\r\n+      ret\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385638932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n     else{\r\n-      ret\r\n+      return <\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385645521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n     else{\r\n-      return <\r\n+      return <Navigate to\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385651156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n     else{\r\n-      return <Navigate to\r\n+      return <Navigate to={/}\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385658693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n     else{\r\n-      return <Navigate to={/}\r\n+      return <Navigate to={'/}\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385667906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     if(localStorage.getItem('userToken')!==null){\r\n       return props.children\r\n     }\r\n     else{\r\n-      return <Navigate to={'/}\r\n+      return <Navigate to={'/login}/\r\n     }\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763385858424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n import React, { useContext } from \"react\";\r\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n-export default function ProtectedRoute(props) \r\n-  {\r\n-    if(localStorage.getItem('userToken')!==null){\r\n-      return props.children\r\n-    }\r\n-    else{\r\n-      return <Navigate to={'/login}/\r\n-    }\r\n-  }\n\\ No newline at end of file\n+export default function ProtectedRoute({ children }) {\r\n+  const { isLogin } = useContext(UserContext);\r\n+\r\n+  // لو المستخدم مسجل دخول\r\n+  if (isLogin) {\r\n+    return children;\r\n+  } else {\r\n+    // لو مش مسجل دخول، حوّله على صفحة login\r\n+    return <Navigate to=\"/login\" />;\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1763385871941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n \r\n export default function ProtectedRoute({ children }) {\r\n   const { isLogin } = useContext(UserContext);\r\n \r\n-  // لو المستخدم مسجل دخول\r\n   if (isLogin) {\r\n     return children;\r\n   } else {\r\n     // لو مش مسجل دخول، حوّله على صفحة login\r\n"
+                },
+                {
+                    "date": 1763385877395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n \r\n   if (isLogin) {\r\n     return children;\r\n   } else {\r\n-    // لو مش مسجل دخول، حوّله على صفحة login\r\n+     لو مش مسجل دخول، حوّله على صفحة login\r\n     return <Navigate to=\"/login\" />;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1763419634761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,6 @@\n \r\n export default function ProtectedRoute({ children }) {\r\n   const { isLogin } = useContext(UserContext);\r\n \r\n-  if (isLogin) {\r\n-    return children;\r\n-  } else {\r\n-     لو مش مسجل دخول، حوّله على صفحة login\r\n-    return <Navigate to=\"/login\" />;\r\n-  }\r\n+  return isLogin ? children : <Navigate to=\"/login\" />;\r\n }\r\n"
+                }
+            ],
+            "date": 1763385267356,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

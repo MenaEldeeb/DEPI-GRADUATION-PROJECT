@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/App.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1763458870056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763458911056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +0,0 @@\n-html, body {\n-  margin: 0;\n-  padding: 0;\n-  width: 100%;\n-  height: 100%;\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763458930270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n \n+\n"
+                },
+                {
+                    "date": 1763459034860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,8 @@\n+html, body {\n+  margin: 0;\n+  padding: 0;\n+  height: 100%;\n+  font-family: Arial, sans-serif;\n+}\n \n \n"
+                },
+                {
+                    "date": 1763459199931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,1 @@\n-html, body {\n-  margin: 0;\n-  padding: 0;\n-  height: 100%;\n-  font-family: Arial, sans-serif;\n-}\n \n-\n"
+                },
+                {
+                    "date": 1763459383346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,43 @@\n \n+#root {\n+  max-width: 1280px;\n+  margin: 0 auto;\n+  padding: 2rem;\n+  text-align: center;\n+}\n+\n+.logo {\n+  height: 6em;\n+  padding: 1.5em;\n+  will-change: filter;\n+  transition: filter 300ms;\n+}\n+.logo:hover {\n+  filter: drop-shadow(0 0 2em #646cffaa);\n+}\n+.logo.react:hover {\n+  filter: drop-shadow(0 0 2em #61dafbaa);\n+}\n+\n+@keyframes logo-spin {\n+  from {\n+    transform: rotate(0deg);\n+  }\n+  to {\n+    transform: rotate(360deg);\n+  }\n+}\n+\n+@media (prefers-reduced-motion: no-preference) {\n+  a:nth-of-type(2) .logo {\n+    animation: logo-spin infinite 20s linear;\n+  }\n+}\n+\n+.card {\n+  padding: 2em;\n+}\n+\n+.read-the-docs {\n+  color: #888;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763479573701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n \n #root {\n-  max-width: 1280px;\n-  margin: 0 auto;\n-  padding: 2rem;\n-  text-align: center;\n+  width: 100%;\n+  max-width: 100%;\n+  margin: 0;\n+  padding: 0;\n+  text-align: left; /* أو شليه */\n }\n \n+\n .logo {\n   height: 6em;\n   padding: 1.5em;\n   will-change: filter;\n"
+                },
+                {
+                    "date": 1763480114044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,43 +3,8 @@\n   width: 100%;\n   max-width: 100%;\n   margin: 0;\n   padding: 0;\n-  text-align: left; /* أو شليه */\n+  text-align: left; \n }\n \n \n-.logo {\n-  height: 6em;\n-  padding: 1.5em;\n-  will-change: filter;\n-  transition: filter 300ms;\n-}\n-.logo:hover {\n-  filter: drop-shadow(0 0 2em #646cffaa);\n-}\n-.logo.react:hover {\n-  filter: drop-shadow(0 0 2em #61dafbaa);\n-}\n-\n-@keyframes logo-spin {\n-  from {\n-    transform: rotate(0deg);\n-  }\n-  to {\n-    transform: rotate(360deg);\n-  }\n-}\n-\n-@media (prefers-reduced-motion: no-preference) {\n-  a:nth-of-type(2) .logo {\n-    animation: logo-spin infinite 20s linear;\n-  }\n-}\n-\n-.card {\n-  padding: 2em;\n-}\n-\n-.read-the-docs {\n-  color: #888;\n\\ No newline at end of file\n-}\n"
+                }
+            ],
+            "date": 1763458870056,
+            "name": "Commit-0",
+            "content": "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,262 @@
+{
+    "sourceFile": "src/Components/Home/Home.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 61,
+            "patches": [
+                {
+                    "date": 1763456243910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763456431001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+import React, { useState } from \"react\";\r\n+import { Link } from \"react-router-dom\";\r\n+import styles from \"./Home.module.css\";\r\n+import bgImg from \"../../a\";\r\n+\r\n+export default function Home() {\r\n+  const [showButtons, setShowButtons] = useState(false);\r\n+\r\n+  return (\r\n+    <div\r\n+      className={styles.homeContainer}\r\n+      style={{ backgroundImage: `url(${bgImg})` }}\r\n+    >\r\n+      <div className={styles.overlay}>\r\n+        <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n+\r\n+        {!showButtons ? (\r\n+          <button\r\n+            className={styles.shopBtn}\r\n+            onClick={() => setShowButtons(true)}\r\n+          >\r\n+            Shop Now\r\n+          </button>\r\n+        ) : (\r\n+          <div className={styles.categories}>\r\n+            <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n+            <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n+          </div>\r\n+        )}\r\n+      </div>\r\n+    </div>\r\n+  );\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763456437227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../a\";\r\n+import bgImg from \"../../assets/images\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763456444763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../assets/images\";\r\n+import bgImg from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763456454922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${bgImg})` }}\r\n+      style={{ backgroundImage: `url(${})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763456460029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${})` }}\r\n+      style={{ backgroundImage: `url(${a})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763456466736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${a})` }}\r\n+      style={{ backgroundImage: `url(${})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763456489417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${})` }}\r\n+      style={{ backgroundImage: `url(${w})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763456499704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n+import im from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${w})` }}\r\n+      style={{ backgroundImage: `url(${})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763456521977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import im from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n+import  from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763456528891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import  from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n+import img from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${})` }}\r\n+      style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763457031410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM\";\r\n+import img from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM.\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457062810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/WhatsApp Image 2025-11-18 at 10.47.01 AM.\";\r\n+import img from \"../../assets/images/w\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457100792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/w\";\r\n+import img from \"../../assets/images/\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457106440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/\r\n+import img from \"../../assets/images/s\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457112819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/s\r\n+import img from \"../../assets/images/st'\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457118167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/st'\r\n+im\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457123721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-im\r\n+import img\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457128880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img\r\n+import img from \r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457135606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \r\n+import img from '0'\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457141819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from '0'\r\n+import img from './'\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457163765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from './'\r\n+<li className=\"nav-item me-3\">\r\n+                <Link className=\"nav-link text-white\" to=\"/men\">Men</Link>\r\n+              </li>\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763457199312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-<li className=\"nav-item me-3\">\r\n-                <Link className=\"nav-link text-white\" to=\"/men\">Men</Link>\r\n-              </li>\r\n+import img from '../../assets/images/register.jfif'\r\n \r\n+\r\n+\r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1763457204976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from '../../assets/images/register.jfif'\r\n+import img from '../../assets/images/.jfif'\r\n \r\n \r\n \r\n export default function Home() {\r\n"
+                },
+                {
+                    "date": 1763457213069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from '../../assets/images/.jfif'\r\n+import img from '../../assets/images/import { reducerName } from './reducer'\r\n+import { createStore } from 'redux'\r\n \r\n+const store = createStore(reducerName)\r\n \r\n+export default store.jfif'\r\n \r\n+\r\n+\r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1763457220363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from '../../assets/images/import { reducerName } from './reducer'\r\n-import { createStore } from 'redux'\r\n+import img from '../../assets/images/register.jfif'\r\n \r\n+\r\n+\r\n const store = createStore(reducerName)\r\n \r\n export default store.jfif'\r\n \r\n"
+                },
+                {
+                    "date": 1763457227729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from '../../assets/images/register.jfif'\r\n+import img from '../../assets/images/store.jfif'\r\n \r\n \r\n \r\n const store = createStore(reducerName)\r\n"
+                },
+                {
+                    "date": 1763457234387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from '../../assets/images/store.jfif'\r\n+import img from '../../assets/images/store.jpeg'\r\n \r\n \r\n \r\n const store = createStore(reducerName)\r\n"
+                },
+                {
+                    "date": 1763457242583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,8 @@\n import img from '../../assets/images/store.jpeg'\r\n \r\n \r\n \r\n-const store = createStore(reducerName)\r\n-\r\n-export default store.jfif'\r\n-\r\n-\r\n-\r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1763458020270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n+        <h1 className={styles.title}>Welcome to IStore</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763458026402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome to IStore</h1>\r\n+        <h1 className={styles.title}>Welcome to MEStore</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763458398393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +0,0 @@\n-import React, { useState } from \"react\";\r\n-import { Link } from \"react-router-dom\";\r\n-import styles from \"./Home.module.css\";\r\n-import img from '../../assets/images/store.jpeg'\r\n-\r\n-\r\n-\r\n-export default function Home() {\r\n-  const [showButtons, setShowButtons] = useState(false);\r\n-\r\n-  return (\r\n-    <div\r\n-      className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${img})` }}\r\n-    >\r\n-      <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome to MEStore</h1>\r\n-\r\n-        {!showButtons ? (\r\n-          <button\r\n-            className={styles.shopBtn}\r\n-            onClick={() => setShowButtons(true)}\r\n-          >\r\n-            Shop Now\r\n-          </button>\r\n-        ) : (\r\n-          <div className={styles.categories}>\r\n-            <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n-            <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n-            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n-          </div>\r\n-        )}\r\n-      </div>\r\n-    </div>\r\n-  );\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763458489515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,58 @@\n+import React, { useState } from \"react\";\r\n+import { Link } from \"react-router-dom\";\r\n+import 'bootstrap/dist/css/bootstrap.min.css';\r\n+import 'bootstrap/dist/js/bootstrap.bundle.min.js';\r\n+import img from '../../assets/images/store.jpeg';\r\n+\r\n+export default function Home() {\r\n+  const [showButtons, setShowButtons] = useState(false);\r\n+\r\n+  return (\r\n+    <div\r\n+      style={{\r\n+        position: 'relative',       // مهم للـ overlay\r\n+        width: '100%',\r\n+        height: '100vh',\r\n+        backgroundImage: `url(${img})`,\r\n+        backgroundSize: 'cover',\r\n+        backgroundPosition: 'center',\r\n+        backgroundRepeat: 'no-repeat',\r\n+      }}\r\n+    >\r\n+      {/* Overlay */}\r\n+      <div\r\n+        className=\"d-flex flex-column justify-content-center align-items-center text-center\"\r\n+        style={{\r\n+          position: 'absolute',\r\n+          top: 0,\r\n+          left: 0,\r\n+          width: '100%',\r\n+          height: '100%',\r\n+          backgroundColor: 'rgba(0,0,0,0.55)',\r\n+          padding: '20px',\r\n+        }}\r\n+      >\r\n+        {/* Title */}\r\n+        <h1 className=\"text-white fw-bold mb-4\" style={{ fontSize: '45px' }}>\r\n+          Welcome to Menna Store\r\n+        </h1>\r\n+\r\n+        {/* Buttons */}\r\n+        {!showButtons ? (\r\n+          <button\r\n+            className=\"btn btn-success btn-lg\"\r\n+            onClick={() => setShowButtons(true)}\r\n+          >\r\n+            Shop Now\r\n+          </button>\r\n+        ) : (\r\n+          <div className=\"d-flex flex-column flex-md-row gap-3 mt-3\">\r\n+            <Link to=\"/men\" className=\"btn btn-success btn-lg flex-fill\">Men</Link>\r\n+            <Link to=\"/women\" className=\"btn btn-success btn-lg flex-fill\">Women</Link>\r\n+            <Link to=\"/kids\" className=\"btn btn-success btn-lg flex-fill\">Kids</Link>\r\n+          </div>\r\n+        )}\r\n+      </div>\r\n+    </div>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1763458543169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,58 +0,0 @@\n-import React, { useState } from \"react\";\r\n-import { Link } from \"react-router-dom\";\r\n-import 'bootstrap/dist/css/bootstrap.min.css';\r\n-import 'bootstrap/dist/js/bootstrap.bundle.min.js';\r\n-import img from '../../assets/images/store.jpeg';\r\n-\r\n-export default function Home() {\r\n-  const [showButtons, setShowButtons] = useState(false);\r\n-\r\n-  return (\r\n-    <div\r\n-      style={{\r\n-        position: 'relative',       // مهم للـ overlay\r\n-        width: '100%',\r\n-        height: '100vh',\r\n-        backgroundImage: `url(${img})`,\r\n-        backgroundSize: 'cover',\r\n-        backgroundPosition: 'center',\r\n-        backgroundRepeat: 'no-repeat',\r\n-      }}\r\n-    >\r\n-      {/* Overlay */}\r\n-      <div\r\n-        className=\"d-flex flex-column justify-content-center align-items-center text-center\"\r\n-        style={{\r\n-          position: 'absolute',\r\n-          top: 0,\r\n-          left: 0,\r\n-          width: '100%',\r\n-          height: '100%',\r\n-          backgroundColor: 'rgba(0,0,0,0.55)',\r\n-          padding: '20px',\r\n-        }}\r\n-      >\r\n-        {/* Title */}\r\n-        <h1 className=\"text-white fw-bold mb-4\" style={{ fontSize: '45px' }}>\r\n-          Welcome to Menna Store\r\n-        </h1>\r\n-\r\n-        {/* Buttons */}\r\n-        {!showButtons ? (\r\n-          <button\r\n-            className=\"btn btn-success btn-lg\"\r\n-            onClick={() => setShowButtons(true)}\r\n-          >\r\n-            Shop Now\r\n-          </button>\r\n-        ) : (\r\n-          <div className=\"d-flex flex-column flex-md-row gap-3 mt-3\">\r\n-            <Link to=\"/men\" className=\"btn btn-success btn-lg flex-fill\">Men</Link>\r\n-            <Link to=\"/women\" className=\"btn btn-success btn-lg flex-fill\">Women</Link>\r\n-            <Link to=\"/kids\" className=\"btn btn-success btn-lg flex-fill\">Kids</Link>\r\n-          </div>\r\n-        )}\r\n-      </div>\r\n-    </div>\r\n-  );\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763458607655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,34 @@\n-\n+import React, { useState } from \"react\";\r\n+import { Link } from \"react-router-dom\";\r\n+import styles from \"./Home.module.css\";\r\n+import bgImg from \"../../accents/yourImageName.jpg\";\r\n+\r\n+export default function Home() {\r\n+  const [showButtons, setShowButtons] = useState(false);\r\n+\r\n+  return (\r\n+    <div\r\n+      className={styles.homeContainer}\r\n+      style={{ backgroundImage: `url(${bgImg})` }}\r\n+    >\r\n+      <div className={styles.overlay}>\r\n+        <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n+\r\n+        {!showButtons ? (\r\n+          <button\r\n+            className={styles.shopBtn}\r\n+            onClick={() => setShowButtons(true)}\r\n+          >\r\n+            Shop Now\r\n+          </button>\r\n+        ) : (\r\n+          <div className={styles.categories}>\r\n+            <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n+            <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n+          </div>\r\n+        )}\r\n+      </div>\r\n+    </div>\r\n+  );\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763458619487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../accents/yourImageName.jpg\";\r\n+import bgImg from \"../../asse/yourImageName.jpg\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763458628494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../asse/yourImageName.jpg\";\r\n+import bgImg from \"../../assets/.jpg\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763458634009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../assets/.jpg\";\r\n+import bgImg from \"../../assets/store.jpg\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763458642400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../assets/store.jpg\";\r\n+import bgImg from \"../../assets/store.jpeg\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763458692826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import bgImg from \"../../assets/store.jpeg\";\r\n+import img from \"../../assets/store.jpeg\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763458698860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n   return (\r\n     <div\r\n       className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${bgImg})` }}\r\n+      style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n         <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n \r\n"
+                },
+                {
+                    "date": 1763458742088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/store.jpeg\";\r\n+import img from \"../../assets/imag\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763458747603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\r\n import { Link } from \"react-router-dom\";\r\n import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/imag\";\r\n+import img from \"../../assets/images/store.jpeg\";\r\n \r\n export default function Home() {\r\n   const [showButtons, setShowButtons] = useState(false);\r\n \r\n"
+                },
+                {
+                    "date": 1763482009964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome to Dream Style Store</h1>\r\n+        <h1 className={styles.title}>Welcome IStore</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482015451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome IStore</h1>\r\n+        <h1 className={styles.title}>Welcome Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482265672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome Store</h1>\r\n+        <h1 className={styles.title}>Welcome  Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482629211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome  Store</h1>\r\n+        <h1 className={styles.title}>Welcome فViora Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482681042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}>Welcome فViora Store</h1>\r\n+        <h1 className={styles.title}> فViora Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482690094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> فViora Store</h1>\r\n+        <h1 className={styles.title}> فViora</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482699341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> فViora</h1>\r\n+        <h1 className={styles.title}> </h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482711402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> </h1>\r\n+        <h1 className={styles.title}> Welcome</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482742371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome</h1>\r\n+        <h1 className={styles.title}> Welcome To </h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482748343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome To </h1>\r\n+        <h1 className={styles.title}> Welcome To Viora Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763482825494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+import React, { useState } from \"react\";\r\n+import { Link } from \"react-router-dom\";\r\n+import styles from \"./Home.module.css\";\r\n+import img from \"../../assets/images/store.jpeg\";\r\n+\r\n+export default function Home() {\r\n+  const [showButtons, setShowButtons] = useState(false);\r\n+\r\n+  return (\r\n+    <div\r\n+      className={styles.homeContainer}\r\n+      style={{ backgroundImage: `url(${img})` }}\r\n+    >\r\n+      <div className={styles.overlay}>\r\n+        <h1 className={styles.title}> Welcome to Viora Store</h1>\r\n+\r\n+        {!showButtons ? (\r\n+          <button\r\n+            className={styles.shopBtn}\r\n+            onClick={() => setShowButtons(true)}\r\n+          >\r\n+            Shop Now\r\n+          </button>\r\n+        ) : (\r\n+          <div className={styles.categories}>\r\n+            <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n+            <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n+          </div>\r\n+        )}\r\n+      </div>\r\n+    </div>\r\n+  );\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763583405753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome to Viora Store</h1>\r\n+        <h1 className={styles.title}> Welcome to  Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n@@ -30,39 +30,5 @@\n         )}\r\n       </div>\r\n     </div>\r\n   );\r\n-}\n-import React, { useState } from \"react\";\r\n-import { Link } from \"react-router-dom\";\r\n-import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/store.jpeg\";\r\n-\r\n-export default function Home() {\r\n-  const [showButtons, setShowButtons] = useState(false);\r\n-\r\n-  return (\r\n-    <div\r\n-      className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${img})` }}\r\n-    >\r\n-      <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome To Viora Store</h1>\r\n-\r\n-        {!showButtons ? (\r\n-          <button\r\n-            className={styles.shopBtn}\r\n-            onClick={() => setShowButtons(true)}\r\n-          >\r\n-            Shop Now\r\n-          </button>\r\n-        ) : (\r\n-          <div className={styles.categories}>\r\n-            <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n-            <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n-            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n-          </div>\r\n-        )}\r\n-      </div>\r\n-    </div>\r\n-  );\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763583424597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome to  Store</h1>\r\n+        <h1 className={styles.title}> Welcome to Drea Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763583432353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome to Drea Store</h1>\r\n+        <h1 className={styles.title}> Welcome to Dream Style Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763583437392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome to Dream Style Store</h1>\r\n+        <h1 className={styles.title}> Welcome to Dream Style S Store</h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763583444116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       className={styles.homeContainer}\r\n       style={{ backgroundImage: `url(${img})` }}\r\n     >\r\n       <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome to Dream Style S Store</h1>\r\n+        <h1 className={styles.title}> Welcome to Dream Style Store </h1>\r\n \r\n         {!showButtons ? (\r\n           <button\r\n             className={styles.shopBtn}\r\n"
+                },
+                {
+                    "date": 1763641205454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n           <div className={styles.categories}>\r\n             <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n             <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n             <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n           </div>\r\n         )}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1763641212160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n           <div className={styles.categories}>\r\n             <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n             <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n             <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n-            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>H</Link>\r\n           </div>\r\n         )}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1763641217490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n           <div className={styles.categories}>\r\n             <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n             <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n             <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n-            <Link to=\"/kids\" className={styles.catBtn}>Hand</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>Handmade</Link>\r\n           </div>\r\n         )}\r\n       </div>\r\n     </div>\r\n"
+                }
+            ],
+            "date": 1763456243909,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

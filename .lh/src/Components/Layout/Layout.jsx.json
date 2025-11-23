@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/Components/Layout/Layout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1762169472021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1762169479437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +0,0 @@\n- React from 'react'\r\n-\r\n-export default function Layout() {\r\n-  return (\r\n-    <div>Layout</div>\r\n-  )\r\n-}\r\n-import\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1762169493664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+import React from 'react'\r\n+import { Outlet } from 'react-router-dom'\r\n+import Navbar from \"../Navbar/Navbar\";\r\n+\r\n+export default function Layout() {\r\n+  return (\r\n+    <div>\r\n+      <Navbar/>\r\n+      <Outlet></Outlet>\r\n+      Footer\r\n+    </div>\r\n+  )\r\n+}\r\n"
+                },
+                {
+                    "date": 1762169504575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   return (\r\n     <div>\r\n       <Navbar/>\r\n       <Outlet></Outlet>\r\n-      Footer\r\n+      \r\n     </div>\r\n   )\r\n }\r\n"
+                }
+            ],
+            "date": 1762169472021,
+            "name": "Commit-0",
+            "content": " React from 'react'\r\n\r\nexport default function Layout() {\r\n  return (\r\n    <div>Layout</div>\r\n  )\r\n}\r\nimport"
+        }
+    ]
+}

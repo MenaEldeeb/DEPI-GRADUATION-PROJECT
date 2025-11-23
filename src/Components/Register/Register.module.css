@@ -1,0 +1,82 @@
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:white; 
+  font-family: Arial, sans-serif;
+}
+
+.authCard {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.formHeader {
+  text-align: center;
+  color: #198754; 
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.formGroup input:focus {
+  border-color: #198754;
+  box-shadow: 0 0 4px rgba(25, 135, 84, 0.5);
+}
+
+.inputError {
+  border-color: #ff4d4f !important;
+}
+
+.errorMsg {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #198754; 
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submitBtn:hover {
+  background-color: #146c43; 
+}
+
+.redirectText {
+  text-align: center;
+  margin-top: 15px;
+  color: #fff; 
+}
+
+.redirectLink {
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.redirectLink:hover {
+  text-decoration: underline;
+}

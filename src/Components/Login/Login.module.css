@@ -1,0 +1,77 @@
+.authContainer {
+  min-height: 100vh;
+  background-color: white; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.authCard {
+  background: #fff;
+  width: 350px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.formHeader {
+  color: #198754;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #198754;
+  box-shadow: 0 0 4px rgba(25, 135, 84, 0.6);
+}
+
+.inputError {
+  border-color: red !important;
+}
+
+.errorMsg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submitBtn {
+  width: 100%;
+  background-color: #198754;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #146c43;
+}
+
+.redirectText {
+  margin-top: 15px;
+}
+
+.redirectLink {
+  color: #198754;
+  cursor: pointer;
+  font-weight: bold;
+}

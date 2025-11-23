@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/Components/ProductDetails/ProductDetails.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1763834135721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763836647333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n           <p className=\"mt-3\">{product.description}</p>\r\n           <h3 className=\"text-success fw-bold mt-4\">${product.price}</h3>\r\n \r\n           <button\r\n-            className=\"btn btn-primary mt-4\"\r\n+            className=\"btn btn-succe mt-4\"\r\n             onClick={() => addToCart(product)}\r\n           >\r\n             Add to Cart\r\n           </button>\r\n"
+                },
+                {
+                    "date": 1763837004168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n           <p className=\"mt-3\">{product.description}</p>\r\n           <h3 className=\"text-success fw-bold mt-4\">${product.price}</h3>\r\n \r\n           <button\r\n-            className=\"btn btn-succe mt-4\"\r\n+            className=\"btn btn-success mt-4\"\r\n             onClick={() => addToCart(product)}\r\n           >\r\n             Add to Cart\r\n           </button>\r\n"
+                }
+            ],
+            "date": 1763834135721,
+            "name": "Commit-0",
+            "content": "import { useLocation } from \"react-router-dom\";\r\nimport { useContext } from \"react\";\r\nimport { CartContext } from \"../context/CartContext.jsx\";\r\n\r\nexport default function ProductDetails() {\r\n  const { state } = useLocation();\r\n  const { addToCart } = useContext(CartContext);\r\n\r\n  const product = state?.product;\r\n\r\n  if (!product) {\r\n    return <h2 className=\"text-center mt-5\">No product data found</h2>;\r\n  }\r\n\r\n  const productImage =\r\n    product.images?.length > 0 ? product.images[0] : product.thumbnail;\r\n\r\n  return (\r\n    <div className=\"container my-5\">\r\n      <div className=\"row align-items-center\">\r\n        <div className=\"col-md-5 mb-4 mb-md-0\">\r\n          <img\r\n            src={productImage}\r\n            alt={product.title}\r\n            className=\"w-100 rounded shadow-sm\"\r\n          />\r\n        </div>\r\n\r\n        <div className=\"col-md-7\">\r\n          <h2 className=\"fw-bold\">{product.title}</h2>\r\n          <p className=\"text-muted\">{product.category}</p>\r\n          <p className=\"mt-3\">{product.description}</p>\r\n          <h3 className=\"text-success fw-bold mt-4\">${product.price}</h3>\r\n\r\n          <button\r\n            className=\"btn btn-primary mt-4\"\r\n            onClick={() => addToCart(product)}\r\n          >\r\n            Add to Cart\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n"
+        }
+    ]
+}

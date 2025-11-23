@@ -1,0 +1,146 @@
+{
+    "sourceFile": "src/Components/context/userContext.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1763327295935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763327303266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let userContext = createContext();\r\n+export let serContext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n"
+                },
+                {
+                    "date": 1763327318095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let serContext = createContext();\r\n+export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n-    return <userContext.Provider value={{isLogin, setLogin}}>\r\n+    return <UserContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n-    </userContext.Provider>\r\n+    </UserContext.Provider>\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1763327479472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +0,0 @@\n-import { createContext, useState } from \"react\";\r\n-\r\n-export let UserContext = createContext();\r\n-\r\n-export default function UserContextProvider(props){\r\n-    const [isLogin, setLogin] = useState(null)\r\n-   \r\n-    return <UserContext.Provider value={{isLogin, setLogin}}>\r\n-        {props.children}\r\n-    </UserContext.Provider>\r\n-\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763327498613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-\n+import { useContext } from \"react\";\r\n+import { UserContext } from \"./UserContext\";\r\n+\r\n+function () {\r\n+    const { isLogin, setLogin } = useContext(UserContext);\r\n+\r\n+    return (\r\n+        <div>\r\n+            {isLogin ? \"Welcome back!\" : \"Please log in\"}\r\n+            <button onClick={() => setLogin(true)}>Login</button>\r\n+        </div>\r\n+    )\r\n+}\r\n"
+                },
+                {
+                    "date": 1763327508667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +0,0 @@\n-import { useContext } from \"react\";\r\n-import { UserContext } from \"./UserContext\";\r\n-\r\n-function () {\r\n-    const { isLogin, setLogin } = useContext(UserContext);\r\n-\r\n-    return (\r\n-        <div>\r\n-            {isLogin ? \"Welcome back!\" : \"Please log in\"}\r\n-            <button onClick={() => setLogin(true)}>Login</button>\r\n-        </div>\r\n-    )\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763327592830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-\n+import { createContext, useState } from \"react\";\r\n+\r\n+export let UserContext = createContext();\r\n+\r\n+export default function UserContextProvider(props) {\r\n+  const [user, setUser] = useState(null); // null يعني مفيش مستخدم مسجل الدخول\r\n+\r\n+  return (\r\n+    <UserContext.Provider value={{ user, setUser }}>\r\n+      {props.children}\r\n+    </UserContext.Provider>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1763327600338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props) {\r\n-  const [user, setUser] = useState(null); // null يعني مفيش مستخدم مسجل الدخول\r\n+  const [user, setUser] = useState(null); / null يعني مفيش مستخدم مسجل الدخول/\r\n \r\n   return (\r\n     <UserContext.Provider value={{ user, setUser }}>\r\n       {props.children}\r\n"
+                },
+                {
+                    "date": 1763327606700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props) {\r\n-  const [user, setUser] = useState(null); / null يعني مفيش مستخدم مسجل الدخول/\r\n+  const [user, setUser] = useState(null)خدم مسجل الدخول/\r\n \r\n   return (\r\n     <UserContext.Provider value={{ user, setUser }}>\r\n       {props.children}\r\n"
+                },
+                {
+                    "date": 1763327614087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props) {\r\n-  const [user, setUser] = useState(null)خدم مسجل الدخول/\r\n+  const [user, setUser] = useState(null)خد\r\n \r\n   return (\r\n     <UserContext.Provider value={{ user, setUser }}>\r\n       {props.children}\r\n"
+                },
+                {
+                    "date": 1763327620895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n \r\n export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props) {\r\n-  const [user, setUser] = useState(null)خد\r\n-\r\n+  const [user, setUser] = useState(null)خد;\r\n   return (\r\n     <UserContext.Provider value={{ user, setUser }}>\r\n       {props.children}\r\n     </UserContext.Provider>\r\n"
+                },
+                {
+                    "date": 1763327710431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let UserContext = createContext();\r\n+export let userContext = createContext();\r\n \r\n-export default function UserContextProvider(props) {\r\n-  const [user, setUser] = useState(null)خد;\r\n-  return (\r\n-    <UserContext.Provider value={{ user, setUser }}>\r\n-      {props.children}\r\n-    </UserContext.Provider>\r\n-  );\r\n+export default function UserContextProvider(props){\r\n+    const [isLogin, setLogin] = useState(null)\r\n+   \r\n+    return <userContext.Provider value={{isLogin, setLogin}}>\r\n+        {props.children}\r\n+    </userContext.Provider>\r\n+\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1763327717067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let userContext = createContext();\r\n+export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n"
+                },
+                {
+                    "date": 1763327727005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let UserContext = createContext();\r\n+export let Userontext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n"
+                },
+                {
+                    "date": 1763327747907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let Userontext = createContext();\r\n+export let UserContext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n-    return <userContext.Provider value={{isLogin, setLogin}}>\r\n+    return <serContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n-    </userContext.Provider>\r\n+    </serContext.Provider>\r\n \r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1763378619360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,12 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let UserContext = createContext();\r\n+export let userontext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n-    return <serContext.Provider value={{isLogin, setLogin}}>\r\n+    return <userContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n-    </serContext.Provider>\r\n+    </userContext.Provider>\r\n \r\n }\r\n-\r\n"
+                },
+                {
+                    "date": 1763378649279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let userontext = createContext();\r\n+export let userContext = createContext();\r\n \r\n-export default function UserContextProvider(props){\r\n+export default function serContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n     return <userContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n"
+                },
+                {
+                    "date": 1763378677967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import { createContext, useState } from \"react\";\r\n \r\n export let userContext = createContext();\r\n \r\n-export default function serContextProvider(props){\r\n-    const [isLogin, setLogin] = useState(null)\r\n+export default function userContextProvider(props){\r\n+    const [isLogin, setLogin] = useState(null);\r\n    \r\n     return <userContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n     </userContext.Provider>\r\n"
+                },
+                {
+                    "date": 1763379033667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import { createContext, useState } from \"react\";\r\n \r\n export let userContext = createContext();\r\n \r\n-export default function userContextProvider(props){\r\n-    const [isLogin, setLogin] = useState(null);\r\n+export default function serContextProvider(props){\r\n+    const [isLogin, setLogin] = useState(null)\r\n    \r\n     return <userContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n     </userContext.Provider>\r\n"
+                },
+                {
+                    "date": 1763379038872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let userContext = createContext();\r\n+export let serContext = createContext();\r\n \r\n-export default function serContextProvider(props){\r\n+export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n     return <userContext.Provider value={{isLogin, setLogin}}>\r\n         {props.children}\r\n"
+                },
+                {
+                    "date": 1763379209850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState } from \"react\";\r\n \r\n-export let serContext = createContext();\r\n+export let userContext = createContext();\r\n \r\n export default function UserContextProvider(props){\r\n     const [isLogin, setLogin] = useState(null)\r\n    \r\n"
+                },
+                {
+                    "date": 1763379422148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +0,0 @@\n-import { createContext, useState } from \"react\";\r\n-\r\n-export let userContext = createContext();\r\n-\r\n-export default function UserContextProvider(props){\r\n-    const [isLogin, setLogin] = useState(null)\r\n-   \r\n-    return <userContext.Provider value={{isLogin, setLogin}}>\r\n-        {props.children}\r\n-    </userContext.Provider>\r\n-\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763380209493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-\n+import { createContext, useState } from \"react\";\r\n+im\r\n+export const UserContext = createContext();\r\n+\r\n+export default function UserContextProvider({ children }) {\r\n+  const [isLogin, setLogin] = useState(null);\r\n+\r\n+  return (\r\n+    <UserContext.Provider value={{ isLogin, setLogin }}>\r\n+      {children}\r\n+    </UserContext.Provider>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1763380214673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-im\r\n+import{}\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763380224322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-import{}\r\n+import{usc}\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763380229814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-import{usc}\r\n+import{us}\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763380235888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-import{us}\r\n+import{use }\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763380241490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-import{use }\r\n+import{useC}\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763380248540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-import{useC}\r\n+import { useContext } from \"react\";\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763380255213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useState } from \"react\";\r\n-import { useContext } from \"react\";\r\n+\r\n export const UserContext = createContext();\r\n \r\n export default function UserContextProvider({ children }) {\r\n   const [isLogin, setLogin] = useState(null);\r\n"
+                },
+                {
+                    "date": 1763381278921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +0,0 @@\n-import { createContext, useState } from \"react\";\r\n-\r\n-export const UserContext = createContext();\r\n-\r\n-export default function UserContextProvider({ children }) {\r\n-  const [isLogin, setLogin] = useState(null);\r\n-\r\n-  return (\r\n-    <UserContext.Provider value={{ isLogin, setLogin }}>\r\n-      {children}\r\n-    </UserContext.Provider>\r\n-  );\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763381284433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,14 @@\n-\n+import { createContext, useState } from \"react\";\r\n+\r\n+export const UserContext = createContext();\r\n+\r\n+export default function UserContextProvider({ children }) {\r\n+\r\n+  const [isLogin, setLogin] = useState(localStorage.getItem('userToken') || null);\r\n+\r\n+  return (\r\n+    <UserContext.Provider value={{ isLogin, setLogin }}>\r\n+      {children}\r\n+    </UserContext.Provider>\r\n+  );\r\n+}\r\n"
+                },
+                {
+                    "date": 1763419607515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,1 @@\n-import { createContext, useState } from \"react\";\r\n-\r\n-export const UserContext = createContext();\r\n-\r\n-export default function UserContextProvider({ children }) {\r\n-\r\n-  const [isLogin, setLogin] = useState(localStorage.getItem('userToken') || null);\r\n-\r\n-  return (\r\n-    <UserContext.Provider value={{ isLogin, setLogin }}>\r\n-      {children}\r\n-    </UserContext.Provider>\r\n-  );\r\n-}\r\n+\\\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1763327295935,
+            "name": "Commit-0",
+            "content": "import { createContext, useState } from \"react\";\r\n\r\nexport let userContext = createContext();\r\n\r\nexport default function UserContextProvider(props){\r\n    const [isLogin, setLogin] = useState(null)\r\n   \r\n    return <userContext.Provider value={{isLogin, setLogin}}>\r\n        {props.children}\r\n    </userContext.Provider>\r\n\r\n}\r\n"
+        }
+    ]
+}
