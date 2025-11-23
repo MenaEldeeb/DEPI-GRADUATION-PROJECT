@@ -47,7 +47,7 @@ export default function Women() {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mt-6 fw-bold">Men Products</h2>
+      <h2 className="text-center mt-6 fw-bold">Women Products</h2>
 
       <div className="d-flex justify-content-end mb-4 gap-3">
         <select
