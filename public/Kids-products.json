@@ -57,7 +57,7 @@
   { "id": 154, "title": "Kids T-shirt 10", "price": 20, "category": "kids-tshirts", "description": "Soft kids T-shirt", "thumbnail": "/images/T-shirt 13.jpg" },
   { "id": 155, "title": "Kids T-shirt 11", "price": 19, "category": "kids-tshirts", "description": "Beautiful kids T-shirt", "thumbnail": "/images/T-shirt 14.jpg" },
   { "id": 156, "title": "Kids T-shirt 12", "price": 18, "category": "kids-tshirts", "description": "Kids T-shirt for everyday", "thumbnail": "/images/T-shirt 15.jpg" },
-  { "id": 157, "title": "Kids T-shirt 13", "price": 20, "category": "kids-tshirts", "description": "Stylish colorful kids T-shirt", "thumbnail": "/public/images/T-shirt 16.jpg" },
+  { "id": 157, "title": "Kids T-shirt 13", "price": 20, "category": "kids-tshirts", "description": "Stylish colorful kids T-shirt", "thumbnail": "/images/T-shirt 16.jpg" },
   { "id": 158, "title": "Kids T-shirt 14", "price": 19, "category": "kids-tshirts", "description": "Kids T-shirt", "thumbnail": "/images/T-shirt 18.jpg" },
   { "id": 159, "title": "Kids T-shirt 15", "price": 18, "category": "kids-tshirts", "description": "Soft cute T-shirt", "thumbnail": "/images/Tshirt blue.jpeg" },
   { "id": 160, "title": "Kids T-shirt 16", "price": 19, "category": "kids-tshirts", "description": "Kids T-shirt for kids", "thumbnail": "/images/Tshirt green.jpeg" },
@@ -73,5 +73,5 @@
   { "id": 168, "title": "Kids Bag 2", "price": 20, "category": "kids-bags", "description": "Colorful bag", "thumbnail": "/images/hat 2.jpg" },
   { "id": 169, "title": "Kids Bag 3", "price": 19, "category": "kids-bags", "description": "Bag for everyday", "thumbnail": "/images/bag 3.jpg" },
   { "id": 170, "title": "Kids Bag 4", "price": 21, "category": "kids-bags", "description": "Soft kids bag", "thumbnail": "/images/bag 4.jpg" },
-  { "id": 171, "title": "Kids Bag 5", "price": 18, "category": "kids-bags", "description": "Cute kids bag", "thumbnail": "c/images/bag 5.jpg" }
+  { "id": 171, "title": "Kids Bag 5", "price": 18, "category": "kids-bags", "description": "Cute kids bag", "thumbnail": "/images/bag 5.jpg" }
 ]
