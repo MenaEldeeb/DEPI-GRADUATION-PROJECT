@@ -111,7 +111,7 @@
   { "id": 401, "title": "Women Shoes 11", "price": 110, "category": "women-shoes", "description": "Elegant soft shoes", "thumbnail": "/images/shoes w12.jpg" },
   { "id": 402, "title": "Women Shoes 12", "price": 112, "category": "women-shoes", "description": "Premium elegant shoes", "thumbnail": "/images/shoes w13.jpg" },
   { "id": 403, "title": "Women Shoes 13", "price": 108, "category": "women-shoes", "description": "Fashionable stylish shoes", "thumbnail": "/images/shoes w14.jpg" },
-  { "id": 404, "title": "Women Shoes 14", "price": 111, "category": "women-shoes", "description": "Chic fashion shoes", "thumbnail": "/public/images/shoes w15.jpg" },
+  { "id": 404, "title": "Women Shoes 14", "price": 111, "category": "women-shoes", "description": "Chic fashion shoes", "thumbnail": "/images/shoes w15.jpg" },
 
 
   { "id": 406, "title": "Women Skirt 1", "price": 75, "category": "women-skirts", "description": "Stylish skirt", "thumbnail": "/images/skirt w1.jpg" },
