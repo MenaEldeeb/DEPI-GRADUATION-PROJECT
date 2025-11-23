@@ -46,7 +46,7 @@ export default function Kids() {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4 fw-bold">Kids Products</h2>
+      <h2 className="text-center mt-6 fw-bold">Kids Products</h2>
 
       <div className="d-flex justify-content-end mb-4 gap-3">
         <select

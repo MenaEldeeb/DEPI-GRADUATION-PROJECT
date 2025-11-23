@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 38,
+            "activePatchIndex": 42,
             "patches": [
                 {
                     "date": 1763587097996,
@@ -160,6 +160,22 @@
                 {
                     "date": 1763638838465,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n                 <img\r\n                   src={product.thumbnail}\r\n                   alt={product.title}\r\n                   className=\"w-100\"\r\n-                  style={{ height: \"200px\", objectFit: \"cover\" }}\r\n+                  style={{ height: \"300px\", objectFit: \"cover\" }}\r\n                 />\r\n                 <div className=\"card-body d-flex flex-column\">\r\n                   <h5 className=\"card-title text-truncate\">{product.title}</h5>\r\n                   <p className=\"text-muted small\">Category: {product.category}</p>\r\n"
+                },
+                {
+                    "date": 1763895199518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);\r\n \r\n   return (\r\n     <div className=\"container my-5\">\r\n-      <h2 className=\"text-center mb-4 fw-bold\">Kids Products</h2>\r\n+      <h2 className=\"text-center mb-5 fw-bold\">Kids Products</h2>\r\n \r\n       <div className=\"d-flex justify-content-end mb-4 gap-3\">\r\n         <select\r\n           className=\"form-select w-auto\"\r\n"
+                },
+                {
+                    "date": 1763895224292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);\r\n \r\n   return (\r\n     <div className=\"container my-5\">\r\n-      <h2 className=\"text-center mb-5 fw-bold\">Kids Products</h2>\r\n+      <h2 className=\"text-center mb- fw-bold\">Kids Products</h2>\r\n \r\n       <div className=\"d-flex justify-content-end mb-4 gap-3\">\r\n         <select\r\n           className=\"form-select w-auto\"\r\n"
+                },
+                {
+                    "date": 1763895242989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);\r\n \r\n   return (\r\n     <div className=\"container my-5\">\r\n-      <h2 className=\"text-center mb- fw-bold\">Kids Products</h2>\r\n+      <h2 className=\"text-center mف-6 fw-bold\">Kids Products</h2>\r\n \r\n       <div className=\"d-flex justify-content-end mb-4 gap-3\">\r\n         <select\r\n           className=\"form-select w-auto\"\r\n"
+                },
+                {
+                    "date": 1763895255880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);\r\n \r\n   return (\r\n     <div className=\"container my-5\">\r\n-      <h2 className=\"text-center mف-6 fw-bold\">Kids Products</h2>\r\n+      <h2 className=\"text-center m-6 fw-bold\">Kids Products</h2>\r\n \r\n       <div className=\"d-flex justify-content-end mb-4 gap-3\">\r\n         <select\r\n           className=\"form-select w-auto\"\r\n"
                 }
             ],
             "date": 1763587097996,

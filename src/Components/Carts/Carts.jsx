@@ -15,7 +15,7 @@ export default function Cart() {
   };
 
   const handleCheckout = () => {
-    alert(`Proceeding to pay $${totalPrice} via ${paymentMethod}`);
+    alert(`Proceeding to pay $${totalPrice.toFixed(2)} via ${paymentMethod}`);
   };
 
   return (
@@ -29,7 +29,6 @@ export default function Cart() {
               <h4 className="text-muted">Your cart is empty.</h4>
             ) : (
               <>
-                {/* Cart Items */}
                 {cart.map((item) => (
                   <div className="card rounded-3 mb-4" key={item.id}>
                     <div className="card-body p-4">
@@ -71,17 +70,16 @@ export default function Cart() {
                           <button
                             className="btn btn-link px-2"
                             onClick={() =>
-                              updateQuantity(
-                                item.id,
-                                (item.quantity || 1) + 1
-                              )
+                              updateQuantity(item.id, (item.quantity || 1) + 1)
                             }
                           >
                             <i className="fas fa-plus"></i>
                           </button>
                         </div>
                         <div className="col-md-2 text-end">
-                          <strong>${item.price * (item.quantity || 1)}</strong>
+                          <strong>
+                            ${(item.price * (item.quantity || 1)).toFixed(2)}
+                          </strong>
                         </div>
                         <div className="col-md-1 text-end">
                           <button
@@ -104,33 +102,34 @@ export default function Cart() {
                   </div>
                 ))}
 
-                {/* Total Cart */}
                 <div className="card mb-3">
                   <div className="card-body d-flex justify-content-between align-items-center">
-                    <h4 className="fw-bold mb-0">Total: ${totalPrice}</h4>
+                    <h4 className="fw-bold mb-0">Total: ${totalPrice.toFixed(2)}</h4>
                   </div>
                 </div>
 
                 {/* Payment & Checkout */}
                 <div className="card mb-3">
-                  <div className="card-body">
-                    <label className="form-label fw-semibold">
+                  <div className="card-body d-flex flex-column flex-sm-row align-items-center gap-2">
+                    <label className="form-label fw-semibold mb-0 me-2">
                       Payment Method:
                     </label>
                     <select
-                      className="form-select mb-3"
+                      className="form-select flex-grow-1"
                       value={paymentMethod}
                       onChange={handlePaymentChange}
                     >
                       <option value="cash">Cash by hand</option>
                       <option value="online">Online checkout</option>
                     </select>
-                    <button
-                      className="btn btn-success btn-block btn-lg"
-                      onClick={handleCheckout}
-                    >
-                      Proceed to Pay
-                    </button>
+                <button
+  className="btn btn-success btn-sm flex-shrink-0"
+  onClick={handleCheckout}
+>
+  Proceed to Pay
+</button>
+
+
                   </div>
                 </div>
               </>
