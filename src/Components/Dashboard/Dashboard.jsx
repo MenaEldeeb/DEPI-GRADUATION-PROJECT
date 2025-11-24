@@ -24,12 +24,14 @@ export default function Dashboard() {
     Men: [],
     Women: [],
   });
+
   const [orders, setOrders] = useState({
     Handmade: [],
     Kids: [],
     Men: [],
     Women: [],
   });
+
   const [newProduct, setNewProduct] = useState({
     title: "",
     price: "",
@@ -61,12 +63,14 @@ export default function Dashboard() {
   }, []);
 
   const handleAddProduct = () => {
-    if (!newProduct.title || !newProduct.price) return;
+    if (!newProduct.title || !newProduct.price || !newProduct.category) return;
     const newProd = { ...newProduct, id: Date.now() };
+
     setAllProducts({
       ...allProducts,
       [activeTab]: [...allProducts[activeTab], newProd],
     });
+
     setNewProduct({ title: "", price: "", category: "" });
   };
 
@@ -75,6 +79,7 @@ export default function Dashboard() {
       ...allProducts,
       [activeTab]: allProducts[activeTab].filter((p) => p.id !== id),
     });
+
     setOrders({
       ...orders,
       [activeTab]: orders[activeTab].filter((o) => o.productId !== id),
@@ -106,13 +111,14 @@ export default function Dashboard() {
     <div className="container my-5">
       <h2 className="text-center mb-4">Dashboard</h2>
 
-      <div className="d-flex justify-content-center mb-4 gap-2">
+      {/* هنا الأزرار المعدلة */}
+      <div className="d-flex justify-content-center mb-4 flex-wrap gap-2">
         {sections.map((sec) => (
           <button
             key={sec}
             className={`btn ${
               activeTab === sec ? "btn-success" : "btn-outline-success"
-            }`}
+            } btn-sm px-3`}
             onClick={() => setActiveTab(sec)}
           >
             {sec}
@@ -130,6 +136,7 @@ export default function Dashboard() {
           }
           className="form-control mb-2"
         />
+
         <input
           type="number"
           placeholder="Price"
@@ -139,6 +146,7 @@ export default function Dashboard() {
           }
           className="form-control mb-2"
         />
+
         <input
           type="text"
           placeholder="Category"
@@ -148,12 +156,14 @@ export default function Dashboard() {
           }
           className="form-control mb-2"
         />
+
         <button className="btn btn-success" onClick={handleAddProduct}>
           Add Product
         </button>
       </div>
 
       <h4>{activeTab} Products</h4>
+
       <table className="table table-bordered mb-4">
         <thead>
           <tr>
@@ -164,6 +174,7 @@ export default function Dashboard() {
             <th>Actions</th>
           </tr>
         </thead>
+
         <tbody>
           {allProducts[activeTab].map((prod) => (
             <tr key={prod.id}>
@@ -171,19 +182,23 @@ export default function Dashboard() {
               <td>{prod.title}</td>
               <td>${prod.price}</td>
               <td>{prod.category}</td>
+
               <td>
-                <button
-                  className="btn btn-sm btn-success me-2"
-                  onClick={() => handleAddOrder(prod.id)}
-                >
-                  Add Order
-                </button>
-                <button
-                  className="btn btn-sm btn-danger"
-                  onClick={() => handleDeleteProduct(prod.id)}
-                >
-                  Delete
-                </button>
+                <div className="d-flex gap-2 flex-wrap">
+                  <button
+                    className="btn btn-sm btn-success w-100 w-sm-auto"
+                    onClick={() => handleAddOrder(prod.id)}
+                  >
+                    Add Order
+                  </button>
+
+                  <button
+                    className="btn btn-sm btn-danger w-100 w-sm-auto"
+                    onClick={() => handleDeleteProduct(prod.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
@@ -191,6 +206,7 @@ export default function Dashboard() {
       </table>
 
       <h4>{activeTab} Orders</h4>
+
       <table className="table table-bordered mb-4">
         <thead>
           <tr>
@@ -199,18 +215,22 @@ export default function Dashboard() {
             <th>Actions</th>
           </tr>
         </thead>
+
         <tbody>
           {orders[activeTab].map((order, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{order.productId}</td>
+
               <td>
-                <button
-                  className="btn btn-sm btn-danger"
-                  onClick={() => handleDeleteOrder(index)}
-                >
-                  Delete
-                </button>
+                <div className="d-flex gap-2 flex-wrap">
+                  <button
+                    className="btn btn-sm btn-danger w-100 w-sm-auto"
+                    onClick={() => handleDeleteOrder(index)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
@@ -218,7 +238,7 @@ export default function Dashboard() {
       </table>
 
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 mb-4">
           <h5>Products Bar Chart</h5>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData}>
@@ -226,12 +246,16 @@ export default function Dashboard() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="products" fill="#28a745" />
+              <Bar dataKey="products">
+                {chartData.map((entry, index) => (
+                  <Cell key={index} fill={entry.color} />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="col-md-6">
+        <div className="col-md-6 mb-4">
           <h5>Orders Pie Chart</h5>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
