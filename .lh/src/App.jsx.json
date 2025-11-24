@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 29,
+            "activePatchIndex": 32,
             "patches": [
                 {
                     "date": 1762168037840,
@@ -124,6 +124,18 @@
                 {
                     "date": 1762168919970,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n \n function App() {\n let routers = createBrowserRouter([\n-  {path:'' , element:<Layout/> , children:\n+  {path:'' , element:<Layout/> , children:[\n     {path:'login' , element:<Login/>},\n     {path:'register' , element:<Register/>},\n     \n     {path:'*' , element:<Notfound/>}\n"
+                },
+                {
+                    "date": 1763996874521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,41 +5,57 @@\n import Layout from './Components/Layout/Layout'\n import Login from './Components/Login/Login'\n import Register from './Components/Register/Register'\n import Notfound from './Components/Notfound/Notfound'\n+import Men from './Components/Men/Men'\n+import Women from './Components/Women/Women'\n+import Kids from './Components/Kids/Kids'\n+import Carts from './Components/Carts/Carts'\n+import Home from'./Components/Home/Home'\n+import UserContextProvider from './Components/context/userContext'\n+import Loader from './Components/Loader/Loader'\n+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'\n+import ProductDetails from'./Components/ProductDetails/ProductDetails'\n+import Handmade from'./Components/Handmade/Handmade'\n+import CartProvider from './Components/context/CartContext'\n+i\n+function App() {\n+  const routers = createBrowserRouter([\n \n \n+    { path: '', element: <Login /> },\n+    { path: 'login', element: <Login /> },\n+    { path: 'register', element: <Register /> },\n \n+    {\n+      path: '',\n+      element: (\n+        <ProtectedRoute>\n+          <Layout />\n+        </ProtectedRoute>\n+      ),\n+      children: [\n+        { path: 'home', element: <Home/> },\n+        { path: 'women', element: <Women /> },\n+        { path: 'men', element: <Men /> },\n+        { path: 'kids', element: <Kids /> },\n+        { path: 'carts', element: <Carts /> },\n+        { path: 'handmade', element: <Handmade /> },\n+         { path: 'product/:id', element: <ProductDetails /> }\n+      ],\n+    },\n \n+    { path: '*', element: <Notfound /> },\n \n-function App() {\n-let routers = createBrowserRouter([\n-  {path:'' , element:<Layout/> , children:[\n-    {path:'login' , element:<Login/>},\n-    {path:'register' , element:<Register/>},\n-    \n-    {path:'*' , element:<Notfound/>}\n-  ]}\n-])\n+  ])\n \n+  return (\n+     <UserContextProvider>\n+  <CartProvider>\n+    <RouterProvider router={routers} />\n+  </CartProvider>\n+</UserContextProvider>\n \n-\n-  return (\n-    <>\n-    <RouterProvider router = {routers}></RouterProvider>\n-    </>\n   )\n }\n \n export default App\n-\n-\n-\n-\n-\n-\n-  \n-\n-\n-\n-\n-  \n"
+                },
+                {
+                    "date": 1763996879727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'\n import ProductDetails from'./Components/ProductDetails/ProductDetails'\n import Handmade from'./Components/Handmade/Handmade'\n import CartProvider from './Components/context/CartContext'\n-import\n+import \n function App() {\n   const routers = createBrowserRouter([\n \n \n"
+                },
+                {
+                    "date": 1763996885058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'\n import ProductDetails from'./Components/ProductDetails/ProductDetails'\n import Handmade from'./Components/Handmade/Handmade'\n import CartProvider from './Components/context/CartContext'\n-import D\n+import Dashboard from './Components/Dashboard/Dashboard'\n function App() {\n   const routers = createBrowserRouter([\n \n \n"
                 }
             ],
             "date": 1762168037840,

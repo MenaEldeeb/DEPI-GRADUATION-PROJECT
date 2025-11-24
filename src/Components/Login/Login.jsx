@@ -1,5 +1,5 @@
 
-              import React, { useContext } from 'react';
+import React, { useContext } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -21,10 +21,16 @@ export default function Login() {
 
       if (response.data.message === 'success') {
         localStorage.setItem('userToken', response.data.token);
-        setLogin(true);         
-        navigate('/Home');       
-      }
+        setLogin(true);
 
+        if (formData.email === 'KK78@gmail.com' && formData.password === 'Babc123') {
+          localStorage.setItem('canAccessDashboard', 'true');
+        } else {
+          localStorage.setItem('canAccessDashboard', 'false');
+        }
+
+        navigate('/home');
+      }
     } catch (error) {
       alert(error.response?.data?.message || 'Login failed');
     }
@@ -45,7 +51,6 @@ export default function Login() {
     <div className={styles.authContainer}>
       <div className={styles.authCard}>
         <h2 className={styles.formHeader}>Login</h2>
-
         <form onSubmit={formik.handleSubmit}>
           <div className={styles.formGroup}>
             <input
@@ -58,7 +63,6 @@ export default function Login() {
               className={formik.touched.email && formik.errors.email ? styles.inputError : ''}
             />
           </div>
-
           <div className={styles.formGroup}>
             <input
               type="password"
@@ -70,10 +74,8 @@ export default function Login() {
               className={formik.touched.password && formik.errors.password ? styles.inputError : ''}
             />
           </div>
-
           <button type="submit" className={styles.submitBtn}>Login</button>
         </form>
-
         <p className={styles.redirectText}>
           Don't have an account?
           <span className={styles.redirectLink} onClick={() => navigate('/register')}>

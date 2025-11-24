@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 31,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1763385267356,
@@ -132,6 +132,18 @@
                 {
                     "date": 1763419634761,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,6 @@\n \r\n export default function ProtectedRoute({ children }) {\r\n   const { isLogin } = useContext(UserContext);\r\n \r\n-  if (isLogin) {\r\n-    return children;\r\n-  } else {\r\n-     لو مش مسجل دخول، حوّله على صفحة login\r\n-    return <Navigate to=\"/login\" />;\r\n-  }\r\n+  return isLogin ? children : <Navigate to=\"/login\" />;\r\n }\r\n"
+                },
+                {
+                    "date": 1764000791377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,13 @@\n import React, { useContext } from \"react\";\r\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n-export default function ProtectedRoute({ children }) {\r\n-  const { isLogin } = useContext(UserContext);\r\n+export default function ProtectedRoute({ children, adminOnly = false }) {\r\n+const { isLogin } = useContext(UserContext);\r\n+const token = localStorage.getItem(\"userToken\");\r\n \r\n-  return isLogin ? children : <Navigate to=\"/login\" />;\r\n+if (!isLogin) return <Navigate to=\"/login\" />;\r\n+if (adminOnly && token !== \"admin-token\") return <Navigate to=\"/home\" />;\r\n+\r\n+return children;\r\n }\r\n"
+                },
+                {
+                    "date": 1764001004276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import React, { useContext } from \"react\";\r\n import { Navigate } from \"react-router-dom\";\r\n import { UserContext } from \"../context/userContext\";\r\n \r\n-export default function ProtectedRoute({ children, adminOnly = false }) {\r\n+export default function ProtectedRoute({ children, requireCredentials = false }) {\r\n const { isLogin } = useContext(UserContext);\r\n const token = localStorage.getItem(\"userToken\");\r\n \r\n if (!isLogin) return <Navigate to=\"/login\" />;\r\n-if (adminOnly && token !== \"admin-token\") return <Navigate to=\"/home\" />;\r\n+if (requireCredentials && token !== \"KK78-Token\") return <Navigate to=\"/home\" />;\r\n \r\n return children;\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1764002550883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,1 @@\n-import React, { useContext } from \"react\";\r\n-import { Navigate } from \"react-router-dom\";\r\n-import { UserContext } from \"../context/userContext\";\r\n \r\n-export default function ProtectedRoute({ children, requireCredentials = false }) {\r\n-const { isLogin } = useContext(UserContext);\r\n-const token = localStorage.getItem(\"userToken\");\r\n-\r\n-if (!isLogin) return <Navigate to=\"/login\" />;\r\n-if (requireCredentials && token !== \"KK78-Token\") return <Navigate to=\"/home\" />;\r\n-\r\n-return children;\r\n-}\r\n-\r\n"
                 }
             ],
             "date": 1763385267356,

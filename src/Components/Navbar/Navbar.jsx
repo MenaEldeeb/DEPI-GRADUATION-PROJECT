@@ -53,6 +53,9 @@ export default function NavbarTop() {
                 <li className="nav-item">
                   <Link className="nav-link text-white" to="/carts">Carts</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link text-white" to="/Dashboard">Dashboard</Link>
+                </li>
               </ul>
 
               <button className="btn btn-light btn-sm text-success fw-bold" onClick={handleLogout}>

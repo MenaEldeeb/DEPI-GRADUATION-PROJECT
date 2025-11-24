@@ -17,7 +17,7 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
 import ProductDetails from'./Components/ProductDetails/ProductDetails'
 import Handmade from'./Components/Handmade/Handmade'
 import CartProvider from './Components/context/CartContext'
-
+import Dashboard from './Components/Dashboard/Dashboard'
 function App() {
   const routers = createBrowserRouter([
 
@@ -38,8 +38,20 @@ function App() {
         { path: 'women', element: <Women /> },
         { path: 'men', element: <Men /> },
         { path: 'kids', element: <Kids /> },
+           { path: 'handmade', element: <Handmade /> },
         { path: 'carts', element: <Carts /> },
-        { path: 'handmade', element: <Handmade /> },
+     
+  {
+  path: 'dashboard',
+  element: (
+    <ProtectedRoute requireDashboard={true}>
+      <Dashboard />
+    </ProtectedRoute>
+  )
+},
+
+
+
          { path: 'product/:id', element: <ProductDetails /> }
       ],
     },

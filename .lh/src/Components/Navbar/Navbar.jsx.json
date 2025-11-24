@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1762170064840,
@@ -12,6 +12,22 @@
                 {
                     "date": 1762170072960,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n \r\n export default function Navbar() {\r\n   return (\r\n-    <div>Navbar/div>\r\n+    <div></div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1763996985905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,74 @@\n-import React from 'react'\r\n+import React, { useContext } from \"react\";\r\n+import { Link } from \"react-router-dom\";\r\n+import \"bootstrap/dist/css/bootstrap.min.css\";\r\n+import \"bootstrap/dist/js/bootstrap.bundle.min.js\";\r\n+import { UserContext } from \"../context/userContext\";\r\n+import { CartContext } from \"../context/CartContext\";\r\n+export default function NavbarTop() {\r\n+  const { isLogin, setLogin } = useContext(UserContext);\r\n+   const {  Cart } = useContext(CartContext);\r\n+  const handleLogout = () => {\r\n+    localStorage.removeItem('userToken');\r\n+    setLogin(null);\r\n+  };\r\n \r\n-export default function Navbar() {\r\n   return (\r\n-    <div></div>\r\n-  )\r\n+    <nav className=\"navbar navbar-expand-lg navbar-dark bg-success fixed-top w-100\">\r\n+      <div className=\"container-fluid\">\r\n+        \r\n+        {/* Logo */}\r\n+        <Link className=\"navbar-brand fw-bold me-4\" to=\"/\">Dream</Link>\r\n+\r\n+        {/* Toggle Button for Mobile */}\r\n+        <button \r\n+          className=\"navbar-toggler\" \r\n+          type=\"button\" \r\n+          data-bs-toggle=\"collapse\" \r\n+          data-bs-target=\"#navbarSupportedContent\"\r\n+        >\r\n+          <span className=\"navbar-toggler-icon\"></span>\r\n+        </button>\r\n+\r\n+        {/* Collapsible Menu */}\r\n+        <div className=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n+\r\n+          {isLogin ? (\r\n+            <>\r\n+              <ul className=\"navbar-nav mx-auto mb-2 mb-lg-0\">\r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/home\">Home</Link>\r\n+                </li>\r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/men\">Men</Link>\r\n+                </li>\r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/women\">Women</Link>\r\n+                </li>\r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/kids\">Kids</Link>\r\n+                </li>\r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/handmade\">Handmade</Link>\r\n+                </li>\r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n+                </li>\r\n+                \r\n+              </ul>\r\n+\r\n+              <button className=\"btn btn-light btn-sm text-success fw-bold\" onClick={handleLogout}>\r\n+                Logout\r\n+              </button>\r\n+            </>\r\n+          ) : (\r\n+            <div className=\"ms-auto d-flex\">\r\n+              <Link className=\"btn btn-outline-light btn-sm me-2\" to=\"/login\">Login</Link>\r\n+              <Link className=\"btn btn-light btn-sm text-success fw-bold\" to=\"/register\">Register</Link>\r\n+            </div>\r\n+          )}\r\n+        </div>\r\n+      </div>\r\n+    </nav>\r\n+  );\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1763996991551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,11 @@\n                 </li>\r\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n-                \r\n+                <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\"></Link>\r\n+                </li>\r\n               </ul>\r\n \r\n               <button className=\"btn btn-light btn-sm text-success fw-bold\" onClick={handleLogout}>\r\n                 Logout\r\n"
+                },
+                {
+                    "date": 1763997000955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                 <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/carts\"></Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\">Dashb</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               <button className=\"btn btn-light btn-sm text-success fw-bold\" onClick={handleLogout}>\r\n"
+                },
+                {
+                    "date": 1763997016941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                 <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/carts\">Dashb</Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/\">Dashboard</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               <button className=\"btn btn-light btn-sm text-success fw-bold\" onClick={handleLogout}>\r\n"
                 }
             ],
             "date": 1762170064840,
