@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import {
   BarChart,
   Bar,
@@ -52,6 +53,19 @@ export default function Dashboard() {
     category: "",
   });
 
+  // Merge arrays and assign UUID for duplicates
+  const mergeArrays = (existing, incoming) => {
+    const map = new Map(existing.map((p) => [p.id, p]));
+    incoming.forEach((p) => {
+      if (map.has(p.id)) {
+        map.set(uuidv4(), { ...p, id: uuidv4() });
+      } else {
+        map.set(p.id || uuidv4(), { ...p });
+      }
+    });
+    return Array.from(map.values());
+  };
+
   useEffect(() => {
     async function fetchProducts() {
       try {
@@ -75,16 +89,6 @@ export default function Dashboard() {
     fetchProducts();
   }, []);
 
-  const mergeArrays = (existing, incoming) => {
-    const ids = new Set(existing.map((p) => p.id));
-    return [
-      ...existing,
-      ...incoming.map((p) =>
-        ids.has(p.id) ? { ...p, id: Date.now() + Math.random() } : p
-      ),
-    ];
-  };
-
   useEffect(() => {
     localStorage.setItem("allProducts", JSON.stringify(allProducts));
   }, [allProducts]);
@@ -95,7 +99,7 @@ export default function Dashboard() {
 
   const handleAddProduct = () => {
     if (!newProduct.title || !newProduct.price || !newProduct.category) return;
-    const prod = { ...newProduct, id: Date.now() };
+    const prod = { ...newProduct, id: uuidv4() };
     setAllProducts((prev) => ({
       ...prev,
       [activeTab]: [...prev[activeTab], prod],
@@ -104,6 +108,7 @@ export default function Dashboard() {
   };
 
   const handleDeleteProduct = (id) => {
+    if (!window.confirm("Are you sure you want to delete this product?")) return;
     setAllProducts((prev) => ({
       ...prev,
       [activeTab]: prev[activeTab].filter((p) => p.id !== id),
@@ -115,7 +120,7 @@ export default function Dashboard() {
   };
 
   const handleAddOrder = (productId) => {
-    const order = { id: Date.now() + Math.random(), productId };
+    const order = { id: uuidv4(), productId };
     setOrders((prev) => ({
       ...prev,
       [activeTab]: [...prev[activeTab], order],
@@ -137,16 +142,17 @@ export default function Dashboard() {
   }));
 
   return (
-    <div className="container my-5">
+    <div className="container my-4">
       <h2 className="text-center mb-4">Dashboard</h2>
 
+      {/* Tabs */}
       <div className="d-flex justify-content-center mb-4 flex-wrap gap-2">
         {sections.map((sec) => (
           <button
             key={sec}
             className={`btn ${
               activeTab === sec ? "btn-success" : "btn-outline-success"
-            } btn-sm px-3`}
+            } btn-sm`}
             onClick={() => setActiveTab(sec)}
           >
             {sec}
@@ -154,7 +160,8 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="mb-4">
+      {/* Add Product Form */}
+      <div className="mb-4 d-flex flex-column flex-sm-row gap-2">
         <input
           type="text"
           placeholder="Product Title"
@@ -162,16 +169,19 @@ export default function Dashboard() {
           onChange={(e) =>
             setNewProduct({ ...newProduct, title: e.target.value })
           }
-          className="form-control mb-2"
+          className="form-control"
         />
         <input
           type="number"
           placeholder="Price"
           value={newProduct.price}
           onChange={(e) =>
-            setNewProduct({ ...newProduct, price: Number(e.target.value) })
+            setNewProduct({
+              ...newProduct,
+              price: e.target.value ? Number(e.target.value) : "",
+            })
           }
-          className="form-control mb-2"
+          className="form-control"
         />
         <input
           type="text"
@@ -180,84 +190,94 @@ export default function Dashboard() {
           onChange={(e) =>
             setNewProduct({ ...newProduct, category: e.target.value })
           }
-          className="form-control mb-2"
+          className="form-control"
         />
-        <button className="btn btn-success" onClick={handleAddProduct}>
+        <button
+          className="btn btn-success flex-shrink-0"
+          onClick={handleAddProduct}
+        >
           Add Product
         </button>
       </div>
 
-      <h4>{activeTab} Products</h4>
-      <table className="table table-bordered mb-4">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {allProducts[activeTab].map((prod) => (
-            <tr key={prod.id}>
-              <td>{prod.id}</td>
-              <td>{prod.title}</td>
-              <td>${prod.price}</td>
-              <td>{prod.category}</td>
-              <td>
-                <div className="d-flex gap-2 flex-wrap">
-                  <button
-                    className="btn btn-sm btn-success w-100 w-sm-auto"
-                    onClick={() => handleAddOrder(prod.id)}
-                  >
-                    Add Order
-                  </button>
-                  <button
-                    className="btn btn-sm btn-danger w-100 w-sm-auto"
-                    onClick={() => handleDeleteProduct(prod.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
+      {/* Products Table */}
+      <div className="table-responsive mb-4">
+        <h4>{activeTab} Products</h4>
+        <table className="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {allProducts[activeTab].map((prod) => (
+              <tr key={prod.id}>
+                <td>{prod.id}</td>
+                <td>{prod.title}</td>
+                <td>${prod.price}</td>
+                <td>{prod.category}</td>
+                <td>
+                  <div className="d-flex flex-wrap gap-2">
+                    <button
+                      className="btn btn-sm btn-success"
+                      onClick={() => handleAddOrder(prod.id)}
+                    >
+                      Add Order
+                    </button>
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={() => handleDeleteProduct(prod.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <h4>{activeTab} Orders</h4>
-      <table className="table table-bordered mb-4">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Product ID</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders[activeTab].map((order, index) => (
-            <tr key={order.id}>
-              <td>{index + 1}</td>
-              <td>{order.productId}</td>
-              <td>
-                <div className="d-flex gap-2 flex-wrap">
-                  <button
-                    className="btn btn-sm btn-danger w-100 w-sm-auto"
-                    onClick={() => handleDeleteOrder(order.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
+      {/* Orders Table */}
+      <div className="table-responsive mb-4">
+        <h4>{activeTab} Orders</h4>
+        <table className="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Product ID</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {orders[activeTab].map((order, index) => (
+              <tr key={order.id}>
+                <td>{index + 1}</td>
+                <td>{order.productId}</td>
+                <td>
+                  <div className="d-flex flex-wrap gap-2">
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={() => handleDeleteOrder(order.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
+      {/* Charts */}
       <div className="row">
-        <div className="col-md-6 mb-4">
-          <h5>Products Bar Chart</h5>
+        <div className="col-12 col-md-6 mb-4">
+          <h5 className="text-center">Products Bar Chart</h5>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData}>
               <XAxis dataKey="name" />
@@ -265,16 +285,15 @@ export default function Dashboard() {
               <Tooltip />
               <Legend />
               <Bar dataKey="products">
-                {chartData.map((entry, idx) => (
-                  <Cell key={idx} fill={entry.color} />
+                {chartData.map((entry) => (
+                  <Cell key={entry.name} fill={entry.color} />
                 ))}
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
-
-        <div className="col-md-6 mb-4">
-          <h5>Orders Pie Chart</h5>
+        <div className="col-12 col-md-6 mb-4">
+          <h5 className="text-center">Orders Pie Chart</h5>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
@@ -284,8 +303,8 @@ export default function Dashboard() {
                 outerRadius={100}
                 label
               >
-                {chartData.map((entry, idx) => (
-                  <Cell key={idx} fill={entry.color} />
+                {chartData.map((entry) => (
+                  <Cell key={entry.name} fill={entry.color} />
                 ))}
               </Pie>
               <Tooltip />
