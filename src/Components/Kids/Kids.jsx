@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import styles from "./Kids.module.css";
 
 export default function Kids() {
   const [products, setProducts] = useState([]);
@@ -10,39 +10,46 @@ export default function Kids() {
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("none");
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await axios.get("/Kids-products.json");
-        setProducts(response.data || []);
-      } catch {
-        setError("Failed to load Handmade products.");
-      } finally {
+  function getProducts() {
+    setIsLoading(true);
+    setError(null);
+
+    axios
+      .get("/Kids-products.json")
+      .then((response) => {
+        setProducts(response.data);
         setIsLoading(false);
-      }
-    };
-    fetchProducts();
+      })
+      .catch((error) => {
+        console.error("Error fetching kids products:", error);
+        setError("Failed to load kids products.");
+        setIsLoading(false);
+      });
+  }
+
+  useEffect(() => {
+    getProducts();
   }, []);
 
-  const filteredProducts = products.filter((p) => {
-    if (!p.price) return false;
-    if (priceFilter === "low") return p.price < 20;
-    if (priceFilter === "mid") return p.price >= 20 && p.price <= 35;
-    if (priceFilter === "high") return p.price > 35;
-    return true;
-  });
+  let filteredProducts = products;
 
-  const sortedProducts = [...filteredProducts];
-  if (sortOrder === "asc") sortedProducts.sort((a, b) => a.price - b.price);
-  if (sortOrder === "desc") sortedProducts.sort((a, b) => b.price - a.price);
+  if (priceFilter === "low")
+    filteredProducts = products.filter((p) => p.price < 20);
+  if (priceFilter === "mid")
+    filteredProducts = products.filter((p) => p.price >= 20 && p.price <= 35);
+  if (priceFilter === "high")
+    filteredProducts = products.filter((p) => p.price > 35);
+
+  if (sortOrder === "asc")
+    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+  if (sortOrder === "desc")
+    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mt-4 fw-bold">Kids Products</h2>
+      <h2 className="text-center mt-6 fw-bold">Kids Products</h2>
 
-      <div className={styles.filters}>
+      <div className="d-flex justify-content-end mb-4 gap-3">
         <select
           className="form-select w-auto"
           value={priceFilter}
@@ -76,40 +83,35 @@ export default function Kids() {
         <div className="alert alert-danger text-center">{error}</div>
       )}
 
-      {!isLoading && !error && sortedProducts.length === 0 && (
+      {!isLoading && !error && filteredProducts.length === 0 && (
         <div className="alert alert-info text-center">No products found.</div>
       )}
 
-      {!isLoading && !error && sortedProducts.length > 0 && (
-        <div className="row g-4">
-          {sortedProducts.map((product) => (
-            <div
-              key={product.id}
-              className="col-6 col-sm-6 col-md-4 col-lg-3 d-flex"
-            >
-              <div className={styles.cardWrapper}>
+      {!isLoading && !error && filteredProducts.length > 0 && (
+        <div className="row">
+          {filteredProducts.map((product) => (
+            <div key={product.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div className="card shadow-sm h-100">
                 <img
                   src={product.thumbnail}
                   alt={product.title}
-                  className={styles.cardImage}
+                  className="w-100"
+                  style={{ height: "350px", objectFit: "cover" }}
                 />
-                <div className={styles.cardBody}>
-                  <h5 className={styles.cardTitle}>{product.title}</h5>
-                  <p className="text-muted small">
-                    Category: {product.category}
-                  </p>
-                  <p className={styles.cardDescription}>
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title text-truncate">{product.title}</h5>
+                  <p className="text-muted small">Category: {product.category}</p>
+                  <p className="flex-grow-1 small">
                     {product.description
-                      ? product.description.split(" ").slice(0, 10).join(" ") +
-                        "..."
+                      ? product.description.split(" ").slice(0, 10).join(" ") + "..."
                       : "No description available."}
                   </p>
-                  <div className={styles.cardFooter}>
+                  <div className="d-flex justify-content-between align-items-center mt-auto">
                     <span className="h5 text-success mb-0">${product.price}</span>
                     <Link
                       to={`/product/${product.id}`}
                       state={{ product }}
-                      className={`btn btn-sm btn-outline-success ${styles.btnView}`}
+                      className="btn btn-sm btn-outline-success"
                     >
                       View
                     </Link>
@@ -123,7 +125,3 @@ export default function Kids() {
     </div>
   );
 }
-
-
-
-

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1763838486045,
@@ -44,6 +44,10 @@
                 {
                     "date": 1764024296352,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   margin-bottom: 1.5rem;\r\n }\r\n \r\n .cardWrapper {\r\n-  transition: transform 0.2s, box-shadow 0.2s;\r\n+  transition: transform 0.3s, box-shadow 0.3s;\r\n   display: flex;\r\n   flex-direction: column;\r\n   background-color: #fff;\r\n   border-radius: 0.5rem;\r\n@@ -16,21 +16,21 @@\n   height: 100%;\r\n }\r\n \r\n .cardWrapper:hover {\r\n-  transform: translateY(-3px) scale(1.015);\r\n-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\r\n+  transform: translateY(-5px) scale(1.03);\r\n+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);\r\n }\r\n \r\n .cardImage {\r\n   width: 100%;\r\n   aspect-ratio: 1 / 1;\r\n   object-fit: cover;\r\n-  transition: transform 0.2s;\r\n+  transition: transform 0.3s;\r\n }\r\n \r\n .cardWrapper:hover .cardImage {\r\n-  transform: scale(1.02);\r\n+  transform: scale(1.05);\r\n }\r\n \r\n .cardBody {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1764028420719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,70 +0,0 @@\n-.filters {\r\n-  display: flex;\r\n-  flex-wrap: wrap;\r\n-  justify-content: flex-end;\r\n-  gap: 1rem;\r\n-  margin-bottom: 1.5rem;\r\n-}\r\n-\r\n-.cardWrapper {\r\n-  transition: transform 0.3s, box-shadow 0.3s;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  background-color: #fff;\r\n-  border-radius: 0.5rem;\r\n-  overflow: hidden;\r\n-  height: 100%;\r\n-}\r\n-\r\n-.cardWrapper:hover {\r\n-  transform: translateY(-5px) scale(1.03);\r\n-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);\r\n-}\r\n-\r\n-.cardImage {\r\n-  width: 100%;\r\n-  aspect-ratio: 1 / 1;\r\n-  object-fit: cover;\r\n-  transition: transform 0.3s;\r\n-}\r\n-\r\n-.cardWrapper:hover .cardImage {\r\n-  transform: scale(1.05);\r\n-}\r\n-\r\n-.cardBody {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  padding: 0.75rem;\r\n-  flex-grow: 1;\r\n-}\r\n-\r\n-.cardTitle {\r\n-  white-space: nowrap;\r\n-  overflow: hidden;\r\n-  text-overflow: ellipsis;\r\n-  margin-bottom: 0.25rem;\r\n-}\r\n-\r\n-.cardDescription {\r\n-  flex-grow: 1;\r\n-  font-size: 0.85rem;\r\n-  color: #555;\r\n-  margin-bottom: 0.5rem;\r\n-}\r\n-\r\n-.cardFooter {\r\n-  display: flex;\r\n-  justify-content: space-between;\r\n-  align-items: center;\r\n-  margin-top: auto;\r\n-}\r\n-\r\n-.btnView {\r\n-  transition: background-color 0.3s, color 0.3s;\r\n-}\r\n-\r\n-.btnView:hover {\r\n-  background-color: #28a745;\r\n-  color: #fff;\r\n-}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1763838486045,
