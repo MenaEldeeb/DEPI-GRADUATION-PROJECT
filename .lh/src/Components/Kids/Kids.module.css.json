@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/Components/Kids/Kids.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1764022080909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764022594089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,51 @@\n-.amazonCard {\r\n+.productCard {\r\n   border-radius: 10px;\r\n   transition: 0.2s;\r\n   padding: 10px;\r\n   height: 100%;\r\n   background: #fff;\r\n }\r\n \r\n-.amazonCard:hover {\r\n+.productCard:hover {\r\n   transform: scale(1.03);\r\n }\r\n \r\n-.amazonImgWrapper {\r\n+.productImgWrapper {\r\n   width: 100%;\r\n   height: 260px;\r\n   display: flex;\r\n   justify-content: center;\r\n   align-items: center;\r\n   background: #fff;\r\n }\r\n \r\n-.amazonImg {\r\n+.productImg {\r\n   max-height: 100%;\r\n   width: 100%;\r\n   object-fit: contain;\r\n }\r\n \r\n-.amazonTitle {\r\n+.productTitle {\r\n   font-size: 14px;\r\n   font-weight: 600;\r\n   height: 40px;\r\n   overflow: hidden;\r\n   text-overflow: ellipsis;\r\n }\r\n+\r\n+.productPrice {\r\n+  color: #28a745; /* أخضر success */\r\n+  font-weight: 600;\r\n+  font-size: 1.1rem;\r\n+}\r\n+\r\n+.productViewBtn {\r\n+  background-color: #28a745; /* أخضر success */\r\n+  color: #fff;\r\n+  border: none;\r\n+}\r\n+\r\n+.productViewBtn:hover {\r\n+  background-color: #218838;\r\n+  color: #fff;\r\n+}\r\n"
+                },
+                {
+                    "date": 1764022600635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,15 +33,15 @@\n   text-overflow: ellipsis;\r\n }\r\n \r\n .productPrice {\r\n-  color: #28a745; /* أخضر success */\r\n+  color: #28a745; \r\n   font-weight: 600;\r\n   font-size: 1.1rem;\r\n }\r\n \r\n .productViewBtn {\r\n-  background-color: #28a745; /* أخضر success */\r\n+  background-color: #28a745; \r\n   color: #fff;\r\n   border: none;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764022752748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n   transition: 0.2s;\r\n   padding: 10px;\r\n   height: 100%;\r\n   background: #fff;\r\n+  position: relative;\r\n }\r\n \r\n .productCard:hover {\r\n   transform: scale(1.03);\r\n@@ -15,8 +16,9 @@\n   height: 260px;\r\n   display: flex;\r\n   justify-content: center;\r\n   align-items: center;\r\n+  position: relative;\r\n   background: #fff;\r\n }\r\n \r\n .productImg {\r\n@@ -24,8 +26,32 @@\n   width: 100%;\r\n   object-fit: contain;\r\n }\r\n \r\n+.primeBadge {\r\n+  position: absolute;\r\n+  top: 8px;\r\n+  left: 8px;\r\n+  background-color: #ff9900;\r\n+  color: #fff;\r\n+  font-size: 0.7rem;\r\n+  font-weight: 600;\r\n+  padding: 2px 6px;\r\n+  border-radius: 4px;\r\n+}\r\n+\r\n+.dealBadge {\r\n+  position: absolute;\r\n+  top: 8px;\r\n+  right: 8px;\r\n+  background-color: #dc3545;\r\n+  color: #fff;\r\n+  font-size: 0.7rem;\r\n+  font-weight: 600;\r\n+  padding: 2px 6px;\r\n+  border-radius: 4px;\r\n+}\r\n+\r\n .productTitle {\r\n   font-size: 14px;\r\n   font-weight: 600;\r\n   height: 40px;\r\n@@ -33,19 +59,30 @@\n   text-overflow: ellipsis;\r\n }\r\n \r\n .productPrice {\r\n-  color: #28a745; \r\n+  color: #28a745;\r\n   font-weight: 600;\r\n   font-size: 1.1rem;\r\n }\r\n \r\n .productViewBtn {\r\n-  background-color: #28a745; \r\n+  background-color: #28a745;\r\n   color: #fff;\r\n   border: none;\r\n }\r\n \r\n .productViewBtn:hover {\r\n   background-color: #218838;\r\n   color: #fff;\r\n }\r\n+\r\n+.productCartBtn {\r\n+  background-color: #ffc107;\r\n+  color: #212529;\r\n+  border: none;\r\n+}\r\n+\r\n+.productCartBtn:hover {\r\n+  background-color: #e0a800;\r\n+  color: #212529;\r\n+}\r\n"
+                },
+                {
+                    "date": 1764022894743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,14 +75,4 @@\n   background-color: #218838;\r\n   color: #fff;\r\n }\r\n \r\n-.productCartBtn {\r\n-  background-color: #ffc107;\r\n-  color: #212529;\r\n-  border: none;\r\n-}\r\n-\r\n-.productCartBtn:hover {\r\n-  background-color: #e0a800;\r\n-  color: #212529;\r\n-}\r\n"
+                },
+                {
+                    "date": 1764023016298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,15 +64,6 @@\n   font-weight: 600;\r\n   font-size: 1.1rem;\r\n }\r\n \r\n-.productViewBtn {\r\n-  background-color: #28a745;\r\n-  color: #fff;\r\n-  border: none;\r\n-}\r\n \r\n-.productViewBtn:hover {\r\n-  background-color: #218838;\r\n-  color: #fff;\r\n-}\r\n \r\n"
+                },
+                {
+                    "date": 1764024518838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,69 +1,3 @@\n-.productCard {\r\n-  border-radius: 10px;\r\n-  transition: 0.2s;\r\n-  padding: 10px;\r\n-  height: 100%;\r\n-  background: #fff;\r\n-  position: relative;\r\n-}\r\n \r\n-.productCard:hover {\r\n-  transform: scale(1.03);\r\n-}\r\n \r\n-.productImgWrapper {\r\n-  width: 100%;\r\n-  height: 260px;\r\n-  display: flex;\r\n-  justify-content: center;\r\n-  align-items: center;\r\n-  position: relative;\r\n-  background: #fff;\r\n-}\r\n \r\n-.productImg {\r\n-  max-height: 100%;\r\n-  width: 100%;\r\n-  object-fit: contain;\r\n-}\r\n-\r\n-.primeBadge {\r\n-  position: absolute;\r\n-  top: 8px;\r\n-  left: 8px;\r\n-  background-color: #ff9900;\r\n-  color: #fff;\r\n-  font-size: 0.7rem;\r\n-  font-weight: 600;\r\n-  padding: 2px 6px;\r\n-  border-radius: 4px;\r\n-}\r\n-\r\n-.dealBadge {\r\n-  position: absolute;\r\n-  top: 8px;\r\n-  right: 8px;\r\n-  background-color: #dc3545;\r\n-  color: #fff;\r\n-  font-size: 0.7rem;\r\n-  font-weight: 600;\r\n-  padding: 2px 6px;\r\n-  border-radius: 4px;\r\n-}\r\n-\r\n-.productTitle {\r\n-  font-size: 14px;\r\n-  font-weight: 600;\r\n-  height: 40px;\r\n-  overflow: hidden;\r\n-  text-overflow: ellipsis;\r\n-}\r\n-\r\n-.productPrice {\r\n-  color: #28a745;\r\n-  font-weight: 600;\r\n-  font-size: 1.1rem;\r\n-}\r\n-\r\n-\r\n-\r\n"
+                },
+                {
+                    "date": 1764024532635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,72 @@\n+.filters {\r\n+  display: flex;\r\n+  flex-wrap: wrap;\r\n+  justify-content: flex-end;\r\n+  gap: 1rem;\r\n+  margin-bottom: 1.5rem;\r\n+}\r\n \r\n+.cardWrapper {\r\n+  transition: transform 0.3s, box-shadow 0.3s;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  background-color: #fff;\r\n+  border-radius: 0.5rem;\r\n+  overflow: hidden;\r\n+  height: 100%;\r\n+}\r\n \r\n+.cardWrapper:hover {\r\n+  transform: translateY(-5px) scale(1.03);\r\n+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);\r\n+}\r\n \r\n+.cardImage {\r\n+  width: 100%;\r\n+  aspect-ratio: 1 / 1;\r\n+  object-fit: cover;\r\n+  transition: transform 0.3s;\r\n+}\r\n+\r\n+.cardWrapper:hover .cardImage {\r\n+  transform: scale(1.05);\r\n+}\r\n+\r\n+.cardBody {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  padding: 0.75rem;\r\n+  flex-grow: 1;\r\n+}\r\n+\r\n+.cardTitle {\r\n+  white-space: nowrap;\r\n+  overflow: hidden;\r\n+  text-overflow: ellipsis;\r\n+  margin-bottom: 0.25rem;\r\n+}\r\n+\r\n+.cardDescription {\r\n+  flex-grow: 1;\r\n+  font-size: 0.85rem;\r\n+  color: #555;\r\n+  margin-bottom: 0.5rem;\r\n+}\r\n+\r\n+.cardFooter {\r\n+  display: flex;\r\n+  justify-content: space-between;\r\n+  align-items: center;\r\n+  margin-top: auto;\r\n+}\r\n+\r\n+.btnView {\r\n+  transition: background-color 0.3s, color 0.3s;\r\n+}\r\n+\r\n+.btnView:hover {\r\n+  background-color: #28a745;\r\n+  color: #fff;\r\n+}\r\n+\r\n+\r\n"
+                }
+            ],
+            "date": 1764022080909,
+            "name": "Commit-0",
+            "content": ".amazonCard {\r\n  border-radius: 10px;\r\n  transition: 0.2s;\r\n  padding: 10px;\r\n  height: 100%;\r\n  background: #fff;\r\n}\r\n\r\n.amazonCard:hover {\r\n  transform: scale(1.03);\r\n}\r\n\r\n.amazonImgWrapper {\r\n  width: 100%;\r\n  height: 260px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background: #fff;\r\n}\r\n\r\n.amazonImg {\r\n  max-height: 100%;\r\n  width: 100%;\r\n  object-fit: contain;\r\n}\r\n\r\n.amazonTitle {\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  height: 40px;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n}\r\n"
+        }
+    ]
+}

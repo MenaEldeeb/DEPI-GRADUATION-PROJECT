@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/Components/Men/Men.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1764026083767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764026264310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,63 @@\n-.cardHover {\r\n+.cardWrapper {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  height: 100%;\r\n+  border-radius: 0.5rem;\r\n+  overflow: hidden;\r\n+  background-color: #fff;\r\n   transition: transform 0.3s, box-shadow 0.3s;\r\n }\r\n \r\n-.cardHover:hover {\r\n+.cardWrapper:hover {\r\n   transform: translateY(-5px) scale(1.02);\r\n   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);\r\n+}\r\n+\r\n+.cardImage {\r\n+  width: 100%;\r\n+  height: 350px;\r\n+  object-fit: cover;\r\n+  flex-shrink: 0;\r\n+  transition: transform 0.3s;\r\n+}\r\n+\r\n+.cardWrapper:hover .cardImage {\r\n+  transform: scale(1.03);\r\n+}\r\n+\r\n+.cardBody {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  padding: 0.75rem;\r\n+  flex-grow: 1;\r\n+}\r\n+\r\n+.cardTitle {\r\n+  white-space: nowrap;\r\n+  overflow: hidden;\r\n+  text-overflow: ellipsis;\r\n+  margin-bottom: 0.25rem;\r\n+}\r\n+\r\n+.cardDescription {\r\n+  flex-grow: 1;\r\n+  font-size: 0.85rem;\r\n+  color: #555;\r\n+  margin-bottom: 0.5rem;\r\n+}\r\n+\r\n+.cardFooter {\r\n+  display: flex;\r\n+  justify-content: space-between;\r\n+  align-items: center;\r\n+  margin-top: auto;\r\n+}\r\n+\r\n+.btnView {\r\n+  transition: background-color 0.3s, color 0.3s;\r\n+}\r\n+\r\n+.btnView:hover {\r\n+  background-color: #28a745;\r\n+  color: #fff;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764027749331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,63 +0,0 @@\n-.cardWrapper {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  height: 100%;\r\n-  border-radius: 0.5rem;\r\n-  overflow: hidden;\r\n-  background-color: #fff;\r\n-  transition: transform 0.3s, box-shadow 0.3s;\r\n-}\r\n-\r\n-.cardWrapper:hover {\r\n-  transform: translateY(-5px) scale(1.02);\r\n-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);\r\n-}\r\n-\r\n-.cardImage {\r\n-  width: 100%;\r\n-  height: 350px;\r\n-  object-fit: cover;\r\n-  flex-shrink: 0;\r\n-  transition: transform 0.3s;\r\n-}\r\n-\r\n-.cardWrapper:hover .cardImage {\r\n-  transform: scale(1.03);\r\n-}\r\n-\r\n-.cardBody {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  padding: 0.75rem;\r\n-  flex-grow: 1;\r\n-}\r\n-\r\n-.cardTitle {\r\n-  white-space: nowrap;\r\n-  overflow: hidden;\r\n-  text-overflow: ellipsis;\r\n-  margin-bottom: 0.25rem;\r\n-}\r\n-\r\n-.cardDescription {\r\n-  flex-grow: 1;\r\n-  font-size: 0.85rem;\r\n-  color: #555;\r\n-  margin-bottom: 0.5rem;\r\n-}\r\n-\r\n-.cardFooter {\r\n-  display: flex;\r\n-  justify-content: space-between;\r\n-  align-items: center;\r\n-  margin-top: auto;\r\n-}\r\n-\r\n-.btnView {\r\n-  transition: background-color 0.3s, color 0.3s;\r\n-}\r\n-\r\n-.btnView:hover {\r\n-  background-color: #28a745;\r\n-  color: #fff;\r\n-}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1764026083767,
+            "name": "Commit-0",
+            "content": ".cardHover {\r\n  transition: transform 0.3s, box-shadow 0.3s;\r\n}\r\n\r\n.cardHover:hover {\r\n  transform: translateY(-5px) scale(1.02);\r\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);\r\n}"
+        }
+    ]
+}
