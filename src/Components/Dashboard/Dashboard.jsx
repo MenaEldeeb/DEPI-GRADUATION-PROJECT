@@ -16,31 +16,36 @@ import {
 
 const sections = ["Handmade", "Kids", "Men", "Women"];
 const colors = ["#28a745", "#ffc107", "#17a2b8", "#dc3545"];
-
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("Handmade");
+
   const [allProducts, setAllProducts] = useState(() => {
+    
     try {
       const saved = localStorage.getItem("allProducts");
       if (saved) return JSON.parse(saved);
-    } catch {}
+    } catch (e) {
+      console.error("Error parsing allProducts from localStorage:", e);
+    }
     return { Handmade: [], Kids: [], Men: [], Women: [] };
   });
+
   const [orders, setOrders] = useState(() => {
     try {
       const saved = localStorage.getItem("orders");
       if (saved) {
         const parsed = JSON.parse(saved);
         const fixed = {};
-        sections.forEach((sec) => (fixed[sec] = parsed[sec] || []));
+        sections.forEach((sec) => (fixed[sec] = Array.isArray(parsed[sec]) ? parsed[sec] : []));
         return fixed;
       }
-    } catch {}
-    const empty = {};
-    sections.forEach((sec) => (empty[sec] = []));
-    return empty;
+    } catch (e) {
+      console.error("Error parsing orders from localStorage:", e);
+    }
+    return { Handmade: [], Kids: [], Men: [], Women: [] };
   });
-  const [newProduct, setNewProduct] = useState({ title: "", price: "", category: "" });
+
+  const [newProduct, setNewProduct] = useState({ title: "", price: 0, category: "" });
 
   const mergeArrays = (existing, incoming) => {
     const map = new Map();
@@ -52,9 +57,12 @@ export default function Dashboard() {
     return Array.from(map.values());
   };
 
-  const getProductById = (id, section) => allProducts[section].find((p) => p.id === id);
+  const getProductById = (id, section) => {
+    return allProducts[section]?.find((p) => p.id === id);
+  };
 
   useEffect(() => {
+    let mounted = true;
     async function fetchProducts() {
       try {
         const [handmadeRes, kidsRes, menRes, womenRes] = await Promise.all([
@@ -63,67 +71,94 @@ export default function Dashboard() {
           axios.get("/Men.json"),
           axios.get("/Women.json"),
         ]);
-        setAllProducts({
-          Handmade: mergeArrays([], handmadeRes.data),
-          Kids: mergeArrays([], kidsRes.data),
-          Men: mergeArrays([], menRes.data),
-          Women: mergeArrays([], womenRes.data),
-        });
+        if (mounted) {
+          setAllProducts({
+            Handmade: mergeArrays([], handmadeRes.data),
+            Kids: mergeArrays([], kidsRes.data),
+            Men: mergeArrays([], menRes.data),
+            Women: mergeArrays([], womenRes.data),
+          });
+        }
       } catch (e) {
-        console.error("Failed to fetch products", e);
+        console.error("Failed to fetch products:", e);
       }
     }
-    const hasProducts = sections.some((sec) => allProducts[sec].length > 0);
+    const hasProducts = sections.some((sec) => allProducts[sec]?.length > 0);
     if (!hasProducts) fetchProducts();
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("allProducts", JSON.stringify(allProducts));
+    try {
+      localStorage.setItem("allProducts", JSON.stringify(allProducts));
+    } catch (e) {
+      console.error("Failed to save allProducts to localStorage:", e);
+    }
   }, [allProducts]);
 
   useEffect(() => {
-    localStorage.setItem("orders", JSON.stringify(orders));
+    try {
+      localStorage.setItem("orders", JSON.stringify(orders));
+    } catch (e) {
+      console.error("Failed to save orders to localStorage:", e);
+    }
   }, [orders]);
 
   const handleAddProduct = () => {
     if (!newProduct.title || !newProduct.price || !newProduct.category) return;
     const prod = { ...newProduct, id: uuidv4() };
-    setAllProducts((prev) => ({ ...prev, [activeTab]: [...prev[activeTab], prod] }));
-    setNewProduct({ title: "", price: "", category: "" });
+    setAllProducts((prev) => ({
+      ...prev,
+      [activeTab]: [...prev[activeTab], prod],
+    }));
+    setNewProduct({ title: "", price: 0, category: "" });
   };
 
   const handleDeleteProduct = (id) => {
-    if (!window.confirm("Are you sure you want to delete this product?")) return;
-    setAllProducts((prev) => ({ ...prev, [activeTab]: prev[activeTab].filter((p) => p.id !== id) }));
-    setOrders((prev) => ({ ...prev, [activeTab]: prev[activeTab].filter((o) => o.productId !== id) }));
+    setAllProducts((prev) => ({
+      ...prev,
+      [activeTab]: prev[activeTab].filter((p) => p.id !== id),
+    }));
+    setOrders((prev) => ({
+      ...prev,
+      [activeTab]: prev[activeTab].filter((o) => o.productId !== id),
+    }));
   };
 
   const handleAddOrder = (productId) => {
     const order = { id: uuidv4(), productId };
-    setOrders((prev) => ({ ...prev, [activeTab]: [...prev[activeTab], order] }));
+    setOrders((prev) => ({
+      ...prev,
+      [activeTab]: [...prev[activeTab], order],
+    }));
   };
 
   const handleDeleteOrder = (orderId) => {
-    setOrders((prev) => ({ ...prev, [activeTab]: prev[activeTab].filter((o) => o.id !== orderId) }));
+    setOrders((prev) => ({
+      ...prev,
+      [activeTab]: prev[activeTab].filter((o) => o.id !== orderId),
+    }));
   };
 
-  const uniqueProducts = allProducts[activeTab].filter(
-    (p, index, arr) => arr.findIndex(x => x.title === p.title && x.category === p.category) === index
-  );
+  const uniqueProducts = allProducts[activeTab]?.filter(
+    (p, index, arr) =>
+      arr.findIndex((x) => x.title === p.title && x.category === p.category) === index
+  ) || [];
 
   const chartData = sections.map((sec, idx) => ({
     name: sec,
-    products: allProducts[sec].filter(
-      (p, i, arr) => arr.findIndex(x => x.title === p.title && x.category === p.category) === i
-    ).length,
-    orders: orders[sec].length,
+    products: allProducts[sec]?.filter(
+      (p, i, arr) => arr.findIndex((x) => x.title === p.title && x.category === p.category) === i
+    ).length || 0,
+    orders: orders[sec]?.length || 0,
     color: colors[idx],
   }));
 
   return (
     <div className="container my-4">
       <h2 className="text-center mb-4">Dashboard</h2>
-
       <div className="d-flex justify-content-center mb-4 flex-wrap gap-2">
         {sections.map((sec) => (
           <button
@@ -152,7 +187,9 @@ export default function Dashboard() {
             type="number"
             placeholder="Price"
             value={newProduct.price}
-            onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value ? Number(e.target.value) : "" })}
+            onChange={(e) =>
+              setNewProduct({ ...newProduct, price: e.target.value ? Number(e.target.value) : 0 })
+            }
             className="form-control form-control-sm"
             style={{ height: "40px" }}
           />
@@ -168,7 +205,9 @@ export default function Dashboard() {
           />
         </div>
         <div className="col-12 col-sm-2 d-grid">
-          <button className="btn btn-success btn-sm" onClick={handleAddProduct} style={{ height: "40px" }}>Add Product</button>
+          <button className="btn btn-success btn-sm" onClick={handleAddProduct} style={{ height: "40px" }}>
+            Add Product
+          </button>
         </div>
       </div>
 
@@ -180,11 +219,11 @@ export default function Dashboard() {
             <table className="table table-bordered table-hover table-sm mb-0 align-middle">
               <thead className="table-light">
                 <tr>
-                  <th style={{ width: "120px" }}>ID</th>
-                  <th>Title</th>
-                  <th>Price</th>
-                  <th>Category</th>
-                  <th>Actions</th>
+                  <th scope="col" style={{ width: "120px" }}>ID</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -210,17 +249,17 @@ export default function Dashboard() {
         <div className="col-12 col-md-6 mb-4">
           <div className="table-responsive" style={{ maxHeight: "250px", overflowY: "auto", border: "1px solid #ddd" }}>
             <h5 className="text-center">{activeTab} Orders</h5>
-            <p>Total Orders: {orders[activeTab].length}</p>
+            <p>Total Orders: {orders[activeTab]?.length || 0}</p>
             <table className="table table-bordered table-hover table-sm mb-0 align-middle">
               <thead className="table-light">
                 <tr>
-                  <th>#</th>
-                  <th>Product</th>
-                  <th>Actions</th>
+                  <th scope="col">#</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {orders[activeTab].map((order, index) => {
+                {orders[activeTab]?.map((order, index) => {
                   const product = getProductById(order.productId, activeTab);
                   return (
                     <tr key={order.id}>
