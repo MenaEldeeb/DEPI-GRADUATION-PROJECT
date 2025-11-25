@@ -37,8 +37,8 @@ export default function Login() {
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().required().email(),
-    password: Yup.string().required(),
+    email: Yup.string().required('Email is required').email('Invalid email'),
+    password: Yup.string().required('Password is required'),
   });
 
   const formik = useFormik({
@@ -57,22 +57,30 @@ export default function Login() {
               type="email"
               name="email"
               placeholder="Email"
+              autoComplete="username"
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={formik.touched.email && formik.errors.email ? styles.inputError : ''}
             />
+            {formik.touched.email && formik.errors.email && (
+              <div className={styles.errorText}>{formik.errors.email}</div>
+            )}
           </div>
           <div className={styles.formGroup}>
             <input
               type="password"
               name="password"
               placeholder="Password"
+              autoComplete="current-password"
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={formik.touched.password && formik.errors.password ? styles.inputError : ''}
             />
+            {formik.touched.password && formik.errors.password && (
+              <div className={styles.errorText}>{formik.errors.password}</div>
+            )}
           </div>
           <button type="submit" className={styles.submitBtn}>Login</button>
         </form>
