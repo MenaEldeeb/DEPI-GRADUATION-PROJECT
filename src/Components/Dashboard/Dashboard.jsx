@@ -77,7 +77,7 @@ export default function Dashboard() {
           });
         }
       } catch {
-        void 0; // catch فارغ بدون أي warning
+        void 0; 
       }
     }
     if (!sections.some((sec) => allProducts[sec]?.length > 0)) fetchProducts();
