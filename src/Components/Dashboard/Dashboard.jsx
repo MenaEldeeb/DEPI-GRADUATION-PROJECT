@@ -24,9 +24,7 @@ export default function Dashboard() {
     try {
       const saved = localStorage.getItem("allProducts");
       if (saved) return JSON.parse(saved);
-    } catch (e) {
-      console.error("Error parsing products from localStorage", e);
-    }
+    } catch (e) {}
     return { Handmade: [], Kids: [], Men: [], Women: [] };
   });
 
@@ -39,9 +37,7 @@ export default function Dashboard() {
         sections.forEach((sec) => (fixed[sec] = parsed[sec] || []));
         return fixed;
       }
-    } catch (e) {
-      console.error("Error parsing orders from localStorage", e);
-    }
+    } catch (e) {}
     const empty = {};
     sections.forEach((sec) => (empty[sec] = []));
     return empty;
@@ -53,17 +49,21 @@ export default function Dashboard() {
     category: "",
   });
 
-  // Merge arrays and assign UUID for duplicates
   const mergeArrays = (existing, incoming) => {
-    const map = new Map(existing.map((p) => [p.id, p]));
+    const map = new Map();
+    existing.forEach((p) => {
+      const key = `${p.title}-${p.category}`;
+      map.set(key, p);
+    });
     incoming.forEach((p) => {
-      if (map.has(p.id)) {
-        map.set(uuidv4(), { ...p, id: uuidv4() });
-      } else {
-        map.set(p.id || uuidv4(), { ...p });
-      }
+      const key = `${p.title}-${p.category}`;
+      if (!map.has(key)) map.set(key, { ...p, id: p.id || uuidv4() });
     });
     return Array.from(map.values());
+  };
+
+  const getProductById = (id, section) => {
+    return allProducts[section].find((p) => p.id === id);
   };
 
   useEffect(() => {
@@ -75,18 +75,18 @@ export default function Dashboard() {
           axios.get("/Men.json"),
           axios.get("/Women.json"),
         ]);
-
-        setAllProducts((prev) => ({
-          Handmade: mergeArrays(prev.Handmade, handmadeRes.data),
-          Kids: mergeArrays(prev.Kids, kidsRes.data),
-          Men: mergeArrays(prev.Men, menRes.data),
-          Women: mergeArrays(prev.Women, womenRes.data),
-        }));
+        setAllProducts({
+          Handmade: mergeArrays([], handmadeRes.data),
+          Kids: mergeArrays([], kidsRes.data),
+          Men: mergeArrays([], menRes.data),
+          Women: mergeArrays([], womenRes.data),
+        });
       } catch (err) {
         console.error("Failed to fetch products", err);
       }
     }
-    fetchProducts();
+    const hasProducts = sections.some((sec) => allProducts[sec].length > 0);
+    if (!hasProducts) fetchProducts();
   }, []);
 
   useEffect(() => {
@@ -134,9 +134,16 @@ export default function Dashboard() {
     }));
   };
 
+  // المنتجات الفعلية بدون duplicates حسب title + category
+  const uniqueProducts = allProducts[activeTab].filter(
+    (p, index, arr) => arr.findIndex(x => x.title === p.title && x.category === p.category) === index
+  );
+
   const chartData = sections.map((sec, idx) => ({
     name: sec,
-    products: allProducts[sec].length,
+    products: allProducts[sec].filter(
+      (p, i, arr) => arr.findIndex(x => x.title === p.title && x.category === p.category) === i
+    ).length,
     orders: orders[sec].length,
     color: colors[idx],
   }));
@@ -145,14 +152,11 @@ export default function Dashboard() {
     <div className="container my-4">
       <h2 className="text-center mb-4">Dashboard</h2>
 
-      {/* Tabs */}
       <div className="d-flex justify-content-center mb-4 flex-wrap gap-2">
         {sections.map((sec) => (
           <button
             key={sec}
-            className={`btn ${
-              activeTab === sec ? "btn-success" : "btn-outline-success"
-            } btn-sm`}
+            className={`btn ${activeTab === sec ? "btn-success" : "btn-outline-success"} btn-sm`}
             onClick={() => setActiveTab(sec)}
           >
             {sec}
@@ -160,53 +164,45 @@ export default function Dashboard() {
         ))}
       </div>
 
-      {/* Add Product Form */}
       <div className="mb-4 d-flex flex-column flex-sm-row gap-2">
         <input
           type="text"
           placeholder="Product Title"
           value={newProduct.title}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, title: e.target.value })
-          }
-          className="form-control"
+          onChange={(e) => setNewProduct({ ...newProduct, title: e.target.value })}
+          className="form-control form-control-sm"
         />
         <input
           type="number"
           placeholder="Price"
           value={newProduct.price}
           onChange={(e) =>
-            setNewProduct({
-              ...newProduct,
-              price: e.target.value ? Number(e.target.value) : "",
-            })
+            setNewProduct({ ...newProduct, price: e.target.value ? Number(e.target.value) : "" })
           }
-          className="form-control"
+          className="form-control form-control-sm"
         />
         <input
           type="text"
           placeholder="Category"
           value={newProduct.category}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, category: e.target.value })
-          }
-          className="form-control"
+          onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}
+          className="form-control form-control-sm"
         />
-        <button
-          className="btn btn-success flex-shrink-0"
-          onClick={handleAddProduct}
-        >
+        <button className="btn btn-success btn-sm flex-shrink-0" onClick={handleAddProduct}>
           Add Product
         </button>
       </div>
 
-      {/* Products Table */}
-      <div className="table-responsive mb-4">
+      <div
+        className="table-responsive mb-4"
+        style={{ maxHeight: "180px", overflowY: "auto", border: "1px solid #ddd" }}
+      >
         <h4>{activeTab} Products</h4>
-        <table className="table table-bordered table-hover">
-          <thead>
+        <p>Total Products: {uniqueProducts.length}</p>
+        <table className="table table-bordered table-hover table-sm mb-0">
+          <thead className="table-light">
             <tr>
-              <th>ID</th>
+              <th style={{ width: "120px" }}>ID</th>
               <th>Title</th>
               <th>Price</th>
               <th>Category</th>
@@ -214,26 +210,16 @@ export default function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            {allProducts[activeTab].map((prod) => (
+            {uniqueProducts.map((prod) => (
               <tr key={prod.id}>
-                <td>{prod.id}</td>
+                <td style={{ maxWidth: "100px", overflowX: "auto", whiteSpace: "nowrap" }}>{prod.id}</td>
                 <td>{prod.title}</td>
                 <td>${prod.price}</td>
                 <td>{prod.category}</td>
                 <td>
-                  <div className="d-flex flex-wrap gap-2">
-                    <button
-                      className="btn btn-sm btn-success"
-                      onClick={() => handleAddOrder(prod.id)}
-                    >
-                      Add Order
-                    </button>
-                    <button
-                      className="btn btn-sm btn-danger"
-                      onClick={() => handleDeleteProduct(prod.id)}
-                    >
-                      Delete
-                    </button>
+                  <div className="d-flex flex-wrap gap-1">
+                    <button className="btn btn-sm btn-success" onClick={() => handleAddOrder(prod.id)}>Add Order</button>
+                    <button className="btn btn-sm btn-danger" onClick={() => handleDeleteProduct(prod.id)}>Delete</button>
                   </div>
                 </td>
               </tr>
@@ -242,70 +228,60 @@ export default function Dashboard() {
         </table>
       </div>
 
-      {/* Orders Table */}
-      <div className="table-responsive mb-4">
+      <div
+        className="table-responsive mb-4"
+        style={{ maxHeight: "180px", overflowY: "auto" }}
+      >
         <h4>{activeTab} Orders</h4>
-        <table className="table table-bordered table-hover">
-          <thead>
+        <p>Total Orders: {orders[activeTab].length}</p>
+        <table className="table table-bordered table-hover table-sm mb-0">
+          <thead className="table-light">
             <tr>
               <th>#</th>
-              <th>Product ID</th>
+              <th>Product</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {orders[activeTab].map((order, index) => (
-              <tr key={order.id}>
-                <td>{index + 1}</td>
-                <td>{order.productId}</td>
-                <td>
-                  <div className="d-flex flex-wrap gap-2">
-                    <button
-                      className="btn btn-sm btn-danger"
-                      onClick={() => handleDeleteOrder(order.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
+            {orders[activeTab].map((order, index) => {
+              const product = getProductById(order.productId, activeTab);
+              return (
+                <tr key={order.id}>
+                  <td>{index + 1}</td>
+                  <td>{product ? product.title : "Unknown"}</td>
+                  <td>
+                    <div className="d-flex flex-wrap gap-1">
+                      <button className="btn btn-sm btn-danger" onClick={() => handleDeleteOrder(order.id)}>Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
 
-      {/* Charts */}
       <div className="row">
         <div className="col-12 col-md-6 mb-4">
           <h5 className="text-center">Products Bar Chart</h5>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={250}>
             <BarChart data={chartData}>
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
               <Legend />
               <Bar dataKey="products">
-                {chartData.map((entry) => (
-                  <Cell key={entry.name} fill={entry.color} />
-                ))}
+                {chartData.map((entry) => <Cell key={entry.name} fill={entry.color} />)}
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
         <div className="col-12 col-md-6 mb-4">
           <h5 className="text-center">Orders Pie Chart</h5>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={250}>
             <PieChart>
-              <Pie
-                data={chartData}
-                dataKey="orders"
-                nameKey="name"
-                outerRadius={100}
-                label
-              >
-                {chartData.map((entry) => (
-                  <Cell key={entry.name} fill={entry.color} />
-                ))}
+              <Pie data={chartData} dataKey="orders" nameKey="name" outerRadius={80} label>
+                {chartData.map((entry) => <Cell key={entry.name} fill={entry.color} />)}
               </Pie>
               <Tooltip />
               <Legend />
