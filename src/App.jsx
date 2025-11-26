@@ -18,6 +18,9 @@ import ProductDetails from'./Components/ProductDetails/ProductDetails'
 import Handmade from'./Components/Handmade/Handmade'
 import CartProvider from './Components/context/CartContext'
 import Dashboard from './Components/Dashboard/Dashboard'
+import Checkout from './Components/Checkout/Checkout';
+import OrderSuccess from './Components/OrderSuccess/OrderSuccess';
+
 function App() {
   const routers = createBrowserRouter([
 
@@ -40,7 +43,8 @@ function App() {
         { path: 'kids', element: <Kids /> },
            { path: 'handmade', element: <Handmade /> },
         { path: 'carts', element: <Carts /> },
-     
+     { path: 'checkout', element: <Checkout /> },
+        { path: 'order-success', element: <OrderSuccess /> },
   {
   path: 'dashboard',
   element: (

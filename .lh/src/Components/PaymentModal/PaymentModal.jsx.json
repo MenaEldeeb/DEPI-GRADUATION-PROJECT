@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/Components/PaymentModal/PaymentModal.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764181596998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764181608734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,47 @@\n+import React from \"react\";\r\n+\r\n+export default function PaymentModal({ show, total, method, onClose, onConfirm }) {\r\n+  if (!show) return null;\r\n+\r\n+  return (\r\n+    <>\r\n+      <div className=\"modal-backdrop fade show\"></div>\r\n+\r\n+      <div\r\n+        className=\"modal fade show d-block\"\r\n+        tabIndex=\"-1\"\r\n+        role=\"dialog\"\r\n+        style={{ background: \"rgba(0,0,0,0.3)\" }}\r\n+      >\r\n+        <div className=\"modal-dialog modal-dialog-centered\">\r\n+          <div className=\"modal-content rounded-3 shadow\">\r\n+\r\n+            <div className=\"modal-header\">\r\n+              <h5 className=\"modal-title\">Confirm Payment</h5>\r\n+              <button type=\"button\" className=\"btn-close\" onClick={onClose}></button>\r\n+            </div>\r\n+\r\n+            <div className=\"modal-body\">\r\n+              <p className=\"mb-2 fw-semibold\">\r\n+                Total Amount: <span className=\"text-success\">${total.toFixed(2)}</span>\r\n+              </p>\r\n+              <p className=\"mb-0 fw-semibold\">\r\n+                Payment Method: <span className=\"text-primary\">{method}</span>\r\n+              </p>\r\n+            </div>\r\n+\r\n+            <div className=\"modal-footer\">\r\n+              <button className=\"btn btn-secondary\" onClick={onClose}>\r\n+                Cancel\r\n+              </button>\r\n+              <button className=\"btn btn-success\" onClick={onConfirm}>\r\n+                Confirm Payment\r\n+              </button>\r\n+            </div>\r\n+          </div>\r\n+        </div>\r\n+      </div>\r\n+    </>\r\n+  );\r\n+}\r\n+\r\n"
+                }
+            ],
+            "date": 1764181596998,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

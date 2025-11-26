@@ -57,8 +57,7 @@ export default function Dashboard() {
   };
 
   const getProductById = (id, section) => allProducts[section]?.find((p) => p.id === id);
-
-  useEffect(() => {
+ useEffect(() => {
     let mounted = true;
     async function fetchProducts() {
       try {
@@ -83,6 +82,7 @@ export default function Dashboard() {
     if (!sections.some((sec) => allProducts[sec]?.length > 0)) fetchProducts();
     return () => { mounted = false; };
   }, []);
+
 
   useEffect(() => { localStorage.setItem("allProducts", JSON.stringify(allProducts)); }, [allProducts]);
   useEffect(() => { localStorage.setItem("orders", JSON.stringify(orders)); }, [orders]);

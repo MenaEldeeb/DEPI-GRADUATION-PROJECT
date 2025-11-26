@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/Components/Checkout/Checkout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1764181712894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764182086272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"../components/PaymentModal\";\r\n+import PaymentModal from \"../ؤomponents/PaymentModal\";\r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n"
+                },
+                {
+                    "date": 1764182091695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"../ؤomponents/PaymentModal\";\r\n+import PaymentModal from \"../ؤؤComponents/PaymentModal\";\r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n"
+                },
+                {
+                    "date": 1764182098108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"../ؤؤComponents/PaymentModal\";\r\n+import PaymentModal from \"ؤؤComponents/PaymentModal\";\r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n"
+                },
+                {
+                    "date": 1764182104027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"ؤؤComponents/PaymentModal\";\r\n+import PaymentModal from \"ؤؤComponents/PaymentModa\";\r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n"
+                },
+                {
+                    "date": 1764182109726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"ؤؤComponents/PaymentModa\";\r\n+import PaymentModal from \"ؤ\";\r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n"
+                },
+                {
+                    "date": 1764182160008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n-import { useState, useContext } from \"react\";\r\n-import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"ؤ\";\r\n-import { useNavigate } from \"react-router-dom\";\r\n \r\n+\r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n   const navigate = useNavigate();\r\n \r\n"
+                },
+                {
+                    "date": 1764182276674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n+import { useState, useContext } from \"react\";\r\n+import { CartContext } from \"../context/CartContext\";\r\n \r\n+import { useNavigate } from \"react-router-dom\";\r\n \r\n+\r\n export default function Checkout() {\r\n   const { cart, clearCart } = useContext(CartContext);\r\n   const navigate = useNavigate();\r\n \r\n"
+                },
+                {
+                    "date": 1764182286424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n+import PaymentModal from \"../PaymentModel/paymentModel\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182501608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal from \"../PaymentModel/paymentModel\";\r\n+import PaymentModal} from \"../PaymentModel/paymentModel\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182513004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import PaymentModal} from \"../PaymentModel/paymentModel\";\r\n+import {PaymentModal} from \"../PaymentModel/paymentModel\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182528493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import {PaymentModal} from \"../PaymentModel/paymentModel\";\r\n+import {PaymentModal} from \"../PaymentModel/PaymentModel\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182564494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import {PaymentModal} from \"../PaymentModel/PaymentModel\";\r\n+import {PaymentModal from \"../PaymentModel/PaymentModel\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182677014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import {PaymentModal from \"../PaymentModel/PaymentModel\";\r\n+import Paymentodal from \"../PaymentModel/PaymentModel\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182687362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import Paymentodal from \"../PaymentModel/PaymentModel\";\r\n+impo\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764182694631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-impo\r\n+import Pay\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                }
+            ],
+            "date": 1764181712894,
+            "name": "Commit-0",
+            "content": "import { useState, useContext } from \"react\";\r\nimport { CartContext } from \"../context/CartContext\";\r\nimport PaymentModal from \"../components/PaymentModal\";\r\nimport { useNavigate } from \"react-router-dom\";\r\n\r\nexport default function Checkout() {\r\n  const { cart, clearCart } = useContext(CartContext);\r\n  const navigate = useNavigate();\r\n\r\n  const [paymentMethod, setPaymentMethod] = useState(\"cash\");\r\n  const [showModal, setShowModal] = useState(false);\r\n\r\n  const [customer, setCustomer] = useState({\r\n    name: \"\",\r\n    phone: \"\",\r\n    address: \"\",\r\n  });\r\n\r\n  const total = cart.reduce(\r\n    (acc, item) => acc + item.price * (item.quantity || 1),\r\n    0\r\n  );\r\n\r\n  const handleChange = (e) => {\r\n    setCustomer({ ...customer, [e.target.name]: e.target.value });\r\n  };\r\n\r\n  const handleConfirmPayment = () => {\r\n    clearCart();\r\n    setShowModal(false);\r\n    navigate(\"/order-success\");\r\n  };\r\n\r\n  return (\r\n    <section className=\"container py-5\">\r\n      <h2 className=\"fw-bold mb-4\">Checkout</h2>\r\n\r\n      <div className=\"row\">\r\n        <div className=\"col-md-7\">\r\n          <div className=\"card p-4 mb-4\">\r\n            <h4 className=\"fw-semibold mb-3\">Customer Details</h4>\r\n\r\n            <input\r\n              type=\"text\"\r\n              name=\"name\"\r\n              placeholder=\"Full Name\"\r\n              className=\"form-control mb-3\"\r\n              value={customer.name}\r\n              onChange={handleChange}\r\n            />\r\n\r\n            <input\r\n              type=\"text\"\r\n              name=\"phone\"\r\n              placeholder=\"Phone Number\"\r\n              className=\"form-control mb-3\"\r\n              value={customer.phone}\r\n              onChange={handleChange}\r\n            />\r\n\r\n            <textarea\r\n              name=\"address\"\r\n              placeholder=\"Full Address\"\r\n              className=\"form-control\"\r\n              rows=\"3\"\r\n              value={customer.address}\r\n              onChange={handleChange}\r\n            />\r\n          </div>\r\n\r\n          <div className=\"card p-4\">\r\n            <h5 className=\"fw-semibold mb-2\">Payment Method</h5>\r\n\r\n            <select\r\n              className=\"form-select mb-3\"\r\n              value={paymentMethod}\r\n              onChange={(e) => setPaymentMethod(e.target.value)}\r\n            >\r\n              <option value=\"cash\">Cash on Delivery</option>\r\n              <option value=\"online\">Online Payment</option>\r\n            </select>\r\n\r\n            <button\r\n              className=\"btn btn-success w-100\"\r\n              disabled={!customer.name || !customer.phone || !customer.address}\r\n              onClick={() => setShowModal(true)}\r\n            >\r\n              Proceed to Pay\r\n            </button>\r\n          </div>\r\n        </div>\r\n\r\n        <div className=\"col-md-5\">\r\n          <div className=\"card p-4\">\r\n            <h4 className=\"fw-semibold mb-3\">Order Summary</h4>\r\n\r\n            {cart.map((item) => (\r\n              <div key={item.id} className=\"d-flex justify-content-between mb-2\">\r\n                <span>{item.title} × {item.quantity || 1}</span>\r\n                <strong>${(item.price * (item.quantity || 1)).toFixed(2)}</strong>\r\n              </div>\r\n            ))}\r\n\r\n            <hr />\r\n            <h4 className=\"fw-bold\">Total: ${total.toFixed(2)}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <PaymentModal\r\n        show={showModal}\r\n        total={total}\r\n        method={paymentMethod}\r\n        onClose={() => setShowModal(false)}\r\n        onConfirm={handleConfirmPayment}\r\n      />\r\n    </section>\r\n  );\r\n}\r\n\r\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/Components/OrderSuccess/OrderSuccess.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764181851182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764181859775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+export default function OrderSuccess() {\r\n+  return (\r\n+    <section className=\"container text-center py-5\">\r\n+      <h2 className=\"text-success fw-bold mb-3\">Order Placed Successfully 🎉</h2>\r\n+      <p>Your order has been confirmed. We will contact you soon.</p>\r\n+\r\n+      <a href=\"/\" className=\"btn btn-primary mt-3\">\r\n+        Back to Home\r\n+      </a>\r\n+    </section>\r\n+  );\r\n+}\r\n"
+                }
+            ],
+            "date": 1764181851182,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

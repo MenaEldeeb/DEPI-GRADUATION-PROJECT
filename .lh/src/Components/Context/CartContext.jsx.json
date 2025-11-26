@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 23,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1763832908829,
@@ -100,6 +100,26 @@
                 {
                     "date": 1764073219914,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const CartContext = createContext();\r\n+export const artContext = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n const [cart, setCart] = useState(() => {\r\n const savedCart = localStorage.getItem(\"cart\");\r\n"
+                },
+                {
+                    "date": 1764184562623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const artContext = createContext();\r\n+export const ؤartContext = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n const [cart, setCart] = useState(() => {\r\n const savedCart = localStorage.getItem(\"cart\");\r\n"
+                },
+                {
+                    "date": 1764184573158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const ؤartContext = createContext();\r\n+export const ؤ = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n const [cart, setCart] = useState(() => {\r\n const savedCart = localStorage.getItem(\"cart\");\r\n"
+                },
+                {
+                    "date": 1764184579026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const ؤ = createContext();\r\n+export const  = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n const [cart, setCart] = useState(() => {\r\n const savedCart = localStorage.getItem(\"cart\");\r\n"
+                },
+                {
+                    "date": 1764184584133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const  = createContext();\r\n+export const Cart = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n const [cart, setCart] = useState(() => {\r\n const savedCart = localStorage.getItem(\"cart\");\r\n"
+                },
+                {
+                    "date": 1764184592582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const Cart = createContext();\r\n+export const CartConte = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n const [cart, setCart] = useState(() => {\r\n const savedCart = localStorage.getItem(\"cart\");\r\n"
                 }
             ],
             "date": 1763832908829,
