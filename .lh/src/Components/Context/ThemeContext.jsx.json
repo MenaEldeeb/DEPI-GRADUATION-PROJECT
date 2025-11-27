@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/Components/context/ThemeContext.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1764270155777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764270165928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const ThemeContext = createContext();\r\n+export const Themeؤontext = createContext();\r\n \r\n export default function ThemeProvider({ children }) {\r\n   const [theme, setTheme] = useState(\"light\");\r\n \r\n"
+                },
+                {
+                    "date": 1764270174129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const Themeؤontext = createContext();\r\n+export const = createContext();\r\n \r\n export default function ThemeProvider({ children }) {\r\n   const [theme, setTheme] = useState(\"light\");\r\n \r\n"
+                },
+                {
+                    "date": 1764270191615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useState, useEffect } from \"react\";\r\n \r\n-export const = createContext();\r\n+export const ThemeContext = createContext();\r\n \r\n export default function ThemeProvider({ children }) {\r\n   const [theme, setTheme] = useState(\"light\");\r\n \r\n"
+                },
+                {
+                    "date": 1764270621107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,23 +4,19 @@\n \r\n export default function ThemeProvider({ children }) {\r\n   const [theme, setTheme] = useState(\"light\");\r\n \r\n-  // Load saved theme from localStorage\r\n   useEffect(() => {\r\n-    const savedTheme = localStorage.getItem(\"theme\");\r\n-    if (savedTheme) {\r\n-      setTheme(savedTheme);\r\n-      document.body.className = savedTheme === \"dark\" ? \"dark-mode\" : \"light-mode\";\r\n-    }\r\n+    const saved = localStorage.getItem(\"theme\") || \"light\";\r\n+    setTheme(saved);\r\n+    document.documentElement.setAttribute(\"data-theme\", saved);\r\n   }, []);\r\n \r\n-  // Toggle between light & dark\r\n   const toggleTheme = () => {\r\n     const newTheme = theme === \"light\" ? \"dark\" : \"light\";\r\n     setTheme(newTheme);\r\n+    document.documentElement.setAttribute(\"data-theme\", newTheme);\r\n     localStorage.setItem(\"theme\", newTheme);\r\n-    document.body.className = newTheme === \"dark\" ? \"dark-mode\" : \"light-mode\";\r\n   };\r\n \r\n   return (\r\n     <ThemeContext.Provider value={{ theme, toggleTheme }}>\r\n"
+                }
+            ],
+            "date": 1764270155777,
+            "name": "Commit-0",
+            "content": "import { createContext, useState, useEffect } from \"react\";\r\n\r\nexport const ThemeContext = createContext();\r\n\r\nexport default function ThemeProvider({ children }) {\r\n  const [theme, setTheme] = useState(\"light\");\r\n\r\n  // Load saved theme from localStorage\r\n  useEffect(() => {\r\n    const savedTheme = localStorage.getItem(\"theme\");\r\n    if (savedTheme) {\r\n      setTheme(savedTheme);\r\n      document.body.className = savedTheme === \"dark\" ? \"dark-mode\" : \"light-mode\";\r\n    }\r\n  }, []);\r\n\r\n  // Toggle between light & dark\r\n  const toggleTheme = () => {\r\n    const newTheme = theme === \"light\" ? \"dark\" : \"light\";\r\n    setTheme(newTheme);\r\n    localStorage.setItem(\"theme\", newTheme);\r\n    document.body.className = newTheme === \"dark\" ? \"dark-mode\" : \"light-mode\";\r\n  };\r\n\r\n  return (\r\n    <ThemeContext.Provider value={{ theme, toggleTheme }}>\r\n      {children}\r\n    </ThemeContext.Provider>\r\n  );\r\n}\r\n"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 
-
 import './App.css'
+import 'react-toastify/dist/ReactToastify.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Components/Layout/Layout'
 import Login from './Components/Login/Login'
@@ -12,23 +12,20 @@ import Kids from './Components/Kids/Kids'
 import Carts from './Components/Carts/Carts'
 import Home from'./Components/Home/Home'
 import UserContextProvider from './Components/context/userContext'
-import Loader from './Components/Loader/Loader'
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
 import ProductDetails from'./Components/ProductDetails/ProductDetails'
 import Handmade from'./Components/Handmade/Handmade'
 import CartProvider from './Components/context/CartContext'
 import Dashboard from './Components/Dashboard/Dashboard'
-import Checkout from './Components/Checkout/Checkout';
-import OrderSuccess from './Components/OrderSuccess/OrderSuccess';
+import Checkout from './Components/Checkout/Checkout'
+import OrderSuccess from './Components/OrderSuccess/OrderSuccess'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   const routers = createBrowserRouter([
-
-
     { path: '', element: <Login /> },
     { path: 'login', element: <Login /> },
     { path: 'register', element: <Register /> },
-
     {
       path: '',
       element: (
@@ -41,36 +38,41 @@ function App() {
         { path: 'women', element: <Women /> },
         { path: 'men', element: <Men /> },
         { path: 'kids', element: <Kids /> },
-           { path: 'handmade', element: <Handmade /> },
+        { path: 'handmade', element: <Handmade /> },
         { path: 'carts', element: <Carts /> },
-     { path: 'checkout', element: <Checkout /> },
+        { path: 'checkout', element: <Checkout /> },
         { path: 'order-success', element: <OrderSuccess /> },
-  {
-  path: 'dashboard',
-  element: (
-    <ProtectedRoute requireDashboard={true}>
-      <Dashboard />
-    </ProtectedRoute>
-  )
-},
-
-
-
-         { path: 'product/:id', element: <ProductDetails /> }
+        {
+          path: 'dashboard',
+          element: (
+            <ProtectedRoute requireDashboard={true}>
+              <Dashboard />
+            </ProtectedRoute>
+          )
+        },
+        { path: 'product/:id', element: <ProductDetails /> }
       ],
     },
-
     { path: '*', element: <Notfound /> },
-
   ])
 
   return (
-     <UserContextProvider>
-  <CartProvider>
-    <RouterProvider router={routers} />
-  </CartProvider>
-</UserContextProvider>
-
+    <UserContextProvider>
+      <CartProvider>
+        <RouterProvider router={routers} />
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </CartProvider>
+    </UserContextProvider>
   )
 }
 

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1763832908829,
@@ -140,6 +140,18 @@
                 {
                     "date": 1764241207903,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   const clearCart = () => {\r\n     setCart([]);\r\n   };\r\n \r\n-  // ⭐⭐⭐ cart counter (هنا الإضافة)\r\n+ \r\n   const cartCount = cart.reduce(\r\n     (total, item) => total + (item.quantity || 1),\r\n     0\r\n   );\r\n"
+                },
+                {
+                    "date": 1764280508920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n // CartContext.jsx\r\n import { createContext, useState, useEffect } from \"react\";\r\n+import { toast } from \"react-toastify\";\r\n \r\n export const CartContext = createContext();\r\n \r\n export default function CartProvider({ children }) {\r\n@@ -13,38 +14,39 @@\n     localStorage.setItem(\"cart\", JSON.stringify(cart));\r\n   }, [cart]);\r\n \r\n   const addToCart = (item) => {\r\n-    const exist = cart.find((i) => i.id === item.id);\r\n-    if (exist) {\r\n-      setCart(\r\n-        cart.map((i) =>\r\n+    setCart((prevCart) => {\r\n+      const exist = prevCart.find((i) => i.id === item.id);\r\n+      if (exist) {\r\n+        toast.info(`${item.name} quantity increased ✅`);\r\n+        return prevCart.map((i) =>\r\n           i.id === item.id ? { ...i, quantity: (i.quantity || 1) + 1 } : i\r\n-        )\r\n-      );\r\n-    } else {\r\n-      setCart([...cart, { ...item, quantity: 1 }]);\r\n-    }\r\n+        );\r\n+      } else {\r\n+        toast.success(`${item.name} added to cart ✅`);\r\n+        return [...prevCart, { ...item, quantity: 1 }];\r\n+      }\r\n+    });\r\n   };\r\n \r\n   const updateQuantity = (id, quantity) => {\r\n     if (quantity < 1) return;\r\n-    setCart(cart.map((i) => (i.id === id ? { ...i, quantity } : i)));\r\n+    setCart((prevCart) =>\r\n+      prevCart.map((i) => (i.id === id ? { ...i, quantity } : i))\r\n+    );\r\n   };\r\n \r\n   const removeFromCart = (id) => {\r\n-    setCart(cart.filter((item) => item.id !== id));\r\n+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));\r\n   };\r\n \r\n   const clearCart = () => {\r\n     setCart([]);\r\n+    toast.warning(\"Cart cleared ⚠️\");\r\n   };\r\n \r\n- \r\n-  const cartCount = cart.reduce(\r\n-    (total, item) => total + (item.quantity || 1),\r\n-    0\r\n-  );\r\n+  const cartCount = cart.reduce((total, item) => total + (item.quantity ?? 1), 0);\r\n \r\n   return (\r\n     <CartContext.Provider\r\n       value={{\r\n@@ -52,12 +54,11 @@\n         addToCart,\r\n         updateQuantity,\r\n         removeFromCart,\r\n         clearCart,\r\n-        cartCount, \r\n+        cartCount,\r\n       }}\r\n     >\r\n       {children}\r\n     </CartContext.Provider>\r\n   );\r\n }\r\n-\r\n"
+                },
+                {
+                    "date": 1764280781272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   const addToCart = (item) => {\r\n     setCart((prevCart) => {\r\n       const exist = prevCart.find((i) => i.id === item.id);\r\n       if (exist) {\r\n-        toast.info(`${item.name} quantity increased ✅`);\r\n+        toast.info(`${item.} quantity increased ✅`);\r\n         return prevCart.map((i) =>\r\n           i.id === item.id ? { ...i, quantity: (i.quantity || 1) + 1 } : i\r\n         );\r\n       } else {\r\n"
+                },
+                {
+                    "date": 1764280792986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,14 @@\n   const addToCart = (item) => {\r\n     setCart((prevCart) => {\r\n       const exist = prevCart.find((i) => i.id === item.id);\r\n       if (exist) {\r\n-        toast.info(`${item.} quantity increased ✅`);\r\n+        toast.info(`${item.title} quantity increased ✅`);\r\n         return prevCart.map((i) =>\r\n           i.id === item.id ? { ...i, quantity: (i.quantity || 1) + 1 } : i\r\n         );\r\n       } else {\r\n-        toast.success(`${item.name} added to cart ✅`);\r\n+        toast.success(`${item.tit} added to cart ✅`);\r\n         return [...prevCart, { ...item, quantity: 1 }];\r\n       }\r\n     });\r\n   };\r\n"
                 }
             ],
             "date": 1763832908829,

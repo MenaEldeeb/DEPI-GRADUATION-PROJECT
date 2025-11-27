@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1763458870056,
@@ -36,6 +36,22 @@
                 {
                     "date": 1763480114044,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,43 +3,8 @@\n   width: 100%;\n   max-width: 100%;\n   margin: 0;\n   padding: 0;\n-  text-align: left; /* أو شليه */\n+  text-align: left; \n }\n \n \n-.logo {\n-  height: 6em;\n-  padding: 1.5em;\n-  will-change: filter;\n-  transition: filter 300ms;\n-}\n-.logo:hover {\n-  filter: drop-shadow(0 0 2em #646cffaa);\n-}\n-.logo.react:hover {\n-  filter: drop-shadow(0 0 2em #61dafbaa);\n-}\n-\n-@keyframes logo-spin {\n-  from {\n-    transform: rotate(0deg);\n-  }\n-  to {\n-    transform: rotate(360deg);\n-  }\n-}\n-\n-@media (prefers-reduced-motion: no-preference) {\n-  a:nth-of-type(2) .logo {\n-    animation: logo-spin infinite 20s linear;\n-  }\n-}\n-\n-.card {\n-  padding: 2em;\n-}\n-\n-.read-the-docs {\n-  color: #888;\n\\ No newline at end of file\n-}\n"
+                },
+                {
+                    "date": 1764270519805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,21 @@\n+:root {\n+  --bg-color: #ffffff;\n+  --text-color: #000000;\n+}\n \n+[data-theme=\"dark\"] {\n+  --bg-color: #121212;\n+  --text-color: #ffffff;\n+}\n+\n #root {\n   width: 100%;\n   max-width: 100%;\n   margin: 0;\n   padding: 0;\n-  text-align: left; \n+  text-align: left;\n+  background-color: var(--bg-color);\n+  color: var(--text-color);\n }\n \n \n"
+                },
+                {
+                    "date": 1764270701216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,25 @@\n   --bg-color: #121212;\n   --text-color: #ffffff;\n }\n \n-#root {\n-  width: 100%;\n-  max-width: 100%;\n-  margin: 0;\n-  padding: 0;\n-  text-align: left;\n+body {\n   background-color: var(--bg-color);\n   color: var(--text-color);\n }\n \n+.navbar {\n+  background-color: var(--bg-color) !important;\n+  color: var(--text-color) !important;\n+}\n \n+.nav-link {\n+  color: var(--text-color) !important;\n+}\n+\n+.btn-light {\n+  background-color: var(--bg-color) !important;\n+  color: var(--text-color) !important;\n+}\n+\n+\n+\n"
+                },
+                {
+                    "date": 1764270747073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,31 +0,0 @@\n-:root {\n-  --bg-color: #ffffff;\n-  --text-color: #000000;\n-}\n-\n-[data-theme=\"dark\"] {\n-  --bg-color: #121212;\n-  --text-color: #ffffff;\n-}\n-\n-body {\n-  background-color: var(--bg-color);\n-  color: var(--text-color);\n-}\n-\n-.navbar {\n-  background-color: var(--bg-color) !important;\n-  color: var(--text-color) !important;\n-}\n-\n-.nav-link {\n-  color: var(--text-color) !important;\n-}\n-\n-.btn-light {\n-  background-color: var(--bg-color) !important;\n-  color: var(--text-color) !important;\n-}\n-\n-\n-\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764270891732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n-\n+#root {\n+  width: 100%;\n+  max-width: 100%;\n+  margin: 0;\n+  padding: 0;\n+  text-align: left; \n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1763458870056,
