@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1762170064840,
@@ -56,6 +56,30 @@
                 {
                     "date": 1764241763046,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import { CartContext } from \"../context/CartContext\";\r\n \r\n import styles from \"./Navbar.module.css\";\r\n \r\n-export default function NavbarTop() {\r\n+export default function Navbar() {\r\n   const { isLogin, setLogin } = useContext(UserContext);\r\n   const { cart } = useContext(CartContext);\r\n \r\n   const handleLogout = () => {\r\n@@ -58,9 +58,9 @@\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n-              {/* 🔥 cart badge Next to Logout */}\r\n+              \r\n               <div className=\"d-flex align-items-center\">\r\n                 <div className={styles.cartContainer}>\r\n                   <Link to=\"/carts\" className=\"text-white me-3\">\r\n                     <i className=\"fa-solid fa-cart-shopping fa-lg\"></i>\r\n"
+                },
+                {
+                    "date": 1764242075180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,11 @@\n \r\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n+                 <li className=\"nav-item\">\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n+                </li>\r\n               </ul>\r\n \r\n               \r\n               <div className=\"d-flex align-items-center\">\r\n"
+                },
+                {
+                    "date": 1764242081618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                  <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\">D</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               \r\n"
+                },
+                {
+                    "date": 1764242090232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                  <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/carts\">D</Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\">Das</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               \r\n"
+                },
+                {
+                    "date": 1764242096551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                  <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/carts\">Das</Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/carts\">Dashboard</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               \r\n"
+                },
+                {
+                    "date": 1764242102439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                  <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/carts\">Dashboard</Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/\">Dashboard</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               \r\n"
+                },
+                {
+                    "date": 1764242108548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                 <li className=\"nav-item\">\r\n                   <Link className=\"nav-link text-white\" to=\"/carts\">Carts</Link>\r\n                 </li>\r\n                  <li className=\"nav-item\">\r\n-                  <Link className=\"nav-link text-white\" to=\"/\">Dashboard</Link>\r\n+                  <Link className=\"nav-link text-white\" to=\"/dashboard\">Dashboard</Link>\r\n                 </li>\r\n               </ul>\r\n \r\n               \r\n"
                 }
             ],
             "date": 1762170064840,
