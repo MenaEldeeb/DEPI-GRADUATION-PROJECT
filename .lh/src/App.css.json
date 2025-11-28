@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1763458870056,
@@ -52,6 +52,34 @@
                 {
                     "date": 1764270891732,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n-\n+#root {\n+  width: 100%;\n+  max-width: 100%;\n+  margin: 0;\n+  padding: 0;\n+  text-align: left; \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764349873979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n-#root {\n+/* #root {\n   width: 100%;\n   max-width: 100%;\n   margin: 0;\n   padding: 0;\n   text-align: left; \n\\ No newline at end of file\n-}\n+} */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764349918614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,22 @@\n   max-width: 100%;\n   margin: 0;\n   padding: 0;\n   text-align: left; \n-} */\n\\ No newline at end of file\n+} */\n+ #root {\n+  width: 100%;\n+  max-width: 100%;\n+  margin: 0;\n+  padding: 0;\n+  text-align: left;\n+}\n+\n+body, #root, .App {\n+  min-height: 100vh;\n+  display: flex;\n+  flex-direction: column;\n+}\n+\n+ooter {\n+  margin-top: auto;\n+}\n"
+                },
+                {
+                    "date": 1764349928407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n   display: flex;\n   flex-direction: column;\n }\n \n-ooter {\n+footer {\n   margin-top: auto;\n }\n"
+                },
+                {
+                    "date": 1764349933465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n   display: flex;\n   flex-direction: column;\n }\n \n-footer {\n+.footer {\n   margin-top: auto;\n }\n"
+                },
+                {
+                    "date": 1764351227228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,31 @@\n+/* #root {\n+  width: 100%;\n+  max-width: 100%;\n+  margin: 0;\n+  padding: 0;\n+  text-align: left; \n+} */\n+ /* App.css */\n+body, #root, .App {\n+  margin: 0;\n+  padding: 0;\n+  min-height: 100vh;\n+  display: flex;\n+  flex-direction: column;\n+}\n+\n+.App {\n+  flex: 1;\n+  display: flex;\n+  flex-direction: column;\n+}\n+\n+.content {\n+  flex-grow: 1;\n+  width: 100%;\n+  padding-top: 70px; /* مساوي لارتفاع Navbar */\n+}\n+\n+footer {\n+  margin-top: auto;\n+}\n"
+                },
+                {
+                    "date": 1764351392553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,52 +4,4 @@\n   margin: 0;\n   padding: 0;\n   text-align: left; \n } */\n- /* App.css */\n-body, #root, .App {\n-  margin: 0;\n-  padding: 0;\n-  min-height: 100vh;\n-  display: flex;\n-  flex-direction: column;\n-}\n-\n-.App {\n-  flex: 1;\n-  display: flex;\n-  flex-direction: column;\n-}\n-\n-.content {\n-  flex-grow: 1;\n-  width: 100%;\n-  padding-top: 70px; /* مساوي لارتفاع Navbar */\n-}\n-\n-footer {\n-  margin-top: auto;\n-}\n-/* #root {\n-  width: 100%;\n-  max-width: 100%;\n-  margin: 0;\n-  padding: 0;\n-  text-align: left; \n-} */\n- #root {\n-  width: 100%;\n-  max-width: 100%;\n-  margin: 0;\n-  padding: 0;\n-  text-align: left;\n-}\n-\n-body, #root, .App {\n-  min-height: 100vh;\n-  display: flex;\n-  flex-direction: column;\n-}\n-\n-.footer {\n-  margin-top: auto;\n-}\n"
+                },
+                {
+                    "date": 1764351399776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n-/* #root {\n+#root {\n   width: 100%;\n   max-width: 100%;\n   margin: 0;\n   padding: 0;\n   text-align: left; \n-} */\n+}\n"
                 }
             ],
             "date": 1763458870056,

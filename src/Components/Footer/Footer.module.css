@@ -1,0 +1,61 @@
+.footer {
+  background: #198754;
+  padding: 35px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+.title {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.text {
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.circle {
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.circle:hover {
+  background: #fff;
+  color: #198754;
+  transform: translateY(-3px);
+}
+
+.copy {
+  font-size: 11px;
+  color: #fff;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}

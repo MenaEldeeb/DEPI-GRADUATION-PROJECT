@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1762169472021,
@@ -20,6 +20,94 @@
                 {
                     "date": 1762169504575,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   return (\r\n     <div>\r\n       <Navbar/>\r\n       <Outlet></Outlet>\r\n-      Footer\r\n+      \r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1764350726975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,17 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n \r\n+import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n       <Navbar/>\r\n-      <Outlet></Outlet>\r\n-      \r\n+      <Loader />\r\n+      <div style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n+        <Outlet />\r\n+      </div>\r\n+\r\n     </div>\r\n   )\r\n-}\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764350735357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-\r\n+هة\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350740961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-هة\r\n+import\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350746883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import\r\n+import Foot\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350753226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Foot\r\n+import Footer from'\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350759286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from'\r\n+import Footer from'../\"\"\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350764668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from'../\"\"\r\n+import Footer from'''../\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350773497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from'''../\r\n+import Footer from\"\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350781175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"\r\n+import Footer from\"../F\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350786936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"../F\r\n+import Footer from\"../Footer/\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350793288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"../Footer/\r\n+import Footer from\"\r\n+<Footer />\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1764350799299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"\r\n+import Footer from\"..\r\n <Footer />\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1764350804627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"..\r\n+import Footer from\"../F\r\n <Footer />\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1764350810413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"../F\r\n+import Footer from\"../Footer/\r\n <Footer />\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1764350816660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"../Footer/\r\n+import Footer from\"../Footer/Footer\"\r\n <Footer />\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1764350824489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from \"../Navbar/Navbar\";\r\n import Footer from\"../Footer/Footer\"\r\n-<Footer />\r\n+\r\n import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n     <div>\r\n       <Navbar/>\r\n+      \r\n       <Loader />\r\n       <div style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n         <Outlet />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1764350829677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n export default function Layout() {\r\n   return (\r\n     <div>\r\n       <Navbar/>\r\n-      \r\n+      <\r\n       <Loader />\r\n       <div style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n         <Outlet />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1764350834730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n export default function Layout() {\r\n   return (\r\n     <div>\r\n       <Navbar/>\r\n-      <\r\n+      <Footer/>\r\n       <Loader />\r\n       <div style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n         <Outlet />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1764351066574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,18 @@\n import React from 'react'\r\n import { Outlet } from 'react-router-dom'\r\n-import Navbar from \"../Navbar/Navbar\";\r\n-import Footer from\"../Footer/Footer\"\r\n+import Navbar from \"../Navbar/Navbar\"\r\n+import Footer from \"../Footer/Footer\"\r\n+import Loader from '../Loader/Loader'\r\n \r\n-import Loader from '../Loader/Loader';\r\n export default function Layout() {\r\n   return (\r\n-    <div>\r\n-      <Navbar/>\r\n-      <Footer/>\r\n+    <div className=\"d-flex flex-column min-vh-100\">\r\n+      <Navbar />\r\n       <Loader />\r\n-      <div style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n+      <div className=\"flex-grow-1\" style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n\\ No newline at end of file\n         <Outlet />\r\n       </div>\r\n-\r\n+      <Footer />\r\n     </div>\r\n   )\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1764351148410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +0,0 @@\n-import React from 'react'\r\n-import { Outlet } from 'react-router-dom'\r\n-import Navbar from \"../Navbar/Navbar\"\r\n-import Footer from \"../Footer/Footer\"\r\n-import Loader from '../Loader/Loader'\r\n-\r\n-export default function Layout() {\r\n-  return (\r\n-    <div className=\"d-flex flex-column min-vh-100\">\r\n-      <Navbar />\r\n-      <Loader />\r\n-      <div className=\"flex-grow-1\" style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n-        <Outlet />\r\n-      </div>\r\n-      <Footer />\r\n-    </div>\r\n-  )\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764351252146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import React from 'react'\r\n+import { Outlet } from 'react-router-dom'\r\n+import Navbar from \"../Navbar/Navbar\"\r\n+import Footer from \"../Footer/Footer\"\r\n+import Loader from '../Loader/Loader'\r\n+\r\n+export default function Layout() {\r\n+  return (\r\n+    <div className=\"App d-flex flex-column min-vh-100\">\r\n+      <Navbar />\r\n+      <Loader />\r\n+      <div className=\"content\">\r\n+        <Outlet />\r\n+      </div>\r\n+      <Footer />\r\n+    </div>\r\n+  )\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1764351351354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,12 @@\n import Loader from '../Loader/Loader'\r\n \r\n export default function Layout() {\r\n   return (\r\n-    <div className=\"App d-flex flex-column min-vh-100\">\r\n+    <div className=\"d-flex flex-column min-vh-100\">\r\n       <Navbar />\r\n       <Loader />\r\n-      <div className=\"content\">\r\n+      <div className=\"flex-grow-1\" style={{ width: \"100%\", margin: 0, padding: 0 }}>\r\n         <Outlet />\r\n       </div>\r\n       <Footer />\r\n     </div>\r\n"
                 }
             ],
             "date": 1762169472021,

@@ -1,4 +1,3 @@
-
 import './App.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -20,6 +19,10 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Checkout from './Components/Checkout/Checkout'
 import OrderSuccess from './Components/OrderSuccess/OrderSuccess'
 import { ToastContainer } from 'react-toastify'
+import Footer from './Components/Footer/Footer'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   const routers = createBrowserRouter([
@@ -42,6 +45,7 @@ function App() {
         { path: 'carts', element: <Carts /> },
         { path: 'checkout', element: <Checkout /> },
         { path: 'order-success', element: <OrderSuccess /> },
+       
         {
           path: 'dashboard',
           element: (
@@ -57,22 +61,26 @@ function App() {
   ])
 
   return (
-    <UserContextProvider>
-      <CartProvider>
-        <RouterProvider router={routers} />
-        <ToastContainer
-          position="top-right"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </CartProvider>
-    </UserContextProvider>
+   <UserContextProvider>
+  <CartProvider>
+    <div className="App d-flex flex-column min-vh-100">
+      <RouterProvider router={routers} />
+      
+    </div>
+    <ToastContainer
+      position="top-right"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
+  </CartProvider>
+</UserContextProvider>
+
   )
 }
 
