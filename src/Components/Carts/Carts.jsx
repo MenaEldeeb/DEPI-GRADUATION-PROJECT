@@ -52,7 +52,8 @@ export default function Cart() {
       <div className="container h-100 py-5">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-10">
-            <h3 className="fw-normal mb-4">Shopping Cart</h3>
+           <h3 className="fw-normal mb-4 mt-5">Shopping Cart</h3>
+
 
             {localCart.length === 0 ? (
               <h4 className="text-muted">Your cart is empty.</h4>

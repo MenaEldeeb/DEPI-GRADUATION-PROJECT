@@ -56,9 +56,8 @@ export default function Men() {
   if (error) return <p className="text-center my-5 text-danger">{error}</p>;
 
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4 fw-bold">Men Products</h2>
-
+     <div className="container" style={{ paddingTop: "80px" }}>
+  <h2 className="text-center fw-bold">Men Products</h2>
       {isMobile ? (
         <div className="mobile-list">
           {products.map((product) => (

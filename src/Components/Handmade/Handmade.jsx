@@ -55,8 +55,12 @@ export default function Handmade() {
   if (error) return <p className="text-center my-5 text-danger">{error}</p>;
 
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4 fw-bold">Handmade Products</h2>
+    <div className="container" style={{ paddingTop: "80px" }}>
+  <h2 className="text-center fw-bold">Handmade Products</h2>
+ 
+
+
+
 
       {isMobile ? (
         <div className="mobile-list">

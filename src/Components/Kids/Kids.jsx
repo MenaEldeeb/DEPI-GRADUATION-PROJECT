@@ -56,8 +56,8 @@ export default function Kids() {
   if (error) return <p className="text-center my-5 text-danger">{error}</p>;
 
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4 fw-bold">Kids Products</h2>
+     <div className="container" style={{ paddingTop: "80px" }}>
+  <h2 className="text-center fw-bold">Kids products</h2>
 
       {isMobile ? (
         <div className="mobile-list">
