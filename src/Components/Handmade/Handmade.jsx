@@ -8,14 +8,21 @@ import styles from "./Handmade.module.css";
 
 export default function Handmade() {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showTopBtn, setShowTopBtn] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     const getProducts = async () => {
       try {
         const response = await axios.get("/Handmade.json");
         setProducts(response.data);
+        setFilteredProducts(response.data);
+        const uniqueCategories = ["All", ...new Set(response.data.map(p => p.category))];
+        setCategories(uniqueCategories);
       } catch {
         setError("Failed to load Handmade products.");
       } finally {
@@ -24,6 +31,26 @@ export default function Handmade() {
     };
     getProducts();
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (selectedCategory === "All") {
+      setFilteredProducts(products);
+    } else {
+      setFilteredProducts(products.filter(p => p.category === selectedCategory));
+    }
+  }, [selectedCategory, products]);
 
   const sliderSettings = {
     dots: false,
@@ -49,14 +76,26 @@ export default function Handmade() {
     <div className="container" style={{ paddingTop: "80px" }}>
       <div
         className={styles.banner}
-        style={{ backgroundImage: "url('/kids-banner.jpg')" }}
+        style={{ backgroundImage: "url('/Handmade-banner.jpg')" }}
       >
-        <h2 className="fw-bold">Kids Products</h2>
+        <h2 className="fw-bold">Handmade Products</h2>
+      </div>
+
+      <div className={styles.filterContainer}>
+        {categories.map(cat => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={selectedCategory === cat ? styles.activeFilter : ""}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
 
       <div className={styles.desktopSlider}>
         <Slider {...sliderSettings}>
-          {products.map((product) => (
+          {filteredProducts.map(product => (
             <div key={product.id} className="p-2">
               <div className={`card shadow-sm h-100 border-0 rounded-3 ${styles.hoverScale}`}>
                 <img
@@ -83,7 +122,7 @@ export default function Handmade() {
       </div>
 
       <div className={styles.mobileList}>
-        {products.map((product) => (
+        {filteredProducts.map(product => (
           <div key={product.id} className={styles.mobileCard}>
             <div className={`card shadow-sm h-100 border-0 rounded-3 ${styles.hoverScale}`}>
               <img
@@ -107,6 +146,15 @@ export default function Handmade() {
           </div>
         ))}
       </div>
+
+      {showTopBtn && (
+        <button
+          className={styles.scrollTop}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 }

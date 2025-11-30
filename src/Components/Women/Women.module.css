@@ -35,14 +35,53 @@
   width: 100%;
 }
 
+.desktopSlider .p-2,
+.mobileCard {
+  padding: 5px;
+}
+
+.desktopSlider .card,
+.mobileCard .card {
+  background-color: #1a1a1a;
+  border: 1px solid #28a745;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.desktopSlider .card img,
+.mobileCard .card img {
+  border-radius: 12px 12px 0 0;
+}
+
+.desktopSlider .card-body,
+.mobileCard .card-body {
+  padding: 10px;
+}
+
+.desktopSlider .card-title,
+.mobileCard .card-title,
+.desktopSlider .card-body p,
+.mobileCard .card-body p {
+  color: #fff;
+}
+
+.mobileCard .btn {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.mobileCard .btn:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
 .banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto;
   min-height: 80px;
   border-radius: 12px;
-  margin: 0;
   padding: 5px 10px;
   position: relative;
   text-align: center;
@@ -65,25 +104,78 @@
   color: #000;
   margin: 0;
   line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .card-body {
-  padding: 10px 10px 15px 10px;
   text-align: center;
 }
 
 .card-title,
 .card-body p {
-  color: #000;
   margin-bottom: 5px;
   font-size: 0.9rem;
+}
+
+.filterContainer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filterContainer button {
+  margin: 5px;
+  padding: 6px 15px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  border: 1px solid #111411;
+  background-color: #fff;
+  color: #112115;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filterContainer button:hover {
+ 
+
+  background-color:rgb(19, 17, 17) ;
+  color: #fff;
+}
+
+.filterContainer .activeFilter {
+  background-color: #090c0b;
+  color: #fff;
+  border: 1px solid #198754;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.scrollTop {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #28a745;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+}
+
+.scrollTop:hover {
+  background: #28a745;
+  color: #fff;
+  transition: 0.3s;
 }
 
 @media (max-width: 768px) {
   .desktopSlider { display: none; }
   .mobileList { display: flex; }
   .productImg { height: 250px; }
+  .scrollTop { display: flex; justify-content: center; align-items: center; }
 }
 
 @media (min-width: 769px) {
