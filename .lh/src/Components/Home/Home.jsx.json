@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 61,
+            "activePatchIndex": 62,
             "patches": [
                 {
                     "date": 1763456243910,
@@ -252,6 +252,10 @@
                 {
                     "date": 1763641217490,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n           <div className={styles.categories}>\r\n             <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n             <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n             <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n-            <Link to=\"/kids\" className={styles.catBtn}>Hand</Link>\r\n+            <Link to=\"/kids\" className={styles.catBtn}>Handmade</Link>\r\n           </div>\r\n         )}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1764462382297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +1,19 @@\n+<div className={styles.overlay}>\r\n+  <h1 className={styles.title}> Welcome to Dream Store </h1>\r\n \r\n-import React, { useState } from \"react\";\r\n-import { Link } from \"react-router-dom\";\r\n-import styles from \"./Home.module.css\";\r\n-import img from \"../../assets/images/store.jpeg\";\r\n-\r\n-export default function Home() {\r\n-  const [showButtons, setShowButtons] = useState(false);\r\n-\r\n-  return (\r\n-    <div\r\n-      className={styles.homeContainer}\r\n-      style={{ backgroundImage: `url(${img})` }}\r\n+  {!showButtons ? (\r\n+    <button\r\n+      className={styles.shopBtn}\r\n+      onClick={() => setShowButtons(true)}\r\n     >\r\n-      <div className={styles.overlay}>\r\n-        <h1 className={styles.title}> Welcome to Dream  Store </h1>\r\n-\r\n-        {!showButtons ? (\r\n-          <button\r\n-            className={styles.shopBtn}\r\n-            onClick={() => setShowButtons(true)}\r\n-          >\r\n-            Shop Now\r\n-          </button>\r\n-        ) : (\r\n-          <div className={styles.categories}>\r\n-            <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n-            <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n-            <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n-            <Link to=\"/Handmade\" className={styles.catBtn}>Handmade</Link>\r\n\\ No newline at end of file\n-          </div>\r\n-        )}\r\n-      </div>\r\n+      Shop Now\r\n+    </button>\r\n+  ) : (\r\n+    <div className={`${styles.categories}`}>\r\n+      <Link to=\"/men\" className={styles.catBtn}>Men</Link>\r\n+      <Link to=\"/women\" className={styles.catBtn}>Women</Link>\r\n+      <Link to=\"/kids\" className={styles.catBtn}>Kids</Link>\r\n+      <Link to=\"/Handmade\" className={styles.catBtn}>Handmade</Link>\r\n     </div>\r\n-  );\r\n-}\n+  )}\r\n+</div>\r\n"
                 }
             ],
             "date": 1763456243909,

@@ -1,72 +1,88 @@
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
 
-.cardWrapper {
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  height: 100%;
-}
 
-.cardWrapper:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.cardImage {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.cardWrapper:hover .cardImage {
+.hoverScale:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.cardBody {
+:global(.slick-prev:before),
+:global(.slick-next:before) {
+  color: #28a745;
+  font-size: 25px;
+}
+
+.productImg {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.productImgMobile {
+  height: 250px;
+}
+.productImgDesktop {
+  height: 400px;
+}
+
+.mobileList {
   display: flex;
   flex-direction: column;
-  padding: 0.75rem;
-  flex-grow: 1;
+  gap: 20px;
 }
 
-.cardTitle {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0.25rem;
+.mobileCard {
+  width: 100%;
 }
 
-.cardDescription {
-  flex-grow: 1;
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-}
-
-.cardFooter {
+.banner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: auto;
+  justify-content: center;
+  height: auto;
+  min-height: 80px;
+  border-radius: 12px;
+  margin: 0;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
 }
 
-.btnView {
-  transition: background-color 0.3s, color 0.3s;
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
 }
 
-.btnView:hover {
-  background-color: #28a745;
-  color: #fff;
+.banner h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
+.card-body {
+  padding: 10px 10px 15px 10px;
+  text-align: center;
+}
 
+.card-title,
+.card-body p {
+  color: #000;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .desktopSlider { display: none; }
+  .mobileList { display: flex; }
+}
+@media (min-width: 769px) {
+  .desktopSlider { display: block; }
+  .mobileList { display: none; }
+}

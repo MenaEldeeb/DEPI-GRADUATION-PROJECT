@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
@@ -13,7 +12,8 @@ export default function Home() {
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className={styles.overlay}>
-        <h1 className={styles.title}> Welcome to Dream  Store </h1>
+        <h1 className={styles.title}>Welcome to Dream Store
+</h1>
 
         {!showButtons ? (
           <button

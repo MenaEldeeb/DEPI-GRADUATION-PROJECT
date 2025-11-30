@@ -1,50 +1,40 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styles from "./Kids.module.css";
 
 export default function Kids() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  function getProducts() {
-    setIsLoading(true);
-    setError(null);
-
-    axios
-      .get("/Kids-products.json")
-      .then((response) => {
-        setProducts(response.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching Kids products:", error);
-        setError("Failed to load kids products.");
-        setIsLoading(false);
-      });
-  }
 
   useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios.get("/Kids-products.json");
+        setProducts(response.data);
+      } catch {
+        setError("Failed to load kids products.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
     getProducts();
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 200,
+    speed: 250,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
     autoplaySpeed: 1000,
+    pauseOnHover: true,
     responsive: [
       { breakpoint: 1200, settings: { slidesToShow: 3 } },
       { breakpoint: 992, settings: { slidesToShow: 2 } },
@@ -56,44 +46,23 @@ export default function Kids() {
   if (error) return <p className="text-center my-5 text-danger">{error}</p>;
 
   return (
-     <div className="container" style={{ paddingTop: "80px" }}>
-  <h2 className="text-center fw-bold">Kids products</h2>
+    <div className="container" style={{ paddingTop: "80px" }}>
+      <div
+        className={styles.banner}
+        style={{ backgroundImage: "url('/kids-banner.jpg')" }}
+      >
+        <h2 className="fw-bold">Kids Products</h2>
+      </div>
 
-      {isMobile ? (
-        <div className="mobile-list">
-          {products.map((product) => (
-            <div key={product.id} className="mobile-card">
-              <div className="card shadow-sm h-100 border-0 rounded-3 hover-scale">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "12px 12px 0 0" }}
-                />
-                <div className="card-body text-center">
-                  <h5 className="card-title text-truncate">{product.title}</h5>
-                  <p className="text-muted small mb-1">Category: {product.category}</p>
-                  <p className="text-success h6 mb-2">${product.price}</p>
-                  <Link
-                    to={`/product/${product.id}`}
-                    state={{ product }}
-                    className="btn btn-sm btn-outline-success w-100"
-                  >
-                    View
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <Slider {...sliderSettings} key={products.length}>
+      <div className={styles.desktopSlider}>
+        <Slider {...sliderSettings}>
           {products.map((product) => (
             <div key={product.id} className="p-2">
-              <div className="card shadow-sm h-100 border-0 rounded-3 hover-scale">
+              <div className={`card shadow-sm h-100 border-0 rounded-3 ${styles.hoverScale}`}>
                 <img
                   src={product.thumbnail}
                   alt={product.title}
-                  style={{ width: "100%", height: "400px", objectFit: "cover", borderRadius: "12px 12px 0 0" }}
+                  className={`${styles.productImg} ${styles.productImgDesktop}`}
                 />
                 <div className="card-body text-center">
                   <h5 className="card-title text-truncate">{product.title}</h5>
@@ -111,26 +80,33 @@ export default function Kids() {
             </div>
           ))}
         </Slider>
-      )}
+      </div>
 
-      <style>{`
-        .hover-scale:hover {
-          transform: scale(1.05);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .slick-prev:before, .slick-next:before {
-          color: #28a745;
-          font-size: 25px;
-        }
-        .mobile-list {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-        .mobile-card {
-          width: 100%;
-        }
-      `}</style>
+      <div className={styles.mobileList}>
+        {products.map((product) => (
+          <div key={product.id} className={styles.mobileCard}>
+            <div className={`card shadow-sm h-100 border-0 rounded-3 ${styles.hoverScale}`}>
+              <img
+                src={product.thumbnail}
+                alt={product.title}
+                className={`${styles.productImg} ${styles.productImgMobile}`}
+              />
+              <div className="card-body text-center">
+                <h5 className="card-title text-truncate">{product.title}</h5>
+                <p className="text-muted small mb-1">Category: {product.category}</p>
+                <p className="text-success h6 mb-2">${product.price}</p>
+                <Link
+                  to={`/product/${product.id}`}
+                  state={{ product }}
+                  className="btn btn-sm btn-outline-success w-100"
+                >
+                  View
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

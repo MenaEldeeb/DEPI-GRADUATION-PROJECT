@@ -1,4 +1,3 @@
-// CartContext.jsx
 import { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
@@ -18,13 +17,21 @@ export default function CartProvider({ children }) {
     setCart((prevCart) => {
       const exist = prevCart.find((i) => i.id === item.id);
       if (exist) {
-        toast.info(`${item.title} quantity increased ✅`);
-        return prevCart.map((i) =>
+      
+        const updated = prevCart.map((i) =>
           i.id === item.id ? { ...i, quantity: (i.quantity || 1) + 1 } : i
         );
+     
+        setTimeout(() => {
+          toast.info(`${item.title} quantity increased ✅`);
+        }, 0);
+        return updated;
       } else {
-        toast.success(`${item.title} added to cart ✅`);
-        return [...prevCart, { ...item, quantity: 1 }];
+        const updated = [...prevCart, { ...item, quantity: 1 }];
+        setTimeout(() => {
+          toast.success(`${item.title} added to cart ✅`);
+        }, 0);
+        return updated;
       }
     });
   };
@@ -42,7 +49,9 @@ export default function CartProvider({ children }) {
 
   const clearCart = () => {
     setCart([]);
-    toast.warning("Cart cleared ⚠️");
+    setTimeout(() => {
+      toast.warning("Cart cleared ⚠️");
+    }, 0);
   };
 
   const cartCount = cart.reduce((total, item) => total + (item.quantity ?? 1), 0);

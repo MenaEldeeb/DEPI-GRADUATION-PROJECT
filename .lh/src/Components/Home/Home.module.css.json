@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 47,
             "patches": [
                 {
                     "date": 1763456267359,
@@ -40,6 +40,162 @@
                 {
                     "date": 1763479092407,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n .homeContainer {\r\n   height: 100vh;\r\n-  width: 100%;        /* 🔥 السطر المهم */\r\n+  width: 100%;       \r\n   background-size: cover;\r\n   background-position: center;\r\n-  background-repeat: no-repeat; /* مهم برضه */\r\n+  background-repeat: no-repeat; \r\n   position: relative;\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764462367663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n   background-repeat: no-repeat; \r\n   position: relative;\r\n }\r\n \r\n-\r\n .overlay {\r\n   background: rgba(0, 0, 0, 0.55);\r\n   height: 100%;\r\n   display: flex;\r\n@@ -45,8 +44,11 @@\n .categories {\r\n   display: flex;\r\n   flex-direction: column;\r\n   gap: 15px;\r\n+  opacity: 0;\r\n+  transform: translateY(20px);\r\n+  animation: fadeSlide 0.5s forwards;\r\n }\r\n \r\n .catBtn {\r\n   background: #14a44d;\r\n@@ -59,5 +61,12 @@\n }\r\n \r\n .catBtn:hover {\r\n   background: #0d7c39;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+@keyframes fadeSlide {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translateY(0);\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1764462492017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,72 +0,0 @@\n-.homeContainer {\r\n-  height: 100vh;\r\n-  width: 100%;       \r\n-  background-size: cover;\r\n-  background-position: center;\r\n-  background-repeat: no-repeat; \r\n-  position: relative;\r\n-}\r\n-\r\n-.overlay {\r\n-  background: rgba(0, 0, 0, 0.55);\r\n-  height: 100%;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  align-items: center;\r\n-  justify-content: center;\r\n-  color: white;\r\n-  text-align: center;\r\n-  padding: 20px;\r\n-}\r\n-\r\n-.title {\r\n-  font-size: 45px;\r\n-  font-weight: bold;\r\n-  margin-bottom: 20px;\r\n-}\r\n-\r\n-.shopBtn {\r\n-  background: #14a44d;\r\n-  border: none;\r\n-  padding: 12px 26px;\r\n-  color: white;\r\n-  font-size: 22px;\r\n-  border-radius: 8px;\r\n-  margin: 10px;\r\n-  cursor: pointer;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.shopBtn:hover {\r\n-  background: #0d7c39;\r\n-}\r\n-\r\n-.categories {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  gap: 15px;\r\n-  opacity: 0;\r\n-  transform: translateY(20px);\r\n-  animation: fadeSlide 0.5s forwards;\r\n-}\r\n-\r\n-.catBtn {\r\n-  background: #14a44d;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: white;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.catBtn:hover {\r\n-  background: #0d7c39;\r\n-}\r\n-\r\n-@keyframes fadeSlide {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translateY(0);\r\n-  }\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764462503909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,72 @@\n-\n+.homeContainer {\r\n+  height: 100vh;\r\n+  width: 100%;       \r\n+  background-size: cover;\r\n+  background-position: center;\r\n+  background-repeat: no-repeat; \r\n+  position: relative;\r\n+}\r\n+\r\n+.overlay {\r\n+  background: rgba(0, 0, 0, 0.55);\r\n+  height: 100%;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: center;\r\n+  justify-content: center;\r\n+  color: white;\r\n+  text-align: center;\r\n+  padding: 20px;\r\n+}\r\n+\r\n+.title {\r\n+  font-size: 45px;\r\n+  font-weight: bold;\r\n+  margin-bottom: 20px;\r\n+}\r\n+\r\n+.shopBtn {\r\n+  background: #14a44d;\r\n+  border: none;\r\n+  padding: 12px 26px;\r\n+  color: white;\r\n+  font-size: 22px;\r\n+  border-radius: 8px;\r\n+  margin: 10px;\r\n+  cursor: pointer;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.shopBtn:hover {\r\n+  background: #0d7c39;\r\n+}\r\n+\r\n+.categories {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  gap: 15px;\r\n+  opacity: 0;\r\n+  transform: translateY(20px);\r\n+  animation: fadeSlide 0.5s forwards;\r\n+}\r\n+\r\n+.catBtn {\r\n+  background: #14a44d;\r\n+  padding: 12px 26px;\r\n+  font-size: 20px;\r\n+  color: white;\r\n+  text-decoration: none;\r\n+  border-radius: 8px;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.catBtn:hover {\r\n+  background: #0d7c39;\r\n+}\r\n+\r\n+@keyframes fadeSlide {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translateY(0);\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1764462640123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,27 +7,28 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.55);\r\n+  background: rgba(255, 255, 255, 0.85);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n   justify-content: center;\r\n-  color: white;\r\n+  color: #198754;\r\n   text-align: center;\r\n   padding: 20px;\r\n }\r\n \r\n .title {\r\n   font-size: 45px;\r\n   font-weight: bold;\r\n   margin-bottom: 20px;\r\n+  color: #198754;\r\n }\r\n \r\n .shopBtn {\r\n-  background: #14a44d;\r\n+  background: #198754;\r\n   border: none;\r\n   padding: 12px 26px;\r\n   color: white;\r\n   font-size: 22px;\r\n@@ -50,9 +51,9 @@\n   animation: fadeSlide 0.5s forwards;\r\n }\r\n \r\n .catBtn {\r\n-  background: #14a44d;\r\n+  background: #198754;\r\n   padding: 12px 26px;\r\n   font-size: 20px;\r\n   color: white;\r\n   text-decoration: none;\r\n@@ -69,4 +70,5 @@\n     opacity: 1;\r\n     transform: translateY(0);\r\n   }\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1764462754486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,74 +1,1 @@\n-.homeContainer {\r\n-  height: 100vh;\r\n-  width: 100%;       \r\n-  background-size: cover;\r\n-  background-position: center;\r\n-  background-repeat: no-repeat; \r\n-  position: relative;\r\n-}\r\n \r\n-.overlay {\r\n-  background: rgba(255, 255, 255, 0.85);\r\n-  height: 100%;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  align-items: center;\r\n-  justify-content: center;\r\n-  color: #198754;\r\n-  text-align: center;\r\n-  padding: 20px;\r\n-}\r\n-\r\n-.title {\r\n-  font-size: 45px;\r\n-  font-weight: bold;\r\n-  margin-bottom: 20px;\r\n-  color: #198754;\r\n-}\r\n-\r\n-.shopBtn {\r\n-  background: #198754;\r\n-  border: none;\r\n-  padding: 12px 26px;\r\n-  color: white;\r\n-  font-size: 22px;\r\n-  border-radius: 8px;\r\n-  margin: 10px;\r\n-  cursor: pointer;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.shopBtn:hover {\r\n-  background: #0d7c39;\r\n-}\r\n-\r\n-.categories {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  gap: 15px;\r\n-  opacity: 0;\r\n-  transform: translateY(20px);\r\n-  animation: fadeSlide 0.5s forwards;\r\n-}\r\n-\r\n-.catBtn {\r\n-  background: #198754;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: white;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.catBtn:hover {\r\n-  background: #0d7c39;\r\n-}\r\n-\r\n-@keyframes fadeSlide {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translateY(0);\r\n-  }\r\n-}\r\n-\r\n"
+                },
+                {
+                    "date": 1764462830824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,72 @@\n+.homeContainer {\r\n+  height: 100vh;\r\n+  width: 100%;\r\n+  background-size: cover;\r\n+  background-position: center;\r\n+  background-repeat: no-repeat;\r\n+  position: relative;\r\n+}\r\n \r\n+.overlay {\r\n+  background: rgba(0, 0, 0, 0.55);\r\n+  height: 100%;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: center;\r\n+  justify-content: center;\r\n+  text-align: center;\r\n+  padding: 20px;\r\n+}\r\n+\r\n+.title {\r\n+  font-size: 45px;\r\n+  font-weight: bold;\r\n+  margin-bottom: 20px;\r\n+  color: #198754;\r\n+}\r\n+\r\n+.shopBtn {\r\n+  background: white;\r\n+  border: none;\r\n+  padding: 12px 26px;\r\n+  color: #198754;\r\n+  font-size: 22px;\r\n+  border-radius: 8px;\r\n+  margin: 10px;\r\n+  cursor: pointer;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.shopBtn:hover {\r\n+  background: #e6f0e8;\r\n+}\r\n+\r\n+.categories {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  gap: 15px;\r\n+  opacity: 0;\r\n+  transform: translateY(20px);\r\n+  animation: fadeSlide 0.5s forwards;\r\n+}\r\n+\r\n+.catBtn {\r\n+  background: #198754;\r\n+  padding: 12px 26px;\r\n+  font-size: 20px;\r\n+  color: white;\r\n+  text-decoration: none;\r\n+  border-radius: 8px;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.catBtn:hover {\r\n+  background: #0d7c39;\r\n+}\r\n+\r\n+@keyframes fadeSlide {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translateY(0);\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1764462860588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.55);\r\n+  background: rgba(0, 0, 0, 0.5);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764462915999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.5);\r\n+  background: rgba(0, 0, 0, 0.197);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 45px;\r\n   font-weight: bold;\r\n   margin-bottom: 20px;\r\n-  color: #198754;\r\n+  color: ;\r\n }\r\n \r\n .shopBtn {\r\n   background: white;\r\n"
+                },
+                {
+                    "date": 1764462921403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 45px;\r\n   font-weight: bold;\r\n   margin-bottom: 20px;\r\n-  color: ;\r\n+  color: لb;\r\n }\r\n \r\n .shopBtn {\r\n   background: white;\r\n"
+                },
+                {
+                    "date": 1764462926723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 45px;\r\n   font-weight: bold;\r\n   margin-bottom: 20px;\r\n-  color: لb;\r\n+  color: black;\r\n }\r\n \r\n .shopBtn {\r\n   background: white;\r\n"
+                },
+                {
+                    "date": 1764462950721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.197);\r\n+  background: rgba(0, 0, 0, 0.214);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764462995669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n   animation: fadeSlide 0.5s forwards;\r\n }\r\n \r\n .catBtn {\r\n-  background: #198754;\r\n+  background: w#198754;\r\n   padding: 12px 26px;\r\n   font-size: 20px;\r\n   color: white;\r\n   text-decoration: none;\r\n"
+                },
+                {
+                    "date": 1764463005636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n   animation: fadeSlide 0.5s forwards;\r\n }\r\n \r\n .catBtn {\r\n-  background: w#198754;\r\n+  background: w;\r\n   padding: 12px 26px;\r\n   font-size: 20px;\r\n   color: white;\r\n   text-decoration: none;\r\n"
+                },
+                {
+                    "date": 1764463144550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,22 +49,9 @@\n   transform: translateY(20px);\r\n   animation: fadeSlide 0.5s forwards;\r\n }\r\n \r\n-.catBtn {\r\n-  background: w;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: white;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n \r\n-.catBtn:hover {\r\n-  background: #0d7c39;\r\n-}\r\n-\r\n @keyframes fadeSlide {\r\n   to {\r\n     opacity: 1;\r\n     transform: translateY(0);\r\n"
+                },
+                {
+                    "date": 1764463241345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,14 @@\n }\r\n \r\n .title {\r\n   font-size: 45px;\r\n-  font-weight: bold;\r\n+  font-weight: 300;\r\n   margin-bottom: 20px;\r\n-  color: black;\r\n+  color: #198754;\r\n }\r\n \r\n+\r\n .shopBtn {\r\n   background: white;\r\n   border: none;\r\n   padding: 12px 26px;\r\n@@ -49,9 +50,22 @@\n   transform: translateY(20px);\r\n   animation: fadeSlide 0.5s forwards;\r\n }\r\n \r\n+.catBtn {\r\n+  background: white;\r\n+  padding: 12px 26px;\r\n+  font-size: 20px;\r\n+  color: #198754;\r\n+  text-decoration: none;\r\n+  border-radius: 8px;\r\n+  transition: 0.3s ease;\r\n+}\r\n \r\n+.catBtn:hover {\r\n+  background: #e6f0e8;\r\n+}\r\n+\r\n @keyframes fadeSlide {\r\n   to {\r\n     opacity: 1;\r\n     transform: translateY(0);\r\n"
+                },
+                {
+                    "date": 1764463260462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 45px;\r\n   font-weight: 300;\r\n   margin-bottom: 20px;\r\n-  color: #198754;\r\n+  color: #01140b;\r\n }\r\n \r\n \r\n .shopBtn {\r\n"
+                },
+                {
+                    "date": 1764463274691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 45px;\r\n   font-weight: 300;\r\n   margin-bottom: 20px;\r\n-  color: #01140b;\r\n+  color: #01140bcd;\r\n }\r\n \r\n \r\n .shopBtn {\r\n"
+                },
+                {
+                    "date": 1764463306479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n   padding: 20px;\r\n }\r\n \r\n .title {\r\n-  font-size: 45px;\r\n+  font-size: 100px;\r\n   font-weight: 300;\r\n   margin-bottom: 20px;\r\n-  color: #01140bcd;\r\n+  color: #01140be6;\r\n }\r\n \r\n \r\n .shopBtn {\r\n"
+                },
+                {
+                    "date": 1764463320933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   padding: 20px;\r\n }\r\n \r\n .title {\r\n-  font-size: 100px;\r\n+  font-size: 45px;\r\n   font-weight: 300;\r\n   margin-bottom: 20px;\r\n   color: #01140be6;\r\n }\r\n"
+                },
+                {
+                    "date": 1764463326587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .title {\r\n   font-size: 45px;\r\n-  font-weight: 300;\r\n+  font-weight: ;\r\n   margin-bottom: 20px;\r\n   color: #01140be6;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764463372471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.214);\r\n+  background: rgba(0, 0, 0, 0.745);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n@@ -19,9 +19,9 @@\n }\r\n \r\n .title {\r\n   font-size: 45px;\r\n-  font-weight: ;\r\n+  font-weight: 400;\r\n   margin-bottom: 20px;\r\n   color: #01140be6;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1764463382132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.745);\r\n+  background: rgba(0, 0, 0, 0.444);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764463402237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.444);\r\n+  background: rgba(0, 0, 0, 0.726);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764463407886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   padding: 20px;\r\n }\r\n \r\n .title {\r\n-  font-size: 45px;\r\n+  font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n   color: #01140be6;\r\n }\r\n"
+                },
+                {
+                    "date": 1764463415555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(0, 0, 0, 0.726);\r\n+  background: rgba(33, 7, 7, 0.726);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764463447046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,73 @@\n+.homeContainer {\r\n+  height: 100vh;\r\n+  width: 100%;\r\n+  background-size: cover;\r\n+  background-position: center;\r\n+  background-repeat: no-repeat;\r\n+  position: relative;\r\n+}\r\n+\r\n+.overlay {\r\n+  background: rgba(33, 7, 7, 0.227);\r\n+  height: 100%;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: center;\r\n+  justify-content: center;\r\n+  text-align: center;\r\n+  padding: 20px;\r\n+}\r\n+\r\n+.title {\r\n+  font-size: 50px;\r\n+  font-weight: 400;\r\n+  margin-bottom: 20px;\r\n+  color: #01140be6;\r\n+}\r\n+\r\n+\r\n+.shopBtn {\r\n+  background: white;\r\n+  border: none;\r\n+  padding: 12px 26px;\r\n+  color: #198754;\r\n+  font-size: 22px;\r\n+  border-radius: 8px;\r\n+  margin: 10px;\r\n+  cursor: pointer;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.shopBtn:hover {\r\n+  background: #e6f0e8;\r\n+}\r\n+\r\n+.categories {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  gap: 15px;\r\n+  opacity: 0;\r\n+  transform: translateY(20px);\r\n+  animation: fadeSlide 0.5s forwards;\r\n+}\r\n+\r\n+.catBtn {\r\n+  background: white;\r\n+  padding: 12px 26px;\r\n+  font-size: 20px;\r\n+  color: #198754;\r\n+  text-decoration: none;\r\n+  border-radius: 8px;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.catBtn:hover {\r\n+  background: #e6f0e8;\r\n+}\r\n+\r\n+@keyframes fadeSlide {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translateY(0);\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1764463478706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,89 +17,18 @@\n   text-align: center;\r\n   padding: 20px;\r\n }\r\n \r\n-.title {\r\n+..title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #01140be6;\r\n+  color: transparent;\r\n+  -webkit-text-stroke: 1.3px #198754;\r\n }\r\n \r\n \r\n-.shopBtn {\r\n-  background: white;\r\n-  border: none;\r\n-  padding: 12px 26px;\r\n-  color: #198754;\r\n-  font-size: 22px;\r\n-  border-radius: 8px;\r\n-  margin: 10px;\r\n-  cursor: pointer;\r\n-  transition: 0.3s ease;\r\n-}\r\n \r\n-.shopBtn:hover {\r\n-  background: #e6f0e8;\r\n-}\r\n-\r\n-.categories {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  gap: 15px;\r\n-  opacity: 0;\r\n-  transform: translateY(20px);\r\n-  animation: fadeSlide 0.5s forwards;\r\n-}\r\n-\r\n-.catBtn {\r\n-  background: white;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: #198754;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.catBtn:hover {\r\n-  background: #e6f0e8;\r\n-}\r\n-\r\n-@keyframes fadeSlide {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translateY(0);\r\n-  }\r\n-}\r\n-.homeContainer {\r\n-  height: 100vh;\r\n-  width: 100%;\r\n-  background-size: cover;\r\n-  background-position: center;\r\n-  background-repeat: no-repeat;\r\n-  position: relative;\r\n-}\r\n-\r\n-.overlay {\r\n-  background: rgba(33, 7, 7, 0.726);\r\n-  height: 100%;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  align-items: center;\r\n-  justify-content: center;\r\n-  text-align: center;\r\n-  padding: 20px;\r\n-}\r\n-\r\n-.title {\r\n-  font-size: 50px;\r\n-  font-weight: 400;\r\n-  margin-bottom: 20px;\r\n-  color: #01140be6;\r\n-}\r\n-\r\n-\r\n .shopBtn {\r\n   background: white;\r\n   border: none;\r\n   padding: 12px 26px;\r\n"
+                },
+                {
+                    "date": 1764463504799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,14 @@\n   text-align: center;\r\n   padding: 20px;\r\n }\r\n \r\n-..title {\r\n+.title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n   color: transparent;\r\n-  -webkit-text-stroke: 1.3px #198754;\r\n+  -webkit-text-stroke: 1.3px #0c120f;\r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764463992775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n   color: transparent;\r\n-  -webkit-text-stroke: 1.3px #0c120f;\r\n+  \r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764463998130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .title {\r\n   font-size: 50px;\r\n-  font-weight: 400;\r\n+  font-weight: 500;\r\n   margin-bottom: 20px;\r\n   color: transparent;\r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1764464039594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .title {\r\n   font-size: 50px;\r\n-  font-weight: 500;\r\n+  font-weight: 400;\r\n   margin-bottom: 20px;\r\n   color: transparent;\r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1764464206937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,9 @@\n .title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: transparent;\r\n-  \r\n+  color: #198754; /* أخضر مثل Shop Now */\r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764464245715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #198754; /* أخضر مثل Shop Now */\r\n+  color: #19875413; \r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764464257932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #19875413; \r\n+  color: #041c11e3; \r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764464297393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.227);\r\n+  background: rgba(33, 7, 7, 0.455);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764464506414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,16 @@\n .title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #041c11e3; \r\n+  color: #198754; /* أخضر متناسق مع الأزرار */\r\n+  text-shadow: \r\n+    0 0 5px #198754, \r\n+    0 0 10px #198754, \r\n+    0 0 15px #198754; /* يعطي توهج خفيف للنص */\r\n }\r\n \r\n \r\n-\r\n .shopBtn {\r\n   background: white;\r\n   border: none;\r\n   padding: 12px 26px;\r\n"
+                },
+                {
+                    "date": 1764464515977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,13 @@\n .title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #198754; /* أخضر متناسق مع الأزرار */\r\n+  color: #198754; \r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n-    0 0 15px #198754; /* يعطي توهج خفيف للنص */\r\n+    0 0 15px #198754; /* يعطي توهج خفيف للن\r\n }\r\n \r\n \r\n .shopBtn {\r\n"
+                },
+                {
+                    "date": 1764464537250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,13 @@\n .title {\r\n   font-size: 50px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #198754; \r\n+  color: #000a06; \r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n-    0 0 15px #198754; /* يعطي توهج خفيف للن\r\n+    0 0 15px #198754; \r\n }\r\n \r\n \r\n .shopBtn {\r\n"
+                },
+                {
+                    "date": 1764464650031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,77 +1,1 @@\n-.homeContainer {\r\n-  height: 100vh;\r\n-  width: 100%;\r\n-  background-size: cover;\r\n-  background-position: center;\r\n-  background-repeat: no-repeat;\r\n-  position: relative;\r\n-}\r\n \r\n-.overlay {\r\n-  background: rgba(33, 7, 7, 0.455);\r\n-  height: 100%;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  align-items: center;\r\n-  justify-content: center;\r\n-  text-align: center;\r\n-  padding: 20px;\r\n-}\r\n-\r\n-.title {\r\n-  font-size: 50px;\r\n-  font-weight: 400;\r\n-  margin-bottom: 20px;\r\n-  color: #000a06; \r\n-  text-shadow: \r\n-    0 0 5px #198754, \r\n-    0 0 10px #198754, \r\n-    0 0 15px #198754; \r\n-}\r\n-\r\n-\r\n-.shopBtn {\r\n-  background: white;\r\n-  border: none;\r\n-  padding: 12px 26px;\r\n-  color: #198754;\r\n-  font-size: 22px;\r\n-  border-radius: 8px;\r\n-  margin: 10px;\r\n-  cursor: pointer;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.shopBtn:hover {\r\n-  background: #e6f0e8;\r\n-}\r\n-\r\n-.categories {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  gap: 15px;\r\n-  opacity: 0;\r\n-  transform: translateY(20px);\r\n-  animation: fadeSlide 0.5s forwards;\r\n-}\r\n-\r\n-.catBtn {\r\n-  background: white;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: #198754;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.catBtn:hover {\r\n-  background: #e6f0e8;\r\n-}\r\n-\r\n-@keyframes fadeSlide {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translateY(0);\r\n-  }\r\n-}\r\n"
                 }
             ],
             "date": 1763456267359,

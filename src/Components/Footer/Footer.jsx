@@ -6,8 +6,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-
-        <h3 className={styles.title}>DreamSTORE</h3>
+        <h3 className={styles.title}>Dream</h3>
 
         <p className={styles.text}>
           Your perfect destination for stylish fashion and accessories.
@@ -21,11 +20,7 @@ export default function Footer() {
         </div>
 
         <p className={styles.copy}>© 2025 DreamStore. All Rights Reserved.</p>
-
       </div>
     </footer>
   );
 }
-
-
-

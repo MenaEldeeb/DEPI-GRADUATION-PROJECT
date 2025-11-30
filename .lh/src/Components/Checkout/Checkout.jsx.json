@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1764181712894,
@@ -68,6 +68,14 @@
                 {
                     "date": 1764182694631,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-impo\r\n+import Pay\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1764444418373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState, useContext } from \"react\";\r\n import { CartContext } from \"../context/CartContext\";\r\n-import Pay\r\n+import PaymentModal from \"../PaymentModal/PaymentModal\";\r\n \r\n import { useNavigate } from \"react-router-dom\";\r\n \r\n \r\n@@ -34,9 +34,9 @@\n   };\r\n \r\n   return (\r\n     <section className=\"container py-5\">\r\n-      <h2 className=\"fw-bold mb-4\">Checkout</h2>\r\n+      <h2 className=\"fw-bold m-4\">Checkout</h2>\r\n \r\n       <div className=\"row\">\r\n         <div className=\"col-md-7\">\r\n           <div className=\"card p-4 mb-4\">\r\n"
+                },
+                {
+                    "date": 1764444806593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n   };\r\n \r\n   return (\r\n     <section className=\"container py-5\">\r\n-      <h2 className=\"fw-bold m-4\">Checkout</h2>\r\n+      \r\n \r\n       <div className=\"row\">\r\n         <div className=\"col-md-7\">\r\n           <div className=\"card p-4 mb-4\">\r\n"
                 }
             ],
             "date": 1764181712894,

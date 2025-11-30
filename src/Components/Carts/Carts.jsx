@@ -8,20 +8,12 @@ export default function Cart() {
   const [localCart, setLocalCart] = useState([]);
   const navigate = useNavigate();
 
-  // Load cart from localStorage on mount
+  // Sync localCart with Context cart and localStorage
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setLocalCart(storedCart);
-  }, []);
-
-  // Sync cart to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(localCart));
-  }, [localCart]);
-
-  // Update localCart whenever Context cart changes
-  useEffect(() => {
-    setLocalCart(cart);
+    const currentCart = cart.length ? cart : storedCart;
+    setLocalCart(currentCart);
+    localStorage.setItem("cart", JSON.stringify(currentCart));
   }, [cart]);
 
   const totalPrice = localCart.reduce(
@@ -37,7 +29,7 @@ export default function Cart() {
     updateQuantity(id, quantity); // update Context
     setLocalCart((prev) =>
       prev.map((item) => (item.id === id ? { ...item, quantity } : item))
-    ); // update local state & localStorage
+    );
   };
 
   const handleRemove = (id) => {
@@ -50,32 +42,45 @@ export default function Cart() {
   return (
     <section className="h-100">
       <div className="container h-100 py-5">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-10">
-           <h3 className="fw-normal mb-4 mt-5">Shopping Cart</h3>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10">
+            <h3 
+  className="fw-normal text-center my-5" 
+  style={{ 
+    textShadow: "2px 2px 4px rgba(0,0,0,0.5)" 
+  }}
+>
+  Shopping Cart
+</h3>
 
 
             {localCart.length === 0 ? (
-              <h4 className="text-muted">Your cart is empty.</h4>
+              <h4 className="text-muted text-center">Your cart is empty.</h4>
             ) : (
               <>
                 {localCart.map((item) => (
                   <div className="card rounded-3 mb-4" key={item.id}>
-                    <div className="card-body p-4">
+                    <div className="card-body p-3 p-md-4">
                       <div className="row align-items-center">
-                        <div className="col-md-2">
+                        {/* Image */}
+                        <div className="col-4 col-sm-3 col-md-2 mb-3 mb-md-0 text-center">
                           <img
                             src={item.thumbnail}
                             className="img-fluid rounded-3"
                             alt={item.title}
                           />
                         </div>
-                        <div className="col-md-4">
-                          <p className="lead mb-2">{item.title}</p>
+
+                        {/* Title */}
+                        <div className="col-8 col-sm-5 col-md-4 mb-2 mb-md-0">
+                          <p className="lead mb-0">{item.title}</p>
                         </div>
-                        <div className="col-md-3 d-flex align-items-center">
+
+                        {/* Quantity */}
+                        <div className="col-12 col-sm-4 col-md-3 d-flex align-items-center mb-2 mb-md-0 justify-content-start justify-content-md-center gap-2">
                           <button
-                            className="btn btn-link px-2"
+                            className="btn btn-outline-secondary btn-sm"
+                            disabled={item.quantity === 1}
                             onClick={() =>
                               handleQuantityChange(
                                 item.id,
@@ -88,7 +93,8 @@ export default function Cart() {
                           <input
                             min="1"
                             type="number"
-                            className="form-control form-control-sm mx-2"
+                            className="form-control form-control-sm text-center"
+                            style={{ width: "50px" }}
                             value={item.quantity || 1}
                             onChange={(e) =>
                               handleQuantityChange(
@@ -98,7 +104,7 @@ export default function Cart() {
                             }
                           />
                           <button
-                            className="btn btn-link px-2"
+                            className="btn btn-outline-secondary btn-sm"
                             onClick={() =>
                               handleQuantityChange(
                                 item.id,
@@ -109,14 +115,16 @@ export default function Cart() {
                             <i className="fas fa-plus"></i>
                           </button>
                         </div>
-                        <div className="col-md-2 text-end">
-                          <strong>
-                            ${(item.price * (item.quantity || 1)).toFixed(2)}
-                          </strong>
+
+                        {/* Price */}
+                        <div className="col-6 col-md-2 text-end mb-2 mb-md-0">
+                          <strong>${(item.price * (item.quantity || 1)).toFixed(2)}</strong>
                         </div>
-                        <div className="col-md-1 text-end">
+
+                        {/* Remove */}
+                        <div className="col-6 col-md-1 text-end">
                           <button
-                            className="text-danger btn btn-link"
+                            className="text-danger btn btn-link p-0"
                             onClick={() => handleRemove(item.id)}
                           >
                             <i className="fas fa-trash fa-lg"></i>
@@ -130,9 +138,10 @@ export default function Cart() {
                 {/* Total + Checkout */}
                 <div className="card mb-3">
                   <div className="card-body d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-                    <h4 className="fw-bold mb-0">Total: ${totalPrice.toFixed(2)}</h4>
-                    
-                    {/* Payment Method */}
+                    <h4 className="fw-bold mb-2 mb-sm-0">
+                      Total: ${totalPrice.toFixed(2)}
+                    </h4>
+
                     <select
                       className="form-select flex-grow-1"
                       value={paymentMethod}

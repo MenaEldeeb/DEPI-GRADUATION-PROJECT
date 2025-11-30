@@ -1,0 +1,86 @@
+hoverScale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+:global(.slick-prev:before),
+:global(.slick-next:before) {
+  color: #28a745;
+  font-size: 25px;
+}
+
+.productImg {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.productImgMobile {
+  height: 250px;
+}
+.productImgDesktop {
+  height: 400px;
+}
+
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileCard {
+  width: 100%;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 80px;
+  border-radius: 12px;
+  margin: 0;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+}
+
+.banner h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.card-body {
+  padding: 10px 10px 15px 10px;
+  text-align: center;
+}
+
+.card-title,
+.card-body p {
+  color: #000;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .desktopSlider { display: none; }
+  .mobileList { display: flex; }
+}
+@media (min-width: 769px) {
+  .desktopSlider { display: block; }
+  .mobileList { display: none; }
+}

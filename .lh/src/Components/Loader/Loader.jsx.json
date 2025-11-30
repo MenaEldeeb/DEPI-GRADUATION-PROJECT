@@ -3,11 +3,31 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1763650586057,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764462083857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       className={`${styles.loaderContainer} ${hide ? styles.fadeOut : \"\"}`}\r\n     >\r\n       <h1 className={styles.loaderText}>\r\n         {displayText}\r\n-        <span className={styles.cursor}>|</span>\r\n+        {displayText.length < text.length && <span className={styles.cursor}>|</span>}\r\n       </h1>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1764462121498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       className={`${styles.loaderContainer} ${hide ? styles.fadeOut : \"\"}`}\r\n     >\r\n       <h1 className={styles.loaderText}>\r\n         {displayText}\r\n-        {displayText.length < text.length && <span className={styles.cursor}>|</span>}\r\n+        <span className={styles.cursor}>|</span>\r\n       </h1>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1764464083013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useEffect, useState } from \"react\";\r\n import styles from \"./Loader.module.css\";\r\n \r\n export default function Loader() {\r\n-  const text = \"Dream Store\";\r\n+  const text = \"صDream Store\";\r\n   const [displayText, setDisplayText] = useState(\"\");\r\n   const [hide, setHide] = useState(false);\r\n \r\n   useEffect(() => {\r\n"
+                },
+                {
+                    "date": 1764464091346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useEffect, useState } from \"react\";\r\n import styles from \"./Loader.module.css\";\r\n \r\n export default function Loader() {\r\n-  const text = \"صDream Store\";\r\n+  const text = \"WelcomDream Store\";\r\n   const [displayText, setDisplayText] = useState(\"\");\r\n   const [hide, setHide] = useState(false);\r\n \r\n   useEffect(() => {\r\n"
+                },
+                {
+                    "date": 1764464110997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useEffect, useState } from \"react\";\r\n import styles from \"./Loader.module.css\";\r\n \r\n export default function Loader() {\r\n-  const text = \"Welcom to Dream Store\";\r\n+  const text = \"Welcome to Dream Store\";\r\n   const [displayText, setDisplayText] = useState(\"\");\r\n   const [hide, setHide] = useState(false);\r\n \r\n   useEffect(() => {\r\n"
                 }
             ],
             "date": 1763650586057,

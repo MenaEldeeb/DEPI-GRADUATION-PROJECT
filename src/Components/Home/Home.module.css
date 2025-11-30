@@ -1,36 +1,39 @@
 .homeContainer {
   height: 100vh;
-  width: 100%;       
+  width: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   position: relative;
 }
 
-
 .overlay {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(33, 7, 7, 0.455);
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
   padding: 20px;
 }
 
 .title {
-  font-size: 45px;
-  font-weight: bold;
+  font-size: 50px;
+  font-weight: 400;
   margin-bottom: 20px;
+  color: #000a06b4;
+  text-shadow: 
+    0 0 5px #198754, 
+    0 0 10px #198754, 
+    0 0 15px #198754;
 }
 
 .shopBtn {
-  background: #14a44d;
+  background: white;
   border: none;
   padding: 12px 26px;
-  color: white;
+  color: #000;
   font-size: 22px;
   border-radius: 8px;
   margin: 10px;
@@ -39,25 +42,36 @@
 }
 
 .shopBtn:hover {
-  background: #0d7c39;
+  background: #e6f0e8;
 }
 
 .categories {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlide 0.5s forwards;
 }
 
 .catBtn {
-  background: #14a44d;
+  background: white;
   padding: 12px 26px;
   font-size: 20px;
-  color: white;
+  color: #000;
   text-decoration: none;
   border-radius: 8px;
   transition: 0.3s ease;
 }
 
 .catBtn:hover {
-  background: #0d7c39;
+  background: #e6f0e8;
 }
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

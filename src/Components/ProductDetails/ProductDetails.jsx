@@ -12,17 +12,25 @@ export default function ProductDetails() {
     return <h2 className="text-center mt-5">No product data found</h2>;
   }
 
-  const productImage =
-    product.images?.length > 0 ? product.images[0] : product.thumbnail;
+  const productImage = product.images?.[0] || product.thumbnail || "/placeholder.png";
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    
+  };
 
   return (
     <div className="container my-5">
-      <div className="row align-items-center">
-        <div className="col-md-5 mb-4 mb-md-0">
+      <div
+        className="row p-4 rounded shadow-sm"
+        style={{ backgroundColor: "#fff", alignItems: "center" }}
+      >
+        <div className="col-md-5 mb-3 mb-md-0">
           <img
             src={productImage}
             alt={product.title}
-            className="w-100 rounded shadow-sm"
+            className="img-fluid rounded"
+            style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }}
           />
         </div>
 
@@ -31,11 +39,7 @@ export default function ProductDetails() {
           <p className="text-muted">{product.category}</p>
           <p className="mt-3">{product.description}</p>
           <h3 className="text-success fw-bold mt-4">${product.price}</h3>
-
-          <button
-            className="btn btn-success mt-4"
-            onClick={() => addToCart(product)}
-          >
+          <button className="btn btn-success mt-4" onClick={handleAddToCart}>
             Add to Cart
           </button>
         </div>
@@ -43,3 +47,4 @@ export default function ProductDetails() {
     </div>
   );
 }
+

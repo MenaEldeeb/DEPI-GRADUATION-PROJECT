@@ -35,7 +35,8 @@ export default function Checkout() {
 
   return (
     <section className="container py-5">
-      <h2 className="fw-bold mb-4">Checkout</h2>
+      <h2 className="fw-bold mt-5">Checkout</h2>
+
 
       <div className="row">
         <div className="col-md-7">

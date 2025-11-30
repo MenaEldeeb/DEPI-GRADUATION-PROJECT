@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1764349736671,
@@ -64,6 +64,30 @@
                 {
                     "date": 1764353655250,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   return (\r\n     <footer className={styles.footer}>\r\n       <div className={styles.container}>\r\n \r\n-        <h3 className={styles.title}>DreamS</h3>\r\n+        <h3 className={styles.title}>DreamSTORE</h3>\r\n \r\n         <p className={styles.text}>\r\n           Your perfect destination for stylish fashion and accessories.\r\n         </p>\r\n"
+                },
+                {
+                    "date": 1764455907969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,27 +5,19 @@\n export default function Footer() {\r\n   return (\r\n     <footer className={styles.footer}>\r\n       <div className={styles.container}>\r\n-\r\n         <h3 className={styles.title}>DreamSTORE</h3>\r\n-\r\n         <p className={styles.text}>\r\n           Your perfect destination for stylish fashion and accessories.\r\n         </p>\r\n-\r\n         <div className={styles.social}>\r\n           <a href=\"#\" className={styles.circle}><FaFacebookF /></a>\r\n           <a href=\"#\" className={styles.circle}><FaTwitter /></a>\r\n           <a href=\"#\" className={styles.circle}><FaLinkedinIn /></a>\r\n           <a href=\"#\" className={styles.circle}><FaInstagram /></a>\r\n         </div>\r\n-\r\n         <p className={styles.copy}>© 2025 DreamStore. All Rights Reserved.</p>\r\n-\r\n       </div>\r\n     </footer>\r\n   );\r\n }\r\n-\r\n-\r\n-\r\n"
+                },
+                {
+                    "date": 1764456211006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export default function Footer() {\r\n   return (\r\n     <footer className={styles.footer}>\r\n       <div className={styles.container}>\r\n-        <h3 className={styles.title}>DreamSTORE</h3>\r\n+        \r\n         <p className={styles.text}>\r\n           Your perfect destination for stylish fashion and accessories.\r\n         </p>\r\n         <div className={styles.social}>\r\n"
+                },
+                {
+                    "date": 1764456363492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +0,0 @@\n-import React from \"react\";\r\n-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from \"react-icons/fa\";\r\n-import styles from \"./Footer.module.css\";\r\n-\r\n-export default function Footer() {\r\n-  return (\r\n-    <footer className={styles.footer}>\r\n-      <div className={styles.container}>\r\n-        \r\n-        <p className={styles.text}>\r\n-          Your perfect destination for stylish fashion and accessories.\r\n-        </p>\r\n-        <div className={styles.social}>\r\n-          <a href=\"#\" className={styles.circle}><FaFacebookF /></a>\r\n-          <a href=\"#\" className={styles.circle}><FaTwitter /></a>\r\n-          <a href=\"#\" className={styles.circle}><FaLinkedinIn /></a>\r\n-          <a href=\"#\" className={styles.circle}><FaInstagram /></a>\r\n-        </div>\r\n-        <p className={styles.copy}>© 2025 DreamStore. All Rights Reserved.</p>\r\n-      </div>\r\n-    </footer>\r\n-  );\r\n-}\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764456380820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,28 @@\n-\n+import React from \"react\";\r\n+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from \"react-icons/fa\";\r\n+import styles from \"./Footer.module.css\";\r\n+\r\n+export default function Footer() {\r\n+  return (\r\n+    <footer className={styles.footer}>\r\n+      <div className={styles.container}>\r\n+\r\n+        <h3 className={styles.title}>DreamSTORE</h3>\r\n+\r\n+        <p className={styles.text}>\r\n+          Your perfect destination for stylish fashion and accessories.\r\n+        </p>\r\n+\r\n+        <div className={styles.social}>\r\n+          <a href=\"#\" className={styles.circle}><FaFacebookF /></a>\r\n+          <a href=\"#\" className={styles.circle}><FaTwitter /></a>\r\n+          <a href=\"#\" className={styles.circle}><FaLinkedinIn /></a>\r\n+          <a href=\"#\" className={styles.circle}><FaInstagram /></a>\r\n+        </div>\r\n+\r\n+        <p className={styles.copy}>© 2025 DreamStore. All Rights Reserved.</p>\r\n+\r\n+      </div>\r\n+    </footer>\r\n+  );\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764456407428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   return (\r\n     <footer className={styles.footer}>\r\n       <div className={styles.container}>\r\n \r\n-        <h3 className={styles.title}>DreamSTORE</h3>\r\n+        <h3 className={styles.title}>Dream</h3>\r\n \r\n         <p className={styles.text}>\r\n           Your perfect destination for stylish fashion and accessories.\r\n         </p>\r\n"
+                },
+                {
+                    "date": 1764460757522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n export default function Footer() {\r\n   return (\r\n     <footer className={styles.footer}>\r\n       <div className={styles.container}>\r\n-\r\n         <h3 className={styles.title}>Dream</h3>\r\n \r\n         <p className={styles.text}>\r\n           Your perfect destination for stylish fashion and accessories.\r\n@@ -20,9 +19,8 @@\n           <a href=\"#\" className={styles.circle}><FaInstagram /></a>\r\n         </div>\r\n \r\n         <p className={styles.copy}>© 2025 DreamStore. All Rights Reserved.</p>\r\n-\r\n       </div>\r\n     </footer>\r\n   );\r\n-}\n\\ No newline at end of file\n+}\r\n"
                 }
             ],
             "date": 1764349736671,
