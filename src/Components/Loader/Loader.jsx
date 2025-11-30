@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Loader.module.css";
 
 export default function Loader() {
-  const text = "Welcome to Dream Store";
+  const text = " Dream Store";
   const [displayText, setDisplayText] = useState("");
   const [hide, setHide] = useState(false);
 
