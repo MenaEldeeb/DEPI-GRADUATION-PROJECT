@@ -1,8 +1,7 @@
-
-
 .hoverScale:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.366);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 :global(.slick-prev:before),
@@ -13,12 +12,15 @@
 
 .productImg {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px 12px 0 0;
+  background-color: #f8f8f8;
 }
+
 .productImgMobile {
   height: 250px;
 }
+
 .productImgDesktop {
   height: 400px;
 }
@@ -81,8 +83,11 @@
 @media (max-width: 768px) {
   .desktopSlider { display: none; }
   .mobileList { display: flex; }
+  .productImg { height: 250px; }
 }
+
 @media (min-width: 769px) {
   .desktopSlider { display: block; }
   .mobileList { display: none; }
+  .productImg { height: 400px; }
 }

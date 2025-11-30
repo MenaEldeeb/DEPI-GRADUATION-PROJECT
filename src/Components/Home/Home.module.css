@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 400;
   margin-bottom: 20px;
   color: #000a06b4;
@@ -27,6 +27,7 @@
     0 0 5px #198754, 
     0 0 10px #198754, 
     0 0 15px #198754;
+  letter-spacing: 2px;
 }
 
 .shopBtn {
@@ -43,6 +44,7 @@
 
 .shopBtn:hover {
   background: #e6f0e8;
+  color: #198754;
 }
 
 .categories {
@@ -66,6 +68,8 @@
 
 .catBtn:hover {
   background: #e6f0e8;
+  color: #198754;
+  transition: 0.3s ease;
 }
 
 @keyframes fadeSlide {
@@ -74,4 +78,3 @@
     transform: translateY(0);
   }
 }
-

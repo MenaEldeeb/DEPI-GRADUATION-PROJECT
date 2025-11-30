@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 47,
+            "activePatchIndex": 51,
             "patches": [
                 {
                     "date": 1763456267359,
@@ -196,6 +196,22 @@
                 {
                     "date": 1764464650031,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,77 +1,1 @@\n-.homeContainer {\r\n-  height: 100vh;\r\n-  width: 100%;\r\n-  background-size: cover;\r\n-  background-position: center;\r\n-  background-repeat: no-repeat;\r\n-  position: relative;\r\n-}\r\n \r\n-.overlay {\r\n-  background: rgba(33, 7, 7, 0.455);\r\n-  height: 100%;\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  align-items: center;\r\n-  justify-content: center;\r\n-  text-align: center;\r\n-  padding: 20px;\r\n-}\r\n-\r\n-.title {\r\n-  font-size: 50px;\r\n-  font-weight: 400;\r\n-  margin-bottom: 20px;\r\n-  color: #000a06; \r\n-  text-shadow: \r\n-    0 0 5px #198754, \r\n-    0 0 10px #198754, \r\n-    0 0 15px #198754; \r\n-}\r\n-\r\n-\r\n-.shopBtn {\r\n-  background: white;\r\n-  border: none;\r\n-  padding: 12px 26px;\r\n-  color: #198754;\r\n-  font-size: 22px;\r\n-  border-radius: 8px;\r\n-  margin: 10px;\r\n-  cursor: pointer;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.shopBtn:hover {\r\n-  background: #e6f0e8;\r\n-}\r\n-\r\n-.categories {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  gap: 15px;\r\n-  opacity: 0;\r\n-  transform: translateY(20px);\r\n-  animation: fadeSlide 0.5s forwards;\r\n-}\r\n-\r\n-.catBtn {\r\n-  background: white;\r\n-  padding: 12px 26px;\r\n-  font-size: 20px;\r\n-  color: #198754;\r\n-  text-decoration: none;\r\n-  border-radius: 8px;\r\n-  transition: 0.3s ease;\r\n-}\r\n-\r\n-.catBtn:hover {\r\n-  background: #e6f0e8;\r\n-}\r\n-\r\n-@keyframes fadeSlide {\r\n-  to {\r\n-    opacity: 1;\r\n-    transform: translateY(0);\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1764499387392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,79 @@\n+..homeContainer {\r\n+  height: 100vh;\r\n+  width: 100%;\r\n+  background-size: cover;\r\n+  background-position: center;\r\n+  background-repeat: no-repeat;\r\n+  position: relative;\r\n+}\r\n \r\n+.overlay {\r\n+  background: rgba(33, 7, 7, 0.455);\r\n+  height: 100%;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: center;\r\n+  justify-content: center;\r\n+  text-align: center;\r\n+  padding: 20px;\r\n+}\r\n+\r\n+.title {\r\n+  font-size: 60px;\r\n+  font-weight: 400;\r\n+  margin-bottom: 20px;\r\n+  color: #000a06b4;\r\n+  text-shadow: \r\n+    0 0 5px #198754, \r\n+    0 0 10px #198754, \r\n+    0 0 15px #198754;\r\n+}\r\n+\r\n+.shopBtn {\r\n+  background: white;\r\n+  border: none;\r\n+  padding: 12px 26px;\r\n+  color: #000;\r\n+  font-size: 22px;\r\n+  border-radius: 8px;\r\n+  margin: 10px;\r\n+  cursor: pointer;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.shopBtn:hover {\r\n+  background: #e6f0e8;\r\n+  color: #198754;\r\n+}\r\n+\r\n+.categories {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  gap: 15px;\r\n+  opacity: 0;\r\n+  transform: translateY(20px);\r\n+  animation: fadeSlide 0.5s forwards;\r\n+}\r\n+\r\n+.catBtn {\r\n+  background: white;\r\n+  padding: 12px 26px;\r\n+  font-size: 20px;\r\n+  color: #000;\r\n+  text-decoration: none;\r\n+  border-radius: 8px;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+.catBtn:hover {\r\n+  background: #e6f0e8;\r\n+  color: #198754;\r\n+  transition: 0.3s ease;\r\n+}\r\n+\r\n+@keyframes fadeSlide {\r\n+  to {\r\n+    opacity: 1;\r\n+    transform: translateY(0);\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1764499397779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-..homeContainer {\r\n+.homeContainer {\r\n   height: 100vh;\r\n   width: 100%;\r\n   background-size: cover;\r\n   background-position: center;\r\n"
+                },
+                {
+                    "date": 1764499824858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.455);\r\n+  background: rgba(33, 7, 7, 0.521);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764499939519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.521);\r\n+  background: rgba(33, 7, 7, 0.455);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n@@ -26,8 +26,9 @@\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n+  letter-spacing: 2px;\r\n }\r\n \r\n .shopBtn {\r\n   background: white;\r\n"
                 }
             ],
             "date": 1763456267359,

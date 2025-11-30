@@ -16,7 +16,6 @@ export default function ProductDetails() {
 
   const handleAddToCart = () => {
     addToCart(product);
-    
   };
 
   return (
@@ -30,7 +29,12 @@ export default function ProductDetails() {
             src={productImage}
             alt={product.title}
             className="img-fluid rounded"
-            style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }}
+            style={{
+              maxHeight: "400px",
+              width: "100%",
+              objectFit: "contain",
+              backgroundColor: "#f8f8f8",
+            }}
           />
         </div>
 
@@ -47,4 +51,3 @@ export default function ProductDetails() {
     </div>
   );
 }
-
