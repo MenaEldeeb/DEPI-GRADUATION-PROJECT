@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 60,
+            "activePatchIndex": 67,
             "patches": [
                 {
                     "date": 1763456267359,
@@ -248,6 +248,34 @@
                 {
                     "date": 1764715506200,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.115);\r\n+  background: rgba(33, 7, 7, 0.016);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764716082678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: #000a06b4;\r\n+  color: ;\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
+                },
+                {
+                    "date": 1764716087781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: ;\r\n+  color: brown;\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
+                },
+                {
+                    "date": 1764716104446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: brown;\r\n+  color: brownn;\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
+                },
+                {
+                    "date": 1764716110918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: brownn;\r\n+  color: brown;\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
+                },
+                {
+                    "date": 1764716158260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: brown;\r\n+  color: rgba(165, 42, 42, 0.199);\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
+                },
+                {
+                    "date": 1764716168208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: rgba(165, 42, 42, 0.199);\r\n+  color: rgba(165, 42, 42, 0.692);\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
+                },
+                {
+                    "date": 1764716223726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n .title {\r\n   font-size: 60px;\r\n   font-weight: 400;\r\n   margin-bottom: 20px;\r\n-  color: rgba(165, 42, 42, 0.692);\r\n+  color: rgba(165, 42, 42, 0.84);\r\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n"
                 }
             ],
             "date": 1763456267359,
