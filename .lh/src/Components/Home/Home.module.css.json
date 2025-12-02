@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 51,
+            "activePatchIndex": 60,
             "patches": [
                 {
                     "date": 1763456267359,
@@ -212,6 +212,42 @@
                 {
                     "date": 1764499939519,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.521);\r\n+  background: rgba(33, 7, 7, 0.455);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n@@ -26,8 +26,9 @@\n   text-shadow: \r\n     0 0 5px #198754, \r\n     0 0 10px #198754, \r\n     0 0 15px #198754;\r\n+  letter-spacing: 2px;\r\n }\r\n \r\n .shopBtn {\r\n   background: white;\r\n"
+                },
+                {
+                    "date": 1764715109657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.455);\r\n+  background: rgba(33, 7, 7, 0.126);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715242901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.126);\r\n+  background: rgba(33, 7, 7, 0);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715353822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0);\r\n+  background: rgba(33, 7, 7, 0.164);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715372228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.164);\r\n+  background: rgba(33, 7, 7, 0.444);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715391425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.444);\r\n+  background: rgba(33, 7, 7, 0.356);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715405741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.356);\r\n+  background: rgba(33, 7, 7, 0.268);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715426441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.268);\r\n+  background: rgba(33, 7, 7, 0.164);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715444889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.164);\r\n+  background: rgba(33, 7, 7, 0.115);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1764715506200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   position: relative;\r\n }\r\n \r\n .overlay {\r\n-  background: rgba(33, 7, 7, 0.115);\r\n+  background: rgba(33, 7, 7, 0.016);\r\n   height: 100%;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
                 }
             ],
             "date": 1763456267359,

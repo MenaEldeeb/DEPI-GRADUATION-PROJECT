@@ -3,7 +3,7 @@
   padding: 40px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  color: #198754;
+  color: #0b1e14;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
 }
 
@@ -17,12 +17,12 @@
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #198754;
+  color: #17201c;
 }
 
 .text {
   font-size: 14px;
-  color: #198754;
+  color: #0e1713;
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -37,7 +37,7 @@
 .circle {
   width: 36px;
   height: 36px;
-  background: #198754;
+  background: rgb(22, 27, 24);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -49,13 +49,13 @@
 }
 
 .circle:hover {
-  background: #28a745;
+  background: #110d11;
   transform: translateY(-3px);
 }
 
 .copy {
   font-size: 12px;
-  color: #198754;
+  color: #12211a;
   margin-top: 10px;
   letter-spacing: 0.5px;
 }

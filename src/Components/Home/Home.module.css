@@ -8,7 +8,7 @@
 }
 
 .overlay {
-  background: rgba(33, 7, 7, 0.455);
+  background: rgba(33, 7, 7, 0.016);
   height: 100%;
   display: flex;
   flex-direction: column;
