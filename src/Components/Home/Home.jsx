@@ -12,8 +12,8 @@ export default function Home() {
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className={styles.overlay}>
-        <h1 className={styles.title}>Welcome to Dream Store
-</h1>
+        <h1 className={styles.title}>Your Dream Store Awaits</h1>
+    
 
         {!showButtons ? (
           <button

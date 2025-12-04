@@ -22,13 +22,14 @@
   font-size: 60px;
   font-weight: 400;
   margin-bottom: 20px;
-  color: rgba(165, 42, 42, 0.84);
+  color: rgb(165, 42, 42);
   text-shadow: 
     0 0 5px #198754, 
     0 0 10px #198754, 
     0 0 15px #198754;
   letter-spacing: 2px;
 }
+
 
 .shopBtn {
   background: white;
